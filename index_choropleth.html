@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Community Profiles</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css'
+    	rel='stylesheet' type='text/css'/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+</head>
+<style type="text/css">
+html { 
+	height: 100% 
+}
+body { 
+	height: 100%; 
+	margin: 0; 
+	padding: 0;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;	
+}
+#map {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #333;
+	pointer-events: all;
+}
+div.tooltip {
+	color: #222;
+	background: #fff;
+	padding: .5em;
+	text-shadow: #f5f5f5 0 1px 0;
+	border-radius: 7px; 
+	box-shadow: 0px 0px 2px 0px #a6a6a6; 
+	opacity: 0.9; 
+	position: absolute;
+}
+h6 {
+	font-size: .5em;
+}
+.ui {
+	top: 10px;
+	left: 50px;
+	padding: 8px;
+	position: absolute;
+	background-color: #fff;
+	border: 2px solid #707070;
+	border-radius: 7px;
+	width: 350px;
+}
+.boilers {
+	fill: #FF5500;
+}
+.construction {
+	fill: #15253f;
+}
+.elevators {
+	fill: #3f3e0c;
+}
+.facades {
+	fill: #174727;
+}
+.info {
+	padding: 6px 8px;
+	<!-- font: 14px/16px Arial, Helvetica, sans-serif; -->
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 25px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.legend {
+	line-height: 34px;
+	color: #000000;
+	font-weight: bold;
+	top: 90px;
+	left: 45px;
+}
+.legend i {
+	width: 34px;
+	height: 34px;
+	float: left;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+</style>
+
+<body>
+	<div id="map">
+		<!-- <div id="ui-container" class="ui" style="z-index: 401">		 -->
+			      <!-- <h4>DOB Violations Issued 2017</h4> -->
+				  <!-- <h5>Violation Type</h5> -->
+				  
+				  <!-- <span style="display:inline-block; background-color:#FF5500; padding:0px; margin:0px; height:13px; width:13px; overflow:hidden"><input type="radio" style="opacity:0.50;padding:0px;margin:0px" name="vio" class="selected boiler" value="boiler" id="boiler" checked="true"/></span> -->
+					<!-- <label for="boiler"></label><span class="en">Boilers</span> -->
+				  <!-- <br/> -->
+				  
+				  <!-- <span style="display:inline-block; background-color:#42d4f4; padding:0px; margin:0px; height:13px; width:13px; overflow:hidden"><input type="radio" style="opacity:0.50;padding:0px;margin:0px" name="vio" value="constr" id="constr" /></span> -->
+					<!-- <label for="const"></label><span class="en">Construction</span> -->
+				  <!-- <br/> -->
+				  
+				  <!-- <span style="display:inline-block; background-color:#bcb92f; padding:0px; margin:0px; height:13px; width:13px; overflow:hidden"><input type="radio" style="opacity:0.50;padding:0px;margin:0px" name="vio" value="elev" id="elev" /></span> -->
+					<!-- <label for="elev"></label><span class="en">Elevators</span> -->
+				  <!-- <br/> -->
+				  <!-- <span style="display:inline-block; background-color:#8DB5AF; padding:0px; margin:0px; height:13px; width:13px; overflow:hidden"><input type="radio" style="opacity:0.50;padding:0px;margin:0px" name="vio" value="fac" id="fac" /></span> -->
+					<!-- <label for="fac"></label><span class="en">Facades</span> -->
+				  <!-- <br/> -->
+				  <!-- <h6><i>The choropleth map represent violation rates (the number of violations per number of devices) by Community District. Construction violation rates are calculated by number of violations per number of active permits (NB,A1,A2,A3,DM). Facade violation rates are calculated by number of violations per number of Local Law 11 buildings.</i></h6> -->
+
+		<!-- </div> -->
+	</div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+<script src="Leaflet.D3SvgOverlay-master/L.D3SvgOverlay.min.js"></script>
+<script src="js/leaflet.ajax.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="geojson-csv-join-master/index.js"></script> -->
+<script src="https://unpkg.com/geojson-vt@3.2.0/geojson-vt.js"></script>
+
+<script>
+
+var map = L.map('map').setView([40.712824, -74.005999], 11);
+L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+//L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png", {attribution: '© <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'}).addTo(map);
+var tooltip = d3.select('body').append('div')
+	.attr('class', 'tooltip');
+	
+var width = $("#map").width(),
+	height = $("#map").height();
+	
+
+function loadBoilers(){
+	map.setView([40.712824, -74.005999], 11);
+	var points=[];
+	var boilerOverlay = L.d3SvgOverlay(function(sel,proj){
+	var pointsUpd = sel.selectAll('circle').data(points);
+	pointsUpd.enter()
+		.append('circle')
+		.attr('cx',function(d){return proj.latLngToLayerPoint(d.latLng).x;})
+		.attr('cy',function(d){return proj.latLngToLayerPoint(d.latLng).y;})
+		.attr('class', 'boilers')
+		.on('click', function(d){
+			tooltip.style("visibility", "visible");
+			tooltip.html(
+				'BIN: ' + d.bin + '</br>' +								
+				'ADDRESS: '+ d.Address + ', ' + (d.Borough_Name).toUpperCase() + '</br>' +
+				'VIOLATION TYPE: ' + (d.VioCat).toUpperCase() + '</br>' +
+				'VIOLATION NUMBER: ' + d.vioNum + '</br>' +
+				'DISPOSITION DATE: ' + d.dispDate + '</br>' +
+				'CD: ' + d.cd 
+			)
+			if (d3.event.pageX > (width - 200)) {
+			   tooltip.style("left", (d3.event.pageX - 350) + "px");
+			} else {
+			   tooltip.style("left", (d3.event.pageX + 20) + "px")
+					.style("top", (d3.event.pageY -30) + "px");
+			}
+			if (d3.event.pageY > (height - 150)) {
+			   tooltip.style("top", (d3.event.pageY -100) + "px");
+			} else {
+			   tooltip.style("top", (d3.event.pageY -30) + "px");
+			}				
+		})
+		.on("mousemove", function(d){
+			$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 1;");
+		})
+		.on("mouseout", function(){
+			$(this).attr("style", "stroke-width: 0px; fill-opacity: .5;");
+			return tooltip.style("visibility", "hidden");
+		});
+		pointsUpd.attr('r', 2 / proj.scale);
+	});
+	
+	<!-- d3.csv("data/ViosIssued2017_Boilers.csv",function(data){ -->
+				<!-- points = data.map(function(d){ -->
+				<!-- d.latLng = [+d.Lat,+d.Long]; -->
+				<!-- d.bin = [d.BIN_Number];				 -->
+				<!-- d.address = [d.Address]; -->
+				<!-- d.borough = [d.Borough_Name]; -->
+				<!-- d.vioType = [d.VioCat]; -->
+				<!-- d.vioNum = [d.Violation_Number]; -->
+				<!-- d.dispDate = [d.DateTxt]; -->
+				<!-- d.cd = [d.CD]; -->
+			<!-- return d; -->
+			<!-- }); -->
+	<!-- }); -->
+
+	<!-- d3.csv("data/AHV_CD.csv",function(data){ -->
+				<!-- points = data.map(function(d){ -->
+				<!-- d.boro_cd = [+d.boro_cd];				 -->
+				<!-- d.AHVs = [+d.AHVs]; -->
+			<!-- return d; -->
+			<!-- }); -->
+	<!-- }); -->
+
+
+	
+map.on('zoomend', function(){
+//var isChecked = $('#boiler').prop('checked');
+	//if(isChecked==true){
+		var z = map.getZoom();
+		if (z > 13 && map.hasLayer(bldgs_105)==false) {
+			bldgs_105.addTo(map);
+			map.removeLayer(ahvCD);
+			//boilerCD.addTo(map);
+		}
+		else if (z <= 13 && map.hasLayer(bldgs_105)==true) {
+			map.removeLayer(bldgs_105);
+			ahvCD.addTo(map);
+			
+		}
+	//}	
+});
+function getColorCD(d) {
+	return d > 164 ? '#9E3C21' :
+		   d > 99 ? '#BA5A3A' :
+		   d > 51 ? '#C97253' :
+		   d > 24 ? '#D99071' :
+		   d > 10 ? '#E6AB8E' :
+		   d > 4 ? '#F0C9AF' :
+					      '#FFF2E3';
+}
+function getColor(d) {
+	return d > 16 ? '#D10000' :
+		   d > 8 ? '#F53D00' :
+		   d > 4 ? '#F57A00' :
+		   d > 2 ? '#F5B800' :
+					      '#F5F500';
+}
+function style(feature) {
+	return {
+		fillColor: getColorCD(feature.properties.AHVs),
+		//fillColor: '#6E3936',
+		fillOpacity: .7,
+		stroke: true,
+		color: "#9a9a9a",
+		weight: 1,
+		//stroke: false,
+		fill: true
+		//className: feature.properties.boilerCD
+	};
+}
+function bldg_style(feature) {
+	return {
+		fillColor: getColor(feature.properties.AHVs),
+		//fillColor: '#bababa',
+		fillOpacity: .9,
+		stroke: true,
+		color: "#bababa",
+		weight: 0.5,
+		//stroke: false,
+		fill: true
+		//className: feature.properties.boilerCD
+	};
+}
+function highlightFeature(e) {
+	var layer = e.layer;
+	layer.setStyle({
+	weight: 2,
+	color: "#eef442",
+	fillOpacity: 0.7
+	});
+}
+<!-- function onEachFeature(feature, layer) { -->
+	<!-- layer.on({ -->
+		<!-- mousemove: highlightFeature -->
+	<!-- }); -->
+<!-- } -->
+
+function featureJoinByProperty(fProps, dTable, joinKey) {
+  var keyVal = fProps[joinKey];
+  var match = {};
+  for (var i = 0; i < dTable.length; i++) {
+    if (dTable[i][joinKey] === keyVal) {
+      match = dTable[i];
+      for (key in match) {
+        if (!(key in fProps)) {
+          fProps[key] = match[key];
+        }
+      }
+    }
+  }
+  console.log(match);
+}
+
+
+
+
+<!-- function onEachFeature(feature, layer){ -->
+	<!-- if (feature.properties.boro_cd){ -->
+		<!-- layer.bindPopup('CD: ' + feature.properties.boro_cd + '</br>' + '# BOILERS: ' + feature.properties.Boilers + '</br>' + '# VIOLATIONS: ' + feature.properties.VioB + '</br>' + 'VIOLATION RATE: ' + (feature.properties.VioRateB).toFixed(3)); -->
+		<!-- //featureJoinByProperty(layer.feature.properties, points, "boro_cd"); -->
+	<!-- } -->
+
+<!-- } -->
+
+function onEachFeature(feature, layer){
+	if (feature.properties.bin){
+		layer.bindPopup('BIN: ' + feature.properties.bin + '</br>' + '#AHVs: ' + feature.properties.AHVs);
+		//featureJoinByProperty(layer.feature.properties, points, "boro_cd");
+	}
+
+}
+//var dm = new L.geoJson.ajax(("data/CD_DecDeg.json"), {style: style, onEachFeature: onEachFeature}).addTo(map);
+var ahvCD = new L.geoJson.ajax(("data/AHVs_CD_DecDeg.json"), {style: style, className: "ahvCD", onEachFeature: onEachFeature}).addTo(map);	
+var bldgs_105 = new L.geoJson.ajax(("data/AHVs_105_DecDeg.json"), {style: bldg_style, className: "bldgs_105", onEachFeature: onEachFeature}).addTo(map);
+//console.log(bldgs_413);
+
+
+
+
+/*
+drawLegend();
+	function drawLegend(){
+		function getLegendColor(d) {
+		return d > 4.000000 ? '#9E3C21' :
+			   d > 1.177860 ? '#BA5A3A' :
+			   d > 0.555556 ? '#C97253' :
+			   d > 0.311724 ? '#D99071' :
+			   d > 0.220227 ? '#E6AB8E' :
+			   d > 0.159855 ? '#F0C9AF' :
+							  '#FFF2E3';
+		}
+		var info = L.control();
+		info.onAdd = function(map) {
+			this._div = L.DomUtil.create('div', 'info');
+			return this._div;
+		};
+		info.addTo(map);
+		var legend = L.control({position: 'topleft'});
+		legend.onAdd = function (map) {
+			var div = L.DomUtil.create('div', 'info legend'),
+				grades = [0.000, 0.001, 0.161, 0.221, 0.313, 0.557, 1.179],				
+				labels = ["0.00","0.001 - 0.160","0.161 - 0.220","0.221 - 0.312","0.313 - 0.556","0.557 - 1.178","1.179 - 4.000"]; 
+			for (var i = 0; i < grades.length; i++) {
+				div.innerHTML +=
+					'<i style="background:' + getLegendColor(grades[i] + 1) + '"></i> ' +
+					labels[i] + '<br>';					
+			}
+			return div;
+		};
+		legend.addTo(map);
+		//legend.removeFrom(map);
+	}
+	*/
+}
+/*
+function loadConstruction(){	
+	map.setView([40.712824, -74.005999], 11);
+	var points = [];
+	var constructionOverlay = L.d3SvgOverlay(function(sel,proj){
+	var pointsUpd = sel.selectAll('circle').data(points);
+	pointsUpd.enter()
+		.append('circle')
+		.attr('cx',function(d){return proj.latLngToLayerPoint(d.latLng).x;})
+		.attr('cy',function(d){return proj.latLngToLayerPoint(d.latLng).y;})
+		.attr('class', 'construction')
+		.on('click', function(d){
+			tooltip.style("visibility", "visible");
+			tooltip.html(
+				'BIN: ' + d.bin + '</br>' +								
+				'ADDRESS: '+ d.Address + ', ' + (d.Borough_Name).toUpperCase() + '</br>' +
+				'VIOLATION TYPE: ' + (d.VioCat).toUpperCase() + '</br>' +
+				'VIOLATION NUMBER: ' + d.vioNum + '</br>' +
+				'DISPOSITION DATE: ' + d.dispDate + '</br>' +
+				'CD: ' + d.cd
+			)
+			if (d3.event.pageX > (width - 200)) {
+			   tooltip.style("left", (d3.event.pageX - 350) + "px");
+			} else {
+			   tooltip.style("left", (d3.event.pageX + 20) + "px")
+					.style("top", (d3.event.pageY -30) + "px");
+			}
+			if (d3.event.pageY > (height - 150)) {
+			   tooltip.style("top", (d3.event.pageY -100) + "px");
+			} else {
+			   tooltip.style("top", (d3.event.pageY -30) + "px");
+			}				
+		})
+		.on("mousemove", function(d){
+			$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 1;");
+		})
+		.on("mouseout", function(){
+			$(this).attr("style", "stroke-width: 0px; fill-opacity: .5;");
+			return tooltip.style("visibility", "hidden");
+		});
+		pointsUpd.attr('r', 2 / proj.scale);
+	});
+	
+	d3.csv("data/ViosIssued2017_Construction.csv",function(data){
+				points = data.map(function(d){
+				d.latLng = [+d.Lat,+d.Long];
+				d.bin = [d.BIN_Number];				
+				d.address = [d.Address];
+				d.borough = [d.Borough_Name];
+				d.vioType = [d.VioCat];
+				d.vioNum = [d.Violation_Number];
+				d.dispDate = [d.DateTxt];
+				d.cd = [d.CD];
+			return d;
+			});
+	});
+	
+map.on('zoomend', function(){
+var isChecked = $('#constr').prop('checked');
+	if(isChecked==true){
+		var z = map.getZoom();
+		if (z > 13 && map.hasLayer(constructionOverlay)==false) {
+			constructionOverlay.addTo(map);
+			//constructionCD.addTo(map);
+		}
+		else if (z <= 13 && map.hasLayer(constructionOverlay)==true) {
+			map.removeLayer(constructionOverlay);
+			//map.removeLayer(constructionCD);
+		}
+	}
+});
+function getColor(d) {
+	return d > 0.077954 ? '#29597D' :
+		   d > 0.057201 ? '#49769C' :
+		   d > 0.043760 ? '#628AA8' :
+		   d > 0.037673 ? '#7D9FB8' :
+		   d > 0.030155 ? '#97B4C7' :
+		   d > 0.016903 ? '#B6CED9' :
+					      '#DCE6E8';
+}
+function style(feature) {
+	return {
+		fillColor: getColor(feature.properties.VioRateC),
+		//fillColor: '#8BA692',
+		fillOpacity: 0.7,
+		stroke: true,
+		color: "#cfcfd1",
+		weight: 2,
+		//stroke: false,
+		fill: true
+		//className: feature.properties.constructionCD
+	};
+}
+function highlightFeature(e) {
+	var layer = e.layer;
+	layer.setStyle({
+	weight: 2,
+	color: "#668C81",
+	fillOpacity: 0.7
+	});
+}
+function onEachFeature(feature, layer){
+	if (feature.properties.boro_cd){
+		layer.bindPopup('CD: ' + feature.properties.boro_cd + '</br>' + '# ACTIVE PERMITS: ' + feature.properties.ActivePerm + '</br>' + '# VIOLATIONS: ' + feature.properties.VioC + '</br>' + 'VIOLATION RATE: ' + (feature.properties.VioRateC).toFixed(3));
+	}
+}
+//var dm = new L.geoJson.ajax(("data/CD_DecDeg.json"), {style: style, onEachFeature: onEachFeature}).addTo(map);
+var constructionCD = new L.geoJson.ajax(("data/CD_DecDeg2.json"), {style: style, className: "constructionCD", onEachFeature: onEachFeature}).addTo(map);	
+}
+function loadElevators(){
+	map.setView([40.712824, -74.005999], 11);
+	var points = [];
+	var elevatorsOverlay = L.d3SvgOverlay(function(sel,proj){
+	var pointsUpd = sel.selectAll('circle').data(points);
+	pointsUpd.enter()
+		.append('circle')
+		.attr('cx',function(d){return proj.latLngToLayerPoint(d.latLng).x;})
+		.attr('cy',function(d){return proj.latLngToLayerPoint(d.latLng).y;})
+		.attr('class', 'elevators')
+		.on('click', function(d){
+			tooltip.style("visibility", "visible");
+			tooltip.html(
+				'BIN: ' + d.bin + '</br>' +								
+				'ADDRESS: '+ d.Address + ', ' + (d.Borough_Name).toUpperCase() + '</br>' +
+				'VIOLATION TYPE: ' + (d.VioCat).toUpperCase() + '</br>' +
+				'VIOLATION NUMBER: ' + d.vioNum + '</br>' +
+				'DISPOSITION DATE: ' + d.dispDate + '</br>' +
+				'CD: ' + d.cd
+			)
+			if (d3.event.pageX > (width - 200)) {
+			   tooltip.style("left", (d3.event.pageX - 350) + "px");
+			} else {
+			   tooltip.style("left", (d3.event.pageX + 20) + "px")
+					.style("top", (d3.event.pageY -30) + "px");
+			}
+			if (d3.event.pageY > (height - 150)) {
+			   tooltip.style("top", (d3.event.pageY -100) + "px");
+			} else {
+			   tooltip.style("top", (d3.event.pageY -30) + "px");
+			}				
+		})
+		.on("mousemove", function(d){
+			$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 1;");
+		})
+		.on("mouseout", function(){
+			$(this).attr("style", "stroke-width: 0px; fill-opacity: .5;");
+			return tooltip.style("visibility", "hidden");
+		});
+		pointsUpd.attr('r', 2 / proj.scale);
+	});
+	
+	d3.csv("data/ViosIssued2017_Elevators.csv",function(data){
+				points = data.map(function(d){
+				d.latLng = [+d.Lat,+d.Long];
+				d.bin = [d.BIN_Number];				
+				d.address = [d.Address];
+				d.borough = [d.Borough_Name];
+				d.vioType = [d.VioCat];
+				d.vioNum = [d.Violation_Number];
+				d.dispDate = [d.DateTxt];
+				d.cd = [d.CD];
+			return d;
+			});
+	});
+	
+map.on('zoomend', function(){
+var isChecked = $('#elev').prop('checked');
+	if(isChecked==true){
+		var z = map.getZoom();
+		if (z > 13 && map.hasLayer(elevatorsOverlay)==false) {
+			elevatorsOverlay.addTo(map);
+			//elevatorCD.addTo(map);
+		}
+		else if (z <= 13 && map.hasLayer(elevatorsOverlay)==true) {
+			map.removeLayer(elevatorsOverlay);
+			//map.removeLayer(elevatorCD);
+		}
+	}
+});
+function getColor(d) {
+	return d > 1.014458 ? '#664830' :
+		   d > 0.790850 ? '#7A5E40' :
+		   d > 0.589024 ? '#8F7651' :
+		   d > 0.474251 ? '#A69165' :
+		   d > 0.381098 ? '#BDAD7B' :
+		   d > 0.297561 ? '#D6CC92' :
+					      '#E3E0A1';
+}
+function style(feature) {
+	return {
+		fillColor: getColor(feature.properties.VioRateE),
+		//fillColor: '#DBDBB6',
+		fillOpacity: 0.7,
+		stroke: true,
+		color: "#cfcfd1",
+		weight: 2,
+		//stroke: false,
+		fill: true
+		//className: feature.properties.elevatorCD
+	};
+}
+function highlightFeature(e) {
+	var layer = e.layer;
+	layer.setStyle({
+	weight: 2,
+	color: "#eef442",
+	fillOpacity: 0.7
+	});
+}
+function onEachFeature(feature, layer){
+	if (feature.properties.boro_cd){
+		layer.bindPopup('CD: ' + feature.properties.boro_cd + '</br>' + '# ELEVATORS: ' + feature.properties.Elevators + '</br>' + '# VIOLATIONS: ' + feature.properties.VioE + '</br>' + 'VIOLATION RATE: ' + (feature.properties.VioRateE).toFixed(3));
+	}
+}
+//var dm = new L.geoJson.ajax(("data/CD_DecDeg.json"), {style: style, onEachFeature: onEachFeature}).addTo(map);
+var elevatorCD = new L.geoJson.ajax(("data/CD_DecDeg2.json"), {style: style, className: "elevatorCD", onEachFeature: onEachFeature}).addTo(map);	
+}
+function loadFacades(){
+	map.setView([40.712824, -74.005999], 11);
+	var points = [];
+	var facadesOverlay = L.d3SvgOverlay(function(sel,proj){
+	var pointsUpd = sel.selectAll('circle').data(points);
+	pointsUpd.enter()
+		.append('circle')
+		.attr('cx',function(d){return proj.latLngToLayerPoint(d.latLng).x;})
+		.attr('cy',function(d){return proj.latLngToLayerPoint(d.latLng).y;})
+		.attr('class', 'facades')
+		.on('click', function(d){
+			tooltip.style("visibility", "visible");
+			tooltip.html(
+				'BIN: ' + d.bin + '</br>' +								
+				'ADDRESS: '+ d.Address + ', ' + (d.Borough_Name).toUpperCase() + '</br>' +
+				'VIOLATION TYPE: ' + (d.VioCat).toUpperCase() + '</br>' +
+				'VIOLATION NUMBER: ' + d.vioNum + '</br>' +
+				'DISPOSITION DATE: ' + d.dispDate + '</br>' +
+				'CD: ' + d.cd
+			)
+			if (d3.event.pageX > (width - 200)) {
+			   tooltip.style("left", (d3.event.pageX - 350) + "px");
+			} else {
+			   tooltip.style("left", (d3.event.pageX + 20) + "px")
+					.style("top", (d3.event.pageY -30) + "px");
+			}
+			if (d3.event.pageY > (height - 150)) {
+			   tooltip.style("top", (d3.event.pageY -100) + "px");
+			} else {
+			   tooltip.style("top", (d3.event.pageY -30) + "px");
+			}				
+		})
+		.on("mousemove", function(d){
+			$(this).attr("style", "cursor: pointer; fill: #eef442; fill-opacity: 1;");
+		})
+		.on("mouseout", function(){
+			$(this).attr("style", "stroke-width: 0px; fill-opacity: .5;");
+			return tooltip.style("visibility", "hidden");
+		});
+		pointsUpd.attr('r', 2 / proj.scale);
+	});
+	
+	d3.csv("data/ViosIssued2017_LL11.csv",function(data){
+				points = data.map(function(d){
+				d.latLng = [+d.Lat,+d.Long];
+				d.bin = [d.BIN_Number];				
+				d.address = [d.Address];
+				d.borough = [d.Borough_Name];
+				d.vioType = [d.VioCat];
+				d.vioNum = [d.Violation_Number];
+				d.dispDate = [d.DateTxt];
+				d.cd = [d.CD];
+			return d;
+			});
+	});
+	
+map.on('zoomend', function(){
+var isChecked = $('#fac').prop('checked');
+	if(isChecked==true){
+		var z = map.getZoom();
+		if (z > 13 && map.hasLayer(facadesOverlay)==false) {
+			facadesOverlay.addTo(map);
+		}
+		else if (z <= 13 && map.hasLayer(facadesOverlay)==true) {
+			map.removeLayer(facadesOverlay);
+		}
+	}
+});
+function getColor(d) {
+	return d > 0.232143 ? '#154F4A' :
+		   d > 0.113636 ? '#316661' :
+		   d > 0.070866 ? '#4C7D77' :
+		   d > 0.045455 ? '#6B9993' :
+		   d > 0.028169 ? '#8DB5AF' :
+		   d > 0.018919 ? '#B2D4CE' :
+					      '#D8F2ED';
+}
+function style(feature) {
+	return {
+		fillColor: getColor(feature.properties.VioRateLL),
+		//fillColor: '#DBDBB6',
+		fillOpacity: 0.7,
+		stroke: true,
+		color: "#cfcfd1",
+		weight: 2,
+		//stroke: false,
+		fill: true
+		//className: feature.properties.elevatorCD
+	};
+}
+function highlightFeature(e) {
+	var layer = e.layer;
+	layer.setStyle({
+	weight: 2,
+	color: "#eef442",
+	fillOpacity: 0.7
+	});
+}
+function onEachFeature(feature, layer){
+	if (feature.properties.boro_cd){
+		layer.bindPopup('CD: ' + feature.properties.boro_cd + '</br>' + '# FACADES: ' + feature.properties.LL11 + '</br>' + '# VIOLATIONS: ' + feature.properties.VioLL11 + '</br>' + 'VIOLATION RATE: ' + (feature.properties.VioRateLL).toFixed(3));
+	}
+}
+//var dm = new L.geoJson.ajax(("data/CD_DecDeg.json"), {style: style, onEachFeature: onEachFeature}).addTo(map);
+var facadeCD = new L.geoJson.ajax(("data/CD_DecDeg2.json"), {style: style, className: "facadeCD", onEachFeature: onEachFeature}).addTo(map);	
+}
+var boilerCheckbox = document.querySelector('input[id="boiler"]');
+	constructionCheckbox = document.querySelector('input[id="constr"]');
+	elevatorCheckbox = document.querySelector('input[id="elev"]');
+	facadeCheckbox = document.querySelector('input[id="fac"]');
+	
+
+<!-- boilerCheckbox.onchange = function(){ -->
+		<!-- if(this.checked){ -->
+			<!-- d3.selectAll(".boilers").filter(function(d) { -->
+				<!-- return d.VioCat == "Boilers"; -->
+			<!-- })			 -->
+			<!-- .style("display", "block");		 -->
+			<!-- d3.selectAll(".construction").filter(function(d) { -->
+				<!-- return d.VioCat == "Construction"; -->
+			<!-- })			 -->
+			<!-- .style("display", "none"); -->
+			<!-- d3.selectAll(".elevators").filter(function(d) { -->
+				<!-- return d.VioCat == "Elevators"; -->
+			<!-- })			 -->
+			<!-- .style("display", "none"); -->
+		<!-- } else { -->
+			<!-- d3.selectAll(".boilers").filter(function(d) { -->
+				<!-- return d.VioCat == "Boilers"; -->
+			<!-- }) -->
+			<!-- .style("display", "none"); -->
+						
+		<!-- } -->
+<!-- };	 -->
+<!-- constructionCheckbox.onchange = function(){ -->
+		<!-- d3.selectAll(".construction").style("display", "none"); -->
+		<!-- if(this.checked){ -->
+			
+			<!-- d3.selectAll(".construction").filter(function(d) { -->
+				<!-- return d.VioCat == "Construction"; -->
+			<!-- }) -->
+			<!-- .style("display", "block");	 -->
+			<!-- d3.selectAll(".boilers").filter(function(d) { -->
+				<!-- return d.VioCat == "Boilers"; -->
+			<!-- })			 -->
+			<!-- .style("display", "none"); -->
+			<!-- d3.selectAll(".elevators").filter(function(d) { -->
+				<!-- return d.VioCat == "Elevators"; -->
+			<!-- })			 -->
+			<!-- .style("display", "none"); -->
+		<!-- } else { -->
+			<!-- d3.selectAll(".construction").filter(function(d) { -->
+				<!-- return d.VioCat == "Construction"; -->
+			<!-- }) -->
+			<!-- .style("display", "none"); -->
+						
+		<!-- } -->
+<!-- }; -->
+<!-- elevatorCheckbox.onchange = function(){ -->
+		<!-- d3.selectAll(".elevators").style("display", "none"); -->
+		<!-- if(this.checked){ -->
+			<!-- d3.selectAll(".elevators").filter(function(d) { -->
+				<!-- return d.VioCat == "Elevators"; -->
+			<!-- }) -->
+			<!-- .style("display", "block");	 -->
+			<!-- d3.selectAll(".construction").filter(function(d) { -->
+				<!-- return d.VioCat == "Construction"; -->
+			<!-- })			 -->
+			<!-- .style("display", "none"); -->
+			<!-- d3.selectAll(".boilers").filter(function(d) { -->
+				<!-- return d.VioCat == "Boilers"; -->
+			<!-- })			 -->
+			<!-- .style("display", "none"); -->
+		<!-- } else { -->
+			<!-- d3.selectAll(".elevators").filter(function(d) { -->
+				<!-- return d.VioCat == "Elevators"; -->
+			<!-- }) -->
+			<!-- .style("display", "none"); -->
+						
+		<!-- } -->
+<!-- }; -->
+
+boilerCheckbox.onchange = function(){
+		if(this.checked){
+			d3.selectAll(".construction").style("display", "none");
+			d3.selectAll(".elevators").style("display", "none");
+			d3.selectAll(".constructionCD").style("display", "none");
+			d3.selectAll(".elevatorCD").style("display", "none");
+			d3.selectAll(".facades").style("display", "none");	
+			d3.selectAll(".facadeCD").style("display", "none");			
+			loadBoilers();
+		}
+};	
+constructionCheckbox.onchange = function(){
+		if(this.checked){
+			d3.selectAll(".boilers").style("display", "none");
+			d3.selectAll(".elevators").style("display", "none");
+			d3.selectAll(".boilerCD").style("display", "none");
+			d3.selectAll(".elevatorCD").style("display", "none");
+			d3.selectAll(".facades").style("display", "none");	
+			d3.selectAll(".facadeCD").style("display", "none");
+			loadConstruction();
+		}
+};
+elevatorCheckbox.onchange = function(){
+		if(this.checked){
+			d3.selectAll(".boilers").style("display", "none");
+			d3.selectAll(".construction").style("display", "none");
+			d3.selectAll(".boilerCD").style("display", "none");
+			d3.selectAll(".constructionCD").style("display", "none");
+			d3.selectAll(".facades").style("display", "none");	
+			d3.selectAll(".facadeCD").style("display", "none");
+			loadElevators();
+		}
+};
+facadeCheckbox.onchange = function(){
+		if(this.checked){
+			d3.selectAll(".boilers").style("display", "none");
+			d3.selectAll(".construction").style("display", "none");
+			d3.selectAll(".boilerCD").style("display", "none");
+			d3.selectAll(".constructionCD").style("display", "none");
+			d3.selectAll(".elevators").style("display", "none");	
+			d3.selectAll(".elevatorCD").style("display", "none");
+			loadFacades();
+		}
+};
+*/
+loadBoilers();
+</script>
+    
+</body>
+</html>

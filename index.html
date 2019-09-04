@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Community Profiles</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <!-- <link rel="stylesheet" type="text/css" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/keen-dashboards.css" />
+  <link href="build/nv.d3.css" rel="stylesheet" type="text/css">
+</head>
+<body class="application">
+<style>
+	.metrics_txt{
+		font-size: 25px;
+		color: #666666;
+		font-weight: bold;
+		padding-right: 10px;
+		padding-left: 25px;
+	}
+	/* Style the input field */
+	#commDist {
+		padding-left: 20px;
+		margin-top: -6px;
+		border: 0;
+		border-radius: 0;
+	}
+	.dropdown-menu{
+		max-width: 350px;
+		max-height:325px; 
+		overflow:auto; 
+	}
+	.dropdown-menu li a {
+		word-wrap: break-word;
+		white-space: normal;
+	}
+	.dropdown-menu > li:nth-child(odd) {
+	  background: #fffd96;
+	}
+	.dropdown-menu > li:nth-child(even) {
+	  background: #bfbfbf;
+	}
+	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active{
+		color: white;
+		background-color: #bd4d01;
+	}
+	.logo {
+		background-image: url('data/dob_logo.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		float: right;
+		background-size: 70px;
+		height: 50px;
+		width: 110px;	 
+	}
+
+	#chart_CD_Permits{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_Boro_Permits{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_CD_NB{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_CD_A1{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_CD_AHV{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_Boro_AHV{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_AHV_Initial{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#chart_AHV_Renewal{
+		margin: 0px;
+		padding: 0px;
+		height: 100%;
+		width: 100%;
+	}
+	#topWrapper{
+		display: flex;
+		padding: 15px;
+	}
+	#topLeft{
+		flex: 0 0 51%;
+	}
+	#topRight{
+		flex: 1;
+	}
+	#bottomWrapper{
+		display: flex;
+		padding: 30px 15px 15px 15px;
+	}
+	#bottomLeft{
+		flex: 0 0 51%;
+	}
+	#bottomRight{
+		flex: 1;
+	}
+	.mini-box{
+		height: 320px;
+		padding: 10px;
+	}
+</style>
+
+  
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <a class="logo" href="https://www1.nyc.gov/site/buildings/index.page" target="_blank"> </a>
+    <div class="container-fluid">
+		<div class="navbar-header" style="font-size: 35px; color: #FFFFFF;">
+			Community Profiles
+		</div>
+	</div>
+  </div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #BDD7EE; margin-top: 50px; border: 0;">
+	<div class="form-inline" style="padding-top: 7px;">
+		<div class="dropdown">	
+			<span class="metrics_txt">Metrics:</span>
+			<button class="btn btn-outline-success active" id="activePermits" type="button" style="margin-bottom: 7px;" >Permits</button>
+			<button class="btn btn-outline-success" id="ahvs" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
+			<button class="btn btn-outline-success" id="shed" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
+			<button class="btn btn-outline-success" id="cmplnts" type="button" style="margin-bottom: 7px;" >Complaints</button>
+			<button class="btn btn-outline-success" id="vios" type="button" style="margin-bottom: 7px;" >Violations</button>
+			<button class="btn btn-outline-success" id="injury" type="button" style="margin-bottom: 7px;" >Injuries</button>
+			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
+				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
+				<!-- <span class="caret"></span></button> -->
+
+			<!-- <ul class="dropdown-menu" style="right: 110px; left: auto;"> -->
+			  <!-- <input class="form-control" id="commDist" type="text" placeholder="Search..">   -->
+				<!-- <li><a href="#"><b>BRONX 1</b><i>&nbsp;&nbsp;Melrose, Mott Haven, Port Morris</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 2</b><i>&nbsp;&nbsp;Hunts Point, Longwood</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 3</b><i>&nbsp;&nbsp;Claremont, Crotona Park East, Melrose, Morrisania</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BRONX 4</b><i>&nbsp;&nbsp;Concourse, Concourse Village, East Concourse, Highbridge, Mount Eden</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 5</b><i>&nbsp;&nbsp;Fordham, Morris Heights, Mount Hope, University Heights</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 6</b><i>&nbsp;&nbsp;Bathgate, Belmont, Bronx Park South, East Tremont, West Farms</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BRONX 7</b><i>&nbsp;&nbsp;Bedford Park, Fordham, Kingsbridge Heights, Norwood, University Heights</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 8</b><i>&nbsp;&nbsp;Fieldston, Kingsbridge, Marble Hill (MN), North Riverdale, Riverdale, Spuyten Duyvil</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 9</b><i>&nbsp;&nbsp;Bronx River, Castle Hill, Clason Point, Harding Park, Parkchester, Soundview, Soundview-Bruckner, Unionport</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BRONX 10</b><i>&nbsp;&nbsp;City Island, Co-op City, Country Club, Edgewater Park, Pelham Bay, Schuylerville, Throgs Neck, Westchester Square</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 11</b><i>&nbsp;&nbsp;Allerton, Bronxdale, Indian Village, Morris Park, Pelham Gardens, Pelham Parkway, Van Nest</i></a></li> -->
+				<!-- <li><a href="#"><b>BRONX 12</b><i>&nbsp;&nbsp;Baychester, Eastchester, Edenwald, Olinville, Wakefield, Williamsbridge, Woodlawn</i></a></li>	 -->
+				<!-- <li><a href="#"><b>BROOKLYN 1</b><i>&nbsp;&nbsp;East Williamsburg, Greenpoint, Northside, Southside, Williamsburg</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 2</b><i>&nbsp;&nbsp;Boerum Hill, Brooklyn Heights, Clinton Hill, Downtown Brooklyn, DUMBO, Fort Greene, Fulton Ferry, Navy Yard, Vinegar Hill</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 3</b><i>&nbsp;&nbsp;Bedford-Stuyvesant, Stuyvesant Heights, Tompkins Park North</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BROOKLYN 4</b><i>&nbsp;&nbsp;Bushwick</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 5</b><i>&nbsp;&nbsp;Broadway Junction, City Line, Cypress Hills, East New York, Highland Park, New Lots, Spring Creek, Starrett City</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 6</b><i>&nbsp;&nbsp;Carroll Gardens, Cobble Hill, Columbia St, Gowanus, Park Slope, Red Hook</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BROOKLYN 7</b><i>&nbsp;&nbsp;Sunset Park, Windsor Terrace</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 8</b><i>&nbsp;&nbsp;Crown Heights, Prospect Heights, Weeksville</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 9</b><i>&nbsp;&nbsp;Crown Heights South, Prospect Lefferts Gardens, Wingate</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BROOKLYN 10</b><i>&nbsp;&nbsp;Bay Ridge, Dyker Heights, Fort Hamilton</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 11</b><i>&nbsp;&nbsp;Bath Beach, Bensonhurst, Gravesend, Mapleton</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 12</b><i>&nbsp;&nbsp;Borough Park, Kensington, Ocean Parkway</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BROOKLYN 13</b><i>&nbsp;&nbsp;Brighton Beach, Coney Island, Gravesend, Homecrest, Sea Gate, West Brighton</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 14</b><i>&nbsp;&nbsp;Ditmas Park, Flatbush, Manhattan Terrace, Midwood, Ocean Parkway, Prospect Park South</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 15</b><i>&nbsp;&nbsp;Gerritsen Beach, Gravesend, Homecrest, Kings Highway, Manhattan Beach, Plumb Beach, Sheepshead Bay</i></a></li>	   -->
+				<!-- <li><a href="#"><b>BROOKLYN 16</b><i>&nbsp;&nbsp;Broadway Junction, Brownsville, Ocean Hill</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 17</b><i>&nbsp;&nbsp;East Flatbush, Farragut, Flatbush, Northeast Flatbush, Remsen Village, Rugby, Erasmus</i></a></li> -->
+				<!-- <li><a href="#"><b>BROOKLYN 18</b><i>&nbsp;&nbsp;Bergen Beach, Canarsie, Flatlands, Georgetown, Marine Park, Mill Basin, Mill Island, Paerdegat Basin</i></a></li>   -->
+				<!-- <li><a href="#"><b>MANHATTAN 1</b><i>&nbsp;&nbsp;Battery Park City, Civic Center, Ellis Island, Governors Island, Liberty Island, South Street Seaport, Tribeca, Wall Street, World Trade Center</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 2</b><i>&nbsp;&nbsp;Greenwich Village, Hudson Square, Little Italy, NoHo, SoHo, South Village, West Village</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 3</b><i>&nbsp;&nbsp;Chinatown, East Village, Lower East Side, NoHo, Two Bridges</i></a></li>	   -->
+				<!-- <li><a href="#"><b>MANHATTAN 4</b><i>&nbsp;&nbsp;Chelsea, Clinton, Hudson Yards</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 5</b><i>&nbsp;&nbsp;Flatiron, Gramercy Park, Herald Square, Midtown, Midtown South, Murray Hill, Times Square, Union Square</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 6</b><i>&nbsp;&nbsp;Beekman Place, Gramercy Park, Murray Hill, Peter Cooper Village, Stuyvesant Town, Sutton Place, Tudor City, Turtle Bay</i></a></li>	   -->
+				<!-- <li><a href="#"><b>MANHATTAN 7</b><i>&nbsp;&nbsp;Lincoln Square, Manhattan Valley, Upper West Side</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 8</b><i>&nbsp;&nbsp;Carnegie Hill, Lenox Hill, Roosevelt Island, Upper East Side, Yorkville</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 9</b><i>&nbsp;&nbsp;Hamilton Heights, Manhattanville, Morningside Heights, West Harlem</i></a></li>	   -->
+				<!-- <li><a href="#"><b>MANHATTAN 10</b><i>&nbsp;&nbsp;Central Harlem</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 11</b><i>&nbsp;&nbsp;East Harlem, Harlem, Randall's Island Park, Wards Island Park</i></a></li> -->
+				<!-- <li><a href="#"><b>MANHATTAN 12</b><i>&nbsp;&nbsp;Inwood, Washington Heights</i></a></li>	 -->
+				<!-- <li><a href="#"><b>QUEENS 1</b><i>&nbsp;&nbsp;Astoria, Astoria Heights, Dutch Kills, Long Island City, Queensbridge, Ravenswood, Rikers Island (BX), Steinway</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 2</b><i>&nbsp;&nbsp;Blissville, Hunters Point, Long Island City, Sunnyside, Sunnyside Gardens, Woodside</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 3</b><i>&nbsp;&nbsp;East Elmhurst, Jackson Heights, North Corona</i></a></li>	   -->
+				<!-- <li><a href="#"><b>QUEENS 4</b><i>&nbsp;&nbsp;Corona, Corona Heights, Elmhurst, Lefrak City</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 5</b><i>&nbsp;&nbsp;Glendale, Maspeth, Middle Village, Ridgewood</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 6</b><i>&nbsp;&nbsp;Forest Hills, Forest Hills Gardens, Rego Park</i></a></li>	   -->
+				<!-- <li><a href="#"><b>QUEENS 7</b><i>&nbsp;&nbsp;Auburndale, Bay Terrace, Beechhurst, Clearview, College Point, Downtown Flushing, East Flushing, Flushing, Malba, Murray Hill, Queensboro Hill, Waldheim, Whitestone</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 8</b><i>&nbsp;&nbsp;Briarwood, Fresh Meadows, Hillcrest, Holliswood, Jamaica, Jamaica Estates, Jamaica Hills, Kew Gardens Hills, Pomonok, Utopia</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 9</b><i>&nbsp;&nbsp;Kew Gardens, Ozone Park, Richmond Hill, Woodhaven</i></a></li>	   -->
+				<!-- <li><a href="#"><b>QUEENS 10</b><i>&nbsp;&nbsp;Howard Beach, Lindenwood, Old Howard Beach, Ozone Park, South Ozone Park</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 11</b><i>&nbsp;&nbsp;Auburndale, Bayside, Douglaston, Hollis Hills, Little Neck, Oakland Gardens</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 12</b><i>&nbsp;&nbsp;Hollis, Jamaica, Jamaica Center, North Springfield Gardens, Rochdale, South Jamaica, St. Albans</i></a></li>	   -->
+				<!-- <li><a href="#"><b>QUEENS 13</b><i>&nbsp;&nbsp;Bellaire, Bellerose, Brookville, Cambria Heights, Floral Park, Glen Oaks, Laurelton, New Hyde Park, Queens Village, Rosedale, Springfield Gardens</i></a></li> -->
+				<!-- <li><a href="#"><b>QUEENS 14</b><i>&nbsp;&nbsp;Arverne, Bayswater, Belle Harbor, Breezy Point, Broad Channel, Edgemere, Far Rockaway, Hammels, Neponsit, Rockaway Park, The Rockaways, Roxbury, Seaside, Somerville</i></a></li>	 -->
+				<!-- <li><a href="#"><b>STATEN ISLAND 1</b><i>&nbsp;&nbsp;Arlington, Castleton Corners, Clifton, Elm Park, Fox Hills, Graniteville, Grymes Hill, Howland Hook, Livingston, Mariner's Harbor, New Brighton, Old Place, Park Hill, Port Ivory, Port Richmond, Randall Manor, Rosebank, Shore Acres, Silver Lake, St. George, Stapleton, Sunnyside, Tompkinsville, Ward Hill, West Brighton, West New Brighton, Westerleigh, Willowbrook</i></a></li> -->
+				<!-- <li><a href="#"><b>STATEN ISLAND 2</b><i>&nbsp;&nbsp;Arrochar, Bloomfield, Bulls Head, Chelsea, Concord, Dongan Hills, Egbertville, Emerson Hill, Grant City, Grasmere, Heartland Village, Lighthouse Hill, Manor Heights, Midland Beach, New Dorp, New Dorp Beach, New Springville, Old Town, South Beach, Todt Hill, Travis, Willowbrook</i></a></li> -->
+				<!-- <li><a href="#"><b>STATEN ISLAND 3</b><i>&nbsp;&nbsp;Annadale, Arden Heights, Bay Terrace, Butler Manor, Charleston, Eltingville, Fresh Kills, Great Kills, Greenridge, Huguenot, Oakwood, Oakwood Beach, Oakwood Heights, Pleasant Plains, Prince's Bay, Richmond Town, Richmond Valley, Rossville, Sandy Ground, Tottenville, Woodrow</i></a></li> -->
+			<!-- </ul> -->
+		</div>
+	</div>
+</nav>
+
+
+
+<div class="container-fluid">
+	<div class="row">
+
+	  <div class="col-sm-6">
+		<div class="chart-wrapper" style="border-style: solid; border-color: #3d4a57; border-width: 2px;">
+			  <div class="chart-map">
+				  <div class="map">
+					<iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="https://nycdob.github.io/D3_ActiveB_AvgAge_CDs"></iframe>
+				  </div>
+			  </div>		
+		</div>
+	  </div>
+
+	  
+	  <div class="col-sm-6">
+	  <div class="chart-wrapper" style="border-style: solid; border-color: #3d4a57; border-width: 2px; height:790px;">
+	  
+		  <div class="chart-title" style="background-color: #ED7D31; font-size: 24px; color: #FFFFFF;" >
+				<span id="metric">Active Permits: New Buildings (NB) and Major Alterations (A1)</span><br/>
+				<i>Total: <span id="total"></span></i>
+		  </div>
+		
+			<div class="row" id="permitCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Active NB/A1 Permits (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_Permits"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Active NB/A1 Permits by Borough</u></h4>
+					<svg id="chart_Boro_Permits"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Active NB Permits (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_NB"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Active A1 Permits (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_A1"></svg>				
+				</div></div>
+			</div>
+			
+			<div class="row" id="ahvCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Active AHVs (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_AHV"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Active AHVs by Borough</u></h4>
+					<svg id="chart_Boro_AHV"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Active Initial AHVs (Top 10 Community Districts)</u></h4>
+					<svg id="chart_AHV_Initial"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Active Renewal AHVs (Top 10 Community Districts)</u></h4>
+					<svg id="chart_AHV_Renewal"></svg>				
+				</div></div>
+			</div>
+	  </div>
+	  </div>
+	</div>
+
+
+    <hr>
+
+    <p class="small text-muted">Built by DOB Analytics <a href="https://www1.nyc.gov/site/buildings/about/metrics-reports.page">Dev Squad</a></p>
+
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
+  <!-- <script type="text/javascript" src="../../assets/lib/jquery/dist/jquery.min.js"></script> -->
+  <!-- <script type="text/javascript" src="../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
+  <!-- <script type="text/javascript" src="../../assets/lib/holderjs/holder.js"></script> -->
+    <script type="text/javascript" src="assets/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/lib/holderjs/holder.js"></script>
+  <script>
+    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+  </script>
+  <!-- <script type="text/javascript" src="../../assets/lib/keen-js/dist/keen.min.js"></script> -->
+  <!-- <script type="text/javascript" src="../../assets/js/meta.js"></script> -->
+  <script type="text/javascript" src="assets/lib/keen-js/dist/keen.min.js"></script>
+  <script type="text/javascript" src="assets/js/meta.js"></script>
+  <script src="build/nv.d3.js"></script>
+  
+<script>
+$(document).ready(function(){	
+
+	var permitTotal = 0,
+		ahvTotal = 0;
+	
+	$('#permitCharts').show();
+	$('#ahvCharts').hide();
+
+    <!-- $('#commDist').click(function(e) { -->
+        <!-- e.stopPropagation(); -->
+    <!-- }); -->
+		
+	<!-- $("#commDist").on("keyup", function() { -->
+		<!-- var value = $(this).val().toLowerCase(); -->
+		<!-- $(".dropdown-menu li").filter(function() { -->
+		  <!-- $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) -->
+		<!-- }); -->
+	<!-- }); -->
+	
+	<!-- $(".dropdown-menu").on('click', 'li a', function(){ -->
+	  <!-- var selText = $(this).children("b").html(); -->
+		<!-- $("#geo").text(selText); -->
+
+	 <!-- $(this).parent('li').siblings().removeClass('active'); -->
+	  <!-- $(this).parents('.dropdown').find('.selection').html(selText); -->
+	  <!-- $(this).parents('li').addClass("active"); -->
+	<!-- }); -->
+  
+	<!-- $(function () { -->
+		<!-- $("#dropdown a").click(function () { -->
+			<!-- $("#selected .selection").text($(this).text()); -->
+		<!-- }); -->
+	<!-- }); -->
+
+	
+	$('#activePermits').click(function(){
+	   $('#metric').text('Active Permits: New Buildings (NB) and Major Alterations (A1)');
+	   $('#total').text(permitTotal);
+	   $('#permitCharts').show();
+	   $('#ahvCharts').hide();
+	});	
+	$('#ahvs').click(function(){
+	   $('#metric').text('Active After Hours Variances (AHVs)');
+	   $('#total').text(ahvTotal);
+	   $('#ahvCharts').show();
+	   $('#permitCharts').hide();
+	});
+	$('#shed').click(function(){
+	   $('#metric').text('Active Sidewalk Sheds');
+	});
+	$('#cmplnts').click(function(){
+	   $('#metric').text('Complaints (Past 12 Months)');
+	});
+	$('#vios').click(function(){
+	   $('#metric').text('Violations (Past 12 Months)');
+	});
+	$('#injury').click(function(){
+	   $('#metric').text('Construction-Related Injuries');
+	});
+	
+	$('.form-inline').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+
+
+///////////ACTIVE PERMITS/////////////////
+	
+	d3.json("data/activePermitSummary.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			permitTotal += data[i].totalCount;
+		};
+		console.log(permitTotal);
+		
+		
+		var sortedData = data.sort(function(a,b){
+			return b["totalCount"]-a["totalCount"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.totalCount
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.totalCount })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			//.color(['#E64C00']);
+			.color(['#BD4D01']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_Permits')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+		//INITIATE COUNT ON PAGE LOAD
+		$('#total').text(permitTotal);
+	});
+	
+	d3.json("data/activePermitNBA1_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		console.log(data);
+
+		//$('#total').text(data.length);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_Permits')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("data/activePermitNB.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#8fa4b8']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_NB')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});
+		}
+	});
+	
+	d3.json("data/activePermitA1.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#3D4A57']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_A1')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+
+///////////AHVs/////////////////
+	
+	d3.json("data/activeAHVsSummary.json", function(error, data) {
+		if (error) return console.error(error);
+
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			ahvTotal += data[i].count;
+		}
+		console.log(ahvTotal);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			//.color(['#E64C00']);
+			.color(['#BD4D01']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_AHV')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+	
+	d3.json("data/activeAHVs_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		console.log(data);
+
+
+		//$('#total').text(data.length);
+
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_AHV')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("data/activeAHVsInitial.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#8fa4b8']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_AHV_Initial')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});
+		}
+	});
+	
+	d3.json("data/activeAHVsRenewal.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#3D4A57']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_AHV_Renewal')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+
+});
+
+
+</script>
+
+</body>
+</html>
