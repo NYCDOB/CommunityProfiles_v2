@@ -279,6 +279,25 @@
 					<svg id="chart_AHV_Renewal"></svg>				
 				</div></div>
 			</div>
+		  
+			<div class="row" id="shedCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Active Sidewalk Sheds (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_Shed"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Active Sidewalk Sheds by Borough</u></h4>
+					<svg id="chart_Boro_Shed"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Average Age in Days (Top 10 Community Districts)</u></h4>
+					<svg id="chart_Shed_AvgAge"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Total Linear Feet (Top 10 Community Districts)</u></h4>
+					<svg id="chart_Shed_Feet"></svg>				
+				</div></div>
+			</div>
 	  </div>
 	  </div>
 	</div>
@@ -309,10 +328,14 @@
 $(document).ready(function(){	
 
 	var permitTotal = 0,
-		ahvTotal = 0;
+		ahvTotal = 0,
+		shedTotal = 0,
+		format = d3.format(".1f");
+		//formatK = d3.format(",");
 	
 	$('#permitCharts').show();
 	$('#ahvCharts').hide();
+	$('#shedCharts').hide();
 
     <!-- $('#commDist').click(function(e) { -->
         <!-- e.stopPropagation(); -->
@@ -346,15 +369,21 @@ $(document).ready(function(){
 	   $('#total').text(permitTotal);
 	   $('#permitCharts').show();
 	   $('#ahvCharts').hide();
+	   $('#shedCharts').hide();
 	});	
 	$('#ahvs').click(function(){
 	   $('#metric').text('Active After Hours Variances (AHVs)');
 	   $('#total').text(ahvTotal);
 	   $('#ahvCharts').show();
 	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
 	});
 	$('#shed').click(function(){
 	   $('#metric').text('Active Sidewalk Sheds');
+	   $('#total').text(shedTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').show();
 	});
 	$('#cmplnts').click(function(){
 	   $('#metric').text('Complaints (Past 12 Months)');
@@ -711,6 +740,181 @@ $(document).ready(function(){
 		  chart.yAxis.tickFormat(d3.format(''));
 			
 		  d3.select('#chart_AHV_Renewal')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+							 
+///////////SIDEWALK SHEDS/////////////////
+	
+	d3.json("data/activeShedsSummary.json", function(error, data) {
+		if (error) return console.error(error);
+
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			shedTotal += data[i].count;
+		}
+		console.log(shedTotal);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			//.color(['#E64C00']);
+			.color(['#BD4D01']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_Shed')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+	
+	d3.json("data/activeSheds_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		console.log(data);
+
+
+		//$('#total').text(data.length);
+
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_Shed')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("data/activeSheds_AvgAge.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["averageAge"]-a["averageAge"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.averageAge
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return format(d.averageAge) })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#8fa4b8']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Shed_AvgAge')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});
+		}
+	});
+	
+	d3.json("data/activeSheds_Feet.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["SumLinearFeet"]-a["SumLinearFeet"];
+		}).slice(0,10);
+		console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.SumLinearFeet
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.SumLinearFeet })
+			.margin({top: 10, right: -10, bottom: -50, left: 50})	
+			.options({height:200, width:400,})
+			.color(['#3D4A57']);
+
+		  chart.yAxis.tickFormat(d3.format('.2s'));
+			
+		  d3.select('#chart_Shed_Feet')
 			.datum(exampleData)
 			.transition().duration(500)
 			.call(chart);
