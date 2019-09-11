@@ -142,12 +142,12 @@
 	<div class="form-inline" style="padding-top: 7px;">
 		<div class="dropdown">	
 			<span class="metrics_txt">Metrics:</span>
-			<button class="btn btn-outline-success active" id="activePermits" type="button" style="margin-bottom: 7px;" >Permits</button>
-			<button class="btn btn-outline-success" id="ahvs" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
-			<button class="btn btn-outline-success" id="shed" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
-			<button class="btn btn-outline-success" id="cmplnts" type="button" style="margin-bottom: 7px;" >Complaints</button>
-			<button class="btn btn-outline-success" id="vios" type="button" style="margin-bottom: 7px;" >Violations</button>
-			<button class="btn btn-outline-success" id="injury" type="button" style="margin-bottom: 7px;" >Injuries</button>
+			<button class="btn btn-outline-success active" id="activePermitdataset" type="button" style="margin-bottom: 7px;" >Permits</button>
+			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
+			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
+			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
+			<button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button>
+			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Injuries</button>
 			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
 				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
 				<!-- <span class="caret"></span></button> -->
@@ -227,7 +227,8 @@
 		<div class="chart-wrapper" style="border-style: solid; border-color: #3d4a57; border-width: 2px;">
 			  <div class="chart-map">
 				  <div class="map">
-					<iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="https://nycdob.github.io/D3_ActiveB_AvgAge_CDs"></iframe>
+					<!-- iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="https://nycdob.github.io/D3_ActiveB_AvgAge_CDs"></iframe  -->
+					<iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="index_map.html"></iframe>
 				  </div>
 			  </div>		
 		</div>
@@ -364,34 +365,34 @@ $(document).ready(function(){
 	<!-- }); -->
 
 	
-	$('#activePermits').click(function(){
+	$('#activePermitdataset').click(function(){
 	   $('#metric').text('Active Permits: New Buildings (NB) and Major Alterations (A1)');
 	   $('#total').text(permitTotal);
 	   $('#permitCharts').show();
 	   $('#ahvCharts').hide();
 	   $('#shedCharts').hide();
 	});	
-	$('#ahvs').click(function(){
+	$('#activeAVHdataset').click(function(){
 	   $('#metric').text('Active After Hours Variances (AHVs)');
 	   $('#total').text(ahvTotal);
 	   $('#ahvCharts').show();
 	   $('#permitCharts').hide();
 	   $('#shedCharts').hide();
 	});
-	$('#shed').click(function(){
+	$('#activeSheddataset').click(function(){
 	   $('#metric').text('Active Sidewalk Sheds');
 	   $('#total').text(shedTotal);
 	   $('#ahvCharts').hide();
 	   $('#permitCharts').hide();
 	   $('#shedCharts').show();
 	});
-	$('#cmplnts').click(function(){
+	$('#activeComplaintdataset').click(function(){
 	   $('#metric').text('Complaints (Past 12 Months)');
 	});
-	$('#vios').click(function(){
+	$('#activeViolationdataset').click(function(){
 	   $('#metric').text('Violations (Past 12 Months)');
 	});
-	$('#injury').click(function(){
+	$('#activeInjurydataset').click(function(){
 	   $('#metric').text('Construction-Related Injuries');
 	});
 	
@@ -407,13 +408,13 @@ $(document).ready(function(){
 		
 		//GET TOTAL
 		for (var i = 0; i < data.length; i++){
-			permitTotal += data[i].totalCount;
+			permitTotal += data[i].count;
 		};
 		console.log(permitTotal);
 		
 		
 		var sortedData = data.sort(function(a,b){
-			return b["totalCount"]-a["totalCount"];
+			return b["count"]-a["count"];
 		}).slice(0,10);
 		console.log(sortedData);
 		
@@ -427,14 +428,14 @@ $(document).ready(function(){
 			}
 		];
 		sortedData.forEach(function(d){
-			d.values = +d.totalCount
+			d.values = +d.count
 			exampleData[0].values.push(d)
 		})
 		
 		nv.addGraph(function() {
 		  var chart = nv.models.discreteBarChart()
 			.x(function(d) { return d.communityBoard })
-			.y(function(d) { return d.totalCount })
+			.y(function(d) { return d.count })
 			.margin({top: 10, right: -10, bottom: -50, left: 30})	
 			.options({height:200, width:400,})
 			//.color(['#E64C00']);
