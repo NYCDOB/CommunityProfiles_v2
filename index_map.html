@@ -276,6 +276,7 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 						let boros=["Boro?","Manhattan","Bronx", "Brooklyn","Queens","Staten Island"]
 						d.newBoro=boros[(''+d.id).substr(0,1)]
 						tooltip.select(".name").text("CD: "+commdistrict+", "+ d.newBoro ) ;
+						document.querySelector('.line[data-metric="AvgAge"] ').childNodes[0].nodeValue="Total " + metricName + ":"		
 						tooltip.select(".AvgAge_val.val").text(   (commuteById.get(d.id) == undefined) ? "0": commuteById.get(d.id)["count"]     )
 						// other measures will be added to tooltip here. Must account for no match in "metric".json file
 						//tooltip.select(".Measure1_val.val").text(      commuteById.get(d.id)["totalCount"]    )
