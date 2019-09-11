@@ -328,7 +328,7 @@ function handleError(errString,notifyType) {
 queue()  //use d3 library to read the json data
 	// .defer(d3.json, "data/CD_toJoin_topoJSON.json")  //will have all comm districts 
     .defer(d3.json, "data/CD_topoJSON.json")
-	.defer(d3.json, "data/activeAHVSummary.json")
+	.defer(d3.json, "data/activeAHVsSummary.json")
 	.defer(d3.json, "data/activeShedsSummary.json")
 	.defer(d3.json, "data/activePermitSummary.json")	
     .await(ready);   // or  .awaitAll(ready); //2 args: error, and array[n], where n is number of datasets read
