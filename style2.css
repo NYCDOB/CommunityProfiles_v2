@@ -110,7 +110,7 @@ div.tooltip .val { float: right; color: red; font-weight: bold; text-align: left
     stroke: #000;
     stroke-width: 0.5px;
 }
-[class^="collection"] {
+[class^="active"] {
 	fill: #e0e0e0;
 	stroke: #fff;
 	stroke-width: 1.5px;
