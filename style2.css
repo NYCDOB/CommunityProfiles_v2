@@ -11,10 +11,13 @@ caption,th { text-align: left; }
 /* @end */
 
 
-#main-wrapper {
-    width: 960px;
-    margin: 0 auto;
+#ZZmain-wrapper {
+    width: 100%;
+	height:100%;
+
 }
+
+
 /*On mouse hover lighten CD color*/
 path:hover {
 	stroke: #eef442;

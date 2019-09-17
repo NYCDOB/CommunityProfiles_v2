@@ -2,7 +2,11 @@
 <html>
 <head>
   <title>Community Profiles</title>
+  
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  
+  
+  
   <!-- <link rel="stylesheet" type="text/css" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
   <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
     <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -12,9 +16,11 @@
 <body class="application">
 <style>
 	html {
-		overflow-x:hidden;
-		overflow-y:hidden;
+		width:99%;
+		height: 100%;
+		overflow: auto;
 	}
+
 	.metrics_txt{
 		font-size: 25px;
 		color: #666666;
@@ -23,31 +29,45 @@
 		padding-left: 25px;
 	}
 	/* Style the input field */
-	#commDist {
-		padding-left: 20px;
-		margin-top: -6px;
-		border: 0;
-		border-radius: 0;
-	}
-	.dropdown-menu{
-		max-width: 350px;
-		max-height:325px; 
-		overflow:auto; 
-	}
-	.dropdown-menu li a {
-		word-wrap: break-word;
-		white-space: normal;
-	}
-	.dropdown-menu > li:nth-child(odd) {
-	  background: #fffd96;
-	}
-	.dropdown-menu > li:nth-child(even) {
-	  background: #bfbfbf;
-	}
-	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active{
+/*  
+									#commDist {
+										padding-left: 20px;
+										margin-top: -6px;
+										border: 0;
+										border-radius: 0;
+									}
+*/
+	
+	
+	
+*/	
+									.dropdown-menu{
+										max-width: 350px;
+										max-height:325px; 
+										overflow:auto; 
+									}
+									.dropdown-menu li a {
+										word-wrap: break-word;
+										white-space: normal;
+									}
+									.dropdown-menu > li:nth-child(odd) {
+									  background: #fffd96;
+									}
+									.dropdown-menu > li:nth-child(even) {
+									  background: #bfbfbf;
+									}
+*/
+
+	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success.active {
 		color: white;
 		background-color: #bd4d01;
 	}
+	
+	
+	.btn-outline-success.active {
+		color: #333;
+	}
+	
 	.logo {
 		background-image: url('data/dob_logo.png');
 		background-repeat: no-repeat;
@@ -106,26 +126,29 @@
 		height: 100%;
 		width: 100%;
 	}
-	#topWrapper{
-		display: flex;
-		padding: 15px;
-	}
-	#topLeft{
-		flex: 0 0 51%;
-	}
-	#topRight{
-		flex: 1;
-	}
-	#bottomWrapper{
-		display: flex;
-		padding: 30px 15px 15px 15px;
-	}
-	#bottomLeft{
-		flex: 0 0 51%;
-	}
-	#bottomRight{
-		flex: 1;
-	}
+	
+/*	
+									#topWrapper{
+										display: flex;
+										padding: 15px;
+									}
+									#topLeft{
+										flex: 0 0 51%;
+									}
+									#topRight{
+										flex: 1;
+									}
+									#bottomWrapper{
+										display: flex;
+										padding: 30px 15px 15px 15px;
+									}
+									#bottomLeft{
+										flex: 0 0 51%;
+									}
+									#bottomRight{
+										flex: 1;
+									}
+*/	
 	.mini-box{
 		height: 320px;
 		padding: 10px;
@@ -146,7 +169,7 @@
 	<div class="form-inline" style="padding-top: 7px;">
 		<div class="dropdown">	
 			<span class="metrics_txt">Metrics:</span>
-			<button class="btn btn-outline-success active" id="activePermitdataset" type="button" style="margin-bottom: 7px;" >Permits</button>
+			<button class="btn btn-outline-success ZZactive" id="activePermitdataset" type="button" style="margin-bottom: 7px;" >Permits</button>
 			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
 			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
@@ -224,7 +247,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:10px;margin-bottom:0">  <!--  @## 9/17/19-->
 	<div class="row">
 
 	  <div class="col-sm-6">
@@ -232,7 +255,8 @@
 			  <div class="chart-map">
 				  <div class="map">
 					<!-- iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="https://nycdob.github.io/D3_ActiveB_AvgAge_CDs"></iframe  -->
-					<iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="index_map.html"></iframe>
+					<iframe width="100%" height:100%  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" 
+					src="index_map.html"></iframe>
 				  </div>
 			  </div>		
 		</div>
@@ -310,7 +334,7 @@
 
     <hr>
 
-    <p class="small text-muted">Built by DOB Analytics <a href="https://www1.nyc.gov/site/buildings/about/metrics-reports.page">Dev Squad</a></p>
+    <p class="small text-muted" style=" position:relative; bottom:0;">Built by DOB Analytics <a href="https://www1.nyc.gov/site/buildings/about/metrics-reports.page">Dev Squad</a></p>
 
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
@@ -341,7 +365,8 @@ $(document).ready(function(){
 	$('#permitCharts').show();
 	$('#ahvCharts').hide();
 	$('#shedCharts').hide();
-
+	document.querySelector("#activePermitdataset").classList.add("active");  //force "selected" appearance
+	
     <!-- $('#commDist').click(function(e) { -->
         <!-- e.stopPropagation(); -->
     <!-- }); -->

@@ -37,37 +37,13 @@ Map control for Community Profile append
 	
 	<!--   div id="noData" style="display:none;"> <h2>No Data Available</h2> </div>  <!--  shown for empty dataset -->
 	<div id="noData" style="display:none;"> <h2>No Data Available</h2> </div>  <!--  shown for empty dataset -->
-	
-	<div id="metrics" style="visibility:hidden;" >
-    <div id="motor" style="visibility:'hidden';">
-        <h2 style="margin-top:5px; margin-left:15px; font-size:18px;"></h2>
-		<br>
-		<h3 style="font-size:14px; margin-left:15px;">CITYWIDE AVERAGE: <font color="#e21d1d"><span id="citiAvg"></span></font> WORKDAYS</h3>
-		<h3 style="font-size:14px; margin-left:15px;">CD <font color="#e21d1d"><span id="maxCD"></span></font> HAS THE HIGHEST AVERAGE AGE (<font color="#e21d1d"><span id="maxAvg"></span></font>) </h3>
-		<h3 style="font-size:14px; margin-left:15px;">DATA UPDATED ON <font color="#e21d1d"><span id="today"></span></font></h3>
-    </div>
+
     <div class="clr"></div>
 </div><!-- @end #metrics -->    
 		
 
 <div id="tooltip" class="tooltip">
-    <h3 class="name"></h3>
-	    <div data-metric="AvgAge" class="line">
-			Total:
-			<div class="AvgAge_val val"></div>
-		</div>
-		
-		<div data-metric="Measure1" class="line">
-			Percentile:
-			<div class="Measure1_val val"></div>
-		</div>
-		<div data-metric="Measure2" class="line">
-			Measure 2 (tbd):
-			<div class="Measure2_val val"></div>
-		</div>
-
 </div>   
-
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://d3js.org/queue.v1.min.js"></script>
@@ -160,6 +136,47 @@ function assignButtonHandlers() {
 		}  // end parent button handler
 }
 
+
+function buildToolTip(topoID, currentCD) {  //since each metric has unique additional values, need to customize tooltip
+		let theParent = document.querySelector("#tooltip");
+		while (theParent.firstChild) {  
+		  theParent.removeChild(theParent.firstChild);
+		}
+		
+		commdistrict =topoID
+		boros=["Boro?","Manhattan","Bronx", "Brooklyn","Queens","Staten Island"]
+		newBoro=boros[(''+topoID).substr(0,1)]
+		
+		let divDataHeading = document.createElement("h3")
+		divDataHeading.className="name";
+		divDataHeading.innerText="CD: "+topoID+", "+ newBoro  ;
+		theParent.appendChild(divDataHeading);
+			
+		divDataHeading = document.createElement("div")
+		divDataHeading.className="dataHeading line";
+		divDataHeading.innerText="Total: "
+		let divDataValue = document.createElement("div")
+		divDataValue.className="dataValue val";
+		divDataValue.innerText= (currentCD == undefined) ? "0": currentCD.count;   
+		divDataHeading.appendChild(divDataValue);
+		theParent.appendChild(divDataHeading);
+		//loop thru each additional key & value
+		if ( currentCD!=undefined  &&       Object.keys(currentCD).length > 2) {
+			for ( let ctr=2; ctr < Object.keys(currentCD).length-1; ctr++ ) {
+					divDataHeading = document.createElement("div")
+					divDataHeading.className="dataHeading line";
+					divDataHeading.innerText= Object.keys(currentCD)[ctr] + ": "  
+					let divDataValue = document.createElement("div")
+					divDataValue.className="dataValue val";
+					divDataValue.innerText=  currentCD[Object.keys(currentCD)[ctr] ]; 
+					divDataHeading.appendChild(divDataValue);
+					theParent.appendChild(divDataHeading);
+
+			}
+		}
+}
+
+
 function getToday() {
 	let today = new Date();
 	let dd = today.getDate();
@@ -168,19 +185,6 @@ function getToday() {
 	return (mm + '/' + dd + '/' + yyyy);
 }
 
-// click event handler was used when map was standalone page.
-<!-- $(".metricSwitch").click((e) =>  -->
-	<!-- {   e.preventDefault(); -->
-		<!-- document.querySelector("#motor h2").innerHTML=this[e.target.id].metricName; -->
-		<!-- d3.select("#citiAvg").html(d3.format(".1f")(this[e.target.id].citiAvg));		 -->
-		<!-- d3.select("#maxAvg").html(this[e.target.id].maxAvg); -->
-		<!-- d3.select("#maxCD").html(this[e.target.id].maxCD); -->
-		<!-- d3.select("#today").html(getToday()); -->
-		<!-- document.querySelector("."+this[e.target.id].svgDataSet).style.visibility="visible" -->
-		<!-- let otherBtns = document.querySelectorAll("button:not(#"+e.target.id+")") -->
-		<!-- otherBtns.forEach((el)=>{(this[el.id].svgDataSet)?document.querySelector("."+this[el.id].svgDataSet).style.visibility="hidden": null; -->
-		<!-- }) -->
-	<!-- }) -->
 function getPercentiles(dataArray, measureColumn)	{
 	let retval = []; 
 	let varname=""; 
@@ -259,17 +263,10 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 						} else {
 							tooltip.style("top", (d3.event.pageY -30) + "px");
 						}
-						let commdistrict =d.id;
-						let boros=["Boro?","Manhattan","Bronx", "Brooklyn","Queens","Staten Island"]
-						d.newBoro=boros[(''+d.id).substr(0,1)]
-						tooltip.select(".name").text("CD: "+commdistrict+", "+ d.newBoro ) ;
-						document.querySelector('.line[data-metric="AvgAge"] ').childNodes[0].nodeValue="Total " + metricName + ":"		
-						tooltip.select(".AvgAge_val.val").text(   (commuteById.get(d.id) == undefined) ? "0": commuteById.get(d.id)["count"]     )
-
-						// other measures will be added to tooltip here. Must account for no match in "metric".json file
-//						tooltip.select(".Measure1_val.val").text(   (commuteById.get(d.id) == undefined ) ? "n/a":commuteById.get(d.id)["Percentile"]    )
-						tooltip.select(".Measure1_val.val").text((commuteById.get(d.id) != undefined && commuteById.get(d.id)["count"] != 0 )?commuteById.get(d.id)["Percentile"]: "n/a")
-
+						
+						let currentCD=commuteById.get(d.id);
+						
+						buildToolTip(  d.id, currentCD );
 				})
 		  .on("mouseout", function() {
 				d3.select(this).classed("selected", false);
@@ -295,7 +292,7 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 				return "#00"
 			}
 		});
-		globalPercentiles=[...thePercentiles];   //this will be used for the legend, so we make it a var
+		globalPercentiles=[...thePercentiles];   //globalPercentiles is a global var used in the legend
 		return ( {
 	   "citiAvg": citiAvg,
 	   "maxCD" :  maxCD, 
@@ -311,15 +308,12 @@ function handleError(errString,notifyType="console") {
 	return null;
 }
 
-
-
-
 queue()
 	// .defer(d3.json, "data/CD_toJoin_topoJSON.json")  //no longer used; will have all comm districts 
     .defer(d3.json, "data/CD_topoJSON.json")
-	.defer(d3.json, "data/activeAHVsSummary.json" )
-	.defer(d3.json, "data/activeShedsSummary.json")
-	.defer(d3.json, "data/activePermitSummary.json")	
+	.defer(d3.json, "data/activeAHVsSummary2.json" )
+	.defer(d3.json, "data/activeShedsSummary2.json")
+	.defer(d3.json, "data/activePermitSummary2.json")	
     .await(ready);  // this can be more dynamic by adding property to json to indicate which metric.
 function ready(error,CD_topoJSON, activeahv, activeshed,activepermit) {  	
 		//NOTE: if there is an issue with any d3.json, all will fail.
@@ -343,10 +337,8 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activepermit) {
 		activeSheddataset=    (activeshed.length) ? processDataset(activeshed,  "activeSheddataset",   CD_topoJSON, "Sheds") : handleError("No shed data");
 		activePermitdataset = (activepermit.length) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("No permit data"); //default layer
 		assignButtonHandlers();
-		//var ext_color_domain = [minAvg, 10.6, 13.2, 14.6, 15.3, 16.2, maxAvg] 
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
 		
-		//let legend_labels = activePermitdataset.percentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
 		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
 		let legend = svg.selectAll("g.legend")
 			.data(ext_color_domain)
@@ -378,7 +370,6 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activepermit) {
 			.attr('transform', 'translate(10, -630)') // XY position of legend
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
-		
-		window.parent.document.querySelector(".dropdown button.active").click();
+		window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
 }
 </script>
