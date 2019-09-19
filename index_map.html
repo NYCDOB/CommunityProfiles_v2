@@ -168,7 +168,8 @@ function buildToolTip(topoID, currentCD) {  //since each metric has unique addit
 					divDataHeading.innerText= Object.keys(currentCD)[ctr] + ": "  
 					let divDataValue = document.createElement("div")
 					divDataValue.className="dataValue val";
-					divDataValue.innerText=  currentCD[Object.keys(currentCD)[ctr] ]; 
+					// divDataValue.innerText=  currentCD[Object.keys(currentCD)[ctr] ]; 
+					divDataValue.innerText=  Math.trunc(currentCD[Object.keys(currentCD)[ctr] ]); 
 					divDataHeading.appendChild(divDataValue);
 					theParent.appendChild(divDataHeading);
 
@@ -311,9 +312,9 @@ function handleError(errString,notifyType="console") {
 queue()
 	// .defer(d3.json, "data/CD_toJoin_topoJSON.json")  //no longer used; will have all comm districts 
     .defer(d3.json, "data/CD_topoJSON.json")
-	.defer(d3.json, "data/activeAHVsSummary2.json" )
-	.defer(d3.json, "data/activeShedsSummary2.json")
-	.defer(d3.json, "data/activePermitSummary2.json")	
+	.defer(d3.json, "data/activeAhvsSummaryAll.json" )
+	.defer(d3.json, "data/activeShedsSummaryAll.json")
+	.defer(d3.json, "data/activePermitSummaryAll.json")	
     .await(ready);  // this can be more dynamic by adding property to json to indicate which metric.
 function ready(error,CD_topoJSON, activeahv, activeshed,activepermit) {  	
 		//NOTE: if there is an issue with any d3.json, all will fail.
