@@ -92,8 +92,17 @@ div.tooltip h3 {
 }
 div.tooltip .line { clear: both; margin-top: 3px; font-size: 14px; }
 /*div.tooltip .symbol { float: left; width: 6px; height: 6px; margin: 3px 4px 0 0; }*/
-div.tooltip .val { float: right; color: red; font-weight: bold; text-align: left; margin-right: 28px;}
+div.tooltip .val { 
+	float: right; 
+	color: red; 
+	font-weight: bold; 
+	text-align: left; 
+	margin-right: 10px;
+}
+
 /*div.tooltip .moe { float: right; color: #aaa; width: 30px; text-align: right; }*/
+
+
 .overlay {
   fill: none;
   pointer-events: all;
