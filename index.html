@@ -28,44 +28,74 @@
 		padding-right: 10px;
 		padding-left: 25px;
 	}
-	/* Style the input field */
-/*  
-									#commDist {
-										padding-left: 20px;
-										margin-top: -6px;
-										border: 0;
-										border-radius: 0;
-									}
-*/
-	
-	
-	
-*/	
-									.dropdown-menu{
-										max-width: 350px;
-										max-height:325px; 
-										overflow:auto; 
-									}
-									.dropdown-menu li a {
-										word-wrap: break-word;
-										white-space: normal;
-									}
-									.dropdown-menu > li:nth-child(odd) {
-									  background: #fffd96;
-									}
-									.dropdown-menu > li:nth-child(even) {
-									  background: #bfbfbf;
-									}
-*/
 
-	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success.active {
+	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active{
 		color: white;
 		background-color: #bd4d01;
 	}
-	
-	
-	.btn-outline-success.active {
-		color: #333;
+	.btn-primary{
+		border: none;
+	}
+
+	#cmplnts_afterHours, #ahv_cityConstruction{
+		background-color: #3D4A57;
+		opacity:0.8;
+	}
+	#cmplnts_afterHours:hover, #cmplnts_afterHours:focus, #cmplnts_afterHours:active, #cmplnts_afterHours.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#ahv_cityConstruction:hover, #ahv_cityConstruction:focus,#ahv_cityConstruction:active,#ahv_cityConstruction.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#cmplnts_elevator, #ahv_constructionMinNoise{
+		background-color: #8fa4b8;
+		opacity:0.8;
+	}
+	#cmplnts_elevator:hover, #cmplnts_elevator:focus, #cmplnts_elevator:active, #cmplnts_elevator.active{
+		background-color: #8fa4b8;
+		opacity:1;
+	}
+	#ahv_constructionMinNoise:hover, #ahv_constructionMinNoise:focus, #ahv_constructionMinNoise:active, #ahv_constructionMinNoise.active{
+		background-color: #8fa4b8;
+		opacity:1;	
+	}	
+	#cmplnts_illegalConv, #ahv_emergency{
+		background-color: #70BBFF;
+		opacity:0.8;
+	}
+	#cmplnts_illegalConv:hover, #cmplnts_illegalConv:focus, #cmplnts_illegalConv:active, #cmplnts_illegalConv.active{
+		background-color: #70BBFF;
+		opacity:1;
+	}
+	#ahv_emergency:hover, #ahv_emergency:focus, #ahv_emergency:active, #ahv_emergency.active{
+		background-color: #70BBFF;
+		opacity:1;	
+	}	
+	#cmplnts_noPermit, #ahv_safety{
+		background-color: #ec940b;
+		opacity:0.8;
+	}
+	#cmplnts_noPermit:hover, #cmplnts_noPermit:focus, #cmplnts_noPermit:active, #cmplnts_noPermit.active{
+		background-color: #ec940b;
+		opacity:1;
+	}
+	#ahv_safety:hover, #ahv_safety:focus, #ahv_safety:active, #ahv_safety.active{
+		background-color: #ec940b;
+		opacity:1;	
+	}
+	#cmplnts_other, #ahv_undueHardship{
+		background-color: #BD4D01;
+		opacity:0.8;
+	}
+	#cmplnts_other:hover, #cmplnts_other:focus, #cmplnts_other:active, #cmplnts_other.active{
+		background-color: #BD4D01;
+		opacity:1;
+	}
+	#ahv_undueHardship:hover, #ahv_undueHardship:focus, #ahv_undueHardship:active, #ahv_undueHardship.active{
+		background-color: #BD4D01;
+		opacity:1;	
 	}
 	
 	.logo {
@@ -76,79 +106,8 @@
 		background-size: 70px;
 		height: 50px;
 		width: 110px;	 
-	}
-
-	#chart_CD_Permits{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_Boro_Permits{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_CD_NB{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_CD_A1{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_CD_AHV{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_Boro_AHV{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_AHV_Initial{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
-	#chart_AHV_Renewal{
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
-		width: 100%;
-	}
+	}	
 	
-/*	
-									#topWrapper{
-										display: flex;
-										padding: 15px;
-									}
-									#topLeft{
-										flex: 0 0 51%;
-									}
-									#topRight{
-										flex: 1;
-									}
-									#bottomWrapper{
-										display: flex;
-										padding: 30px 15px 15px 15px;
-									}
-									#bottomLeft{
-										flex: 0 0 51%;
-									}
-									#bottomRight{
-										flex: 1;
-									}
-*/	
 	.mini-box{
 		height: 320px;
 		padding: 10px;
@@ -173,8 +132,9 @@
 			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
 			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
-			<button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button>
-			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Injuries</button>
+			<!-- <button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button> -->
+			<!-- <button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Injuries</button> -->
+			
 			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
 				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
 				<!-- <span class="caret"></span></button> -->
@@ -293,19 +253,29 @@
 			<div class="row" id="ahvCharts">
 				<div class="col-sm-6"><div class="mini-box">				
 					<h4 style="padding-left:5px;"><u>Active AHVs (Top 10 Community Districts)</u></h4>
-					<svg id="chart_CD_AHV"></svg>
+					<svg id="chart_CD_AHVtotal"></svg>
 				</div></div>
 				<div class="col-sm-6"><div class="mini-box">
-					<h4 style="padding-left:5px;"><u>Active AHVs by Borough</u></h4>
+					<h4 style="padding-left:5px;"><u>Reasons For AHVs by Borough</u></h4>
 					<svg id="chart_Boro_AHV"></svg>
 				</div></div>
-				<div class="col-sm-6"><div class="mini-box">
-					<h4 style="padding-left:5px; padding-top:35px;"><u>Active Initial AHVs (Top 10 Community Districts)</u></h4>
-					<svg id="chart_AHV_Initial"></svg>
-				</div></div>
-				<div class="col-sm-6"><div class="mini-box">
-					<h4 style="padding-left:5px; padding-top:35px;"><u>Active Renewal AHVs (Top 10 Community Districts)</u></h4>
-					<svg id="chart_AHV_Renewal"></svg>				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Reasons For AHVs (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_ahvs">
+							<button class="btn btn-primary btn-sm active" id="ahv_cityConstruction" type="button" >NYC Construction</button>
+							<button class="btn btn-primary btn-sm" id="ahv_constructionMinNoise" type="button" >Minimal Noise</button>
+							<button class="btn btn-primary btn-sm" id="ahv_emergency" type="button" >Emergency Work</button>
+							<button class="btn btn-primary btn-sm" id="ahv_safety" type="button" >Public Safety</button>
+							<button class="btn btn-primary btn-sm" id="ahv_undueHardship" type="button" >Undue Hardship</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_ahv_cityConstruction"></svg>
+					<svg id="chart_CD_ahv_constructionMinNoise"></svg>
+					<svg id="chart_CD_ahv_emergency"></svg>
+					<svg id="chart_CD_ahv_safety"></svg>
+					<svg id="chart_CD_ahv_undueHardship"></svg>
+					
 				</div></div>
 			</div>
 		  
@@ -327,6 +297,36 @@
 					<svg id="chart_Shed_Feet"></svg>				
 				</div></div>
 			</div>
+			
+			<div class="row" id="complaintCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Complaints (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_cmplnts_total"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Complaint Types by Borough</u></h4>
+					<svg id="chart_Boro_Complaints"></svg>
+				</div></div>
+				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Complaint Types (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_cmplnts">
+							<button class="btn btn-primary btn-sm active" id="cmplnts_afterHours" type="button" >After Hours Work</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_elevator" type="button" >Elevator</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_illegalConv" type="button" >Illegal Conversion</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_noPermit" type="button" >Work Without Permit</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_other" type="button" >Other</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_cmplnts_afterHours"></svg>
+					<svg id="chart_CD_cmplnts_elevator"></svg>
+					<svg id="chart_CD_cmplnts_illegalConv"></svg>
+					<svg id="chart_CD_cmplnts_noPermit"></svg>
+					<svg id="chart_CD_cmplnts_other"></svg>
+					
+				</div></div>
+			</div>
 	  </div>
 	  </div>
 	</div>
@@ -338,17 +338,13 @@
 
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
-  <!-- <script type="text/javascript" src="../../assets/lib/jquery/dist/jquery.min.js"></script> -->
-  <!-- <script type="text/javascript" src="../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script> -->
-  <!-- <script type="text/javascript" src="../../assets/lib/holderjs/holder.js"></script> -->
-    <script type="text/javascript" src="assets/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/lib/holderjs/holder.js"></script>
   <script>
     Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
   </script>
-  <!-- <script type="text/javascript" src="../../assets/lib/keen-js/dist/keen.min.js"></script> -->
-  <!-- <script type="text/javascript" src="../../assets/js/meta.js"></script> -->
+
   <script type="text/javascript" src="assets/lib/keen-js/dist/keen.min.js"></script>
   <script type="text/javascript" src="assets/js/meta.js"></script>
   <script src="build/nv.d3.js"></script>
@@ -359,12 +355,14 @@ $(document).ready(function(){
 	var permitTotal = 0,
 		ahvTotal = 0,
 		shedTotal = 0,
+		complaintsTotal = 0,
 		format = d3.format(".1f");
 		//formatK = d3.format(",");
 	
 	$('#permitCharts').show();
 	$('#ahvCharts').hide();
 	$('#shedCharts').hide();
+	$('#complaintCharts').hide();
 	document.querySelector("#activePermitdataset").classList.add("active");  //force "selected" appearance
 	
     <!-- $('#commDist').click(function(e) { -->
@@ -400,6 +398,7 @@ $(document).ready(function(){
 	   $('#permitCharts').show();
 	   $('#ahvCharts').hide();
 	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
 	});	
 	$('#activeAVHdataset').click(function(){
 	   $('#metric').text('Active After Hours Variances (AHVs)');
@@ -407,6 +406,12 @@ $(document).ready(function(){
 	   $('#ahvCharts').show();
 	   $('#permitCharts').hide();
 	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#chart_CD_ahv_cityConstruction').show();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
 	});
 	$('#activeSheddataset').click(function(){
 	   $('#metric').text('Active Sidewalk Sheds');
@@ -414,16 +419,27 @@ $(document).ready(function(){
 	   $('#ahvCharts').hide();
 	   $('#permitCharts').hide();
 	   $('#shedCharts').show();
+	   $('#complaintCharts').hide();
 	});
 	$('#activeComplaintdataset').click(function(){
 	   $('#metric').text('Complaints (Past 12 Months)');
+	   $('#total').text(complaintsTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').show();
+	   $('#chart_CD_cmplnts_afterHours').show();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
 	});
-	$('#activeViolationdataset').click(function(){
-	   $('#metric').text('Violations (Past 12 Months)');
-	});
-	$('#activeInjurydataset').click(function(){
-	   $('#metric').text('Construction-Related Injuries');
-	});
+	<!-- $('#activeViolationdataset').click(function(){ -->
+	   <!-- $('#metric').text('Violations (Past 12 Months)'); -->
+	<!-- }); -->
+	<!-- $('#activeInjurydataset').click(function(){ -->
+	   <!-- $('#metric').text('Construction-Related Injuries'); -->
+	<!-- }); -->
 	
 	$('.form-inline').on('click', '.btn', function() {
 	  $(this).addClass('active').siblings().removeClass('active');
@@ -608,73 +624,57 @@ $(document).ready(function(){
 
 ///////////AHVs/////////////////
 	
-	d3.json("data/activeAHVsSummary.json", function(error, data) {
-		if (error) return console.error(error);
-
-		//GET TOTAL
-		for (var i = 0; i < data.length; i++){
-			ahvTotal += data[i].count;
-		}
-		console.log(ahvTotal);
-		
-		var sortedData = data.sort(function(a,b){
-			return b["count"]-a["count"];
-		}).slice(0,10);
-		console.log(sortedData);
-		
-		cdCountChart(sortedData);
-		
-		function cdCountChart(sortedData){
-		var exampleData = [
-			{
-				key: "totals",
-				values: []
-			}
-		];
-		sortedData.forEach(function(d){
-			d.values = +d.count
-			exampleData[0].values.push(d)
-		})
-		
-		nv.addGraph(function() {
-		  var chart = nv.models.discreteBarChart()
-			.x(function(d) { return d.communityBoard })
-			.y(function(d) { return d.count })
-			.margin({top: 10, right: -10, bottom: -50, left: 30})	
-			.options({height:200, width:400,})
-			//.color(['#E64C00']);
-			.color(['#BD4D01']);
-
-		  chart.yAxis.tickFormat(d3.format(''));
-			
-		  d3.select('#chart_CD_AHV')
-			.datum(exampleData)
-			.transition().duration(500)
-			.call(chart);
-
-		  nv.utils.windowResize(chart.update);
-
-		  return chart;
-		});
-		}
+	$('#ahv_cityConstruction').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').show();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
 	});
-	
-	d3.json("data/activeAHVs_boro.json", function(error, data) {
+	$('#ahv_constructionMinNoise').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').show();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});
+	$('#ahv_emergency').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').show();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});	
+	$('#ahv_safety').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').show();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});	
+	$('#ahv_undueHardship').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').show();
+	});	
+	$('.btn_ahvs').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+
+	d3.json("data/activeAhvsSummaryByBorough.json", function(error, data) {
 		if (error) return console.error(error);
 		console.log(data);
-
-
-		//$('#total').text(data.length);
-
 		
 		nv.addGraph(function() {
 			var chart = nv.models.multiBarChart()
-			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.margin({top: 10, right: -10, bottom: -50, left: 45})
 			.options({height:200, width:400,})
 			.stacked(true)
 			.staggerLabels(true)
 			.showControls(false)
-			.color(['#3D4A57','#8fa4b8'])
+			.color(['#3D4A57','#8fa4b8','#70BBFF','#ec940b','#BD4D01'])
 			.reduceXTicks(false)
 			.showLegend(true);
 			
@@ -692,93 +692,243 @@ $(document).ready(function(){
 		});		
 	});
 	
-	d3.json("data/activeAHVsInitial.json", function(error, data) {
+	d3.json("data/activeAHVs_reason_CD.json", function(error, data) {
 		if (error) return console.error(error);
 		
-		var sortedData = data.sort(function(a,b){
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			ahvTotal += data[i].count;
+		}
+		
+		var sortedData_cityConstruction = data.sort(function(a,b){
+			return b["NYC Construction"]-a["NYC Construction"];
+		}).slice(0,10);
+		
+		var sortedData_constructionMinNoise = data.sort(function(a,b){
+			return b["Minimal Noise"]-a["Minimal Noise"];
+		}).slice(0,10); 
+		
+		var sortedData_emergency = data.sort(function(a,b){
+			return b["Emergency Work"]-a["Emergency Work"];
+		}).slice(0,10);
+		
+		var sortedData_safety = data.sort(function(a,b){
+			return b["Public Safety"]-a["Public Safety"];
+		}).slice(0,10);
+		
+		var sortedData_undueHardship = data.sort(function(a,b){
+			return b["Undue Hardship"]-a["Undue Hardship"];
+		}).slice(0,10);
+		
+		var sortedData_AHVtotal = data.sort(function(a,b){
 			return b["count"]-a["count"];
 		}).slice(0,10);
-		console.log(sortedData);
 		
-		cdCountChart(sortedData);
+		cdCountChart_cityConstruction(sortedData_cityConstruction);
+		cdCountChart_constructionMinNoise(sortedData_constructionMinNoise);
+		cdCountChart_emergency(sortedData_emergency);
+		cdCountChart_safety(sortedData_safety);
+		cdCountChart_undueHardship(sortedData_undueHardship);
+		cdCountChart_AHVtotal(sortedData_AHVtotal);
 		
-		function cdCountChart(sortedData){
-		var exampleData = [
-			{
-				key: "totals",
-				values: []
-			}
-		];
-		sortedData.forEach(function(d){
-			d.values = +d.count
-			exampleData[0].values.push(d)
-		})
-		
-		nv.addGraph(function() {
-		  var chart = nv.models.discreteBarChart()
-			.x(function(d) { return d.communityBoard })
-			.y(function(d) { return d.count })
-			.margin({top: 10, right: -10, bottom: -50, left: 30})	
-			.options({height:200, width:400,})
-			.color(['#8fa4b8']);
-
-		  chart.yAxis.tickFormat(d3.format(''));
+		function cdCountChart_cityConstruction(sortedData_cityConstruction){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_cityConstruction.forEach(function(d){
+				d.values = +d["NYC Construction"]
+				exampleData[0].values.push(d)
+			})
 			
-		  d3.select('#chart_AHV_Initial')
-			.datum(exampleData)
-			.transition().duration(500)
-			.call(chart);
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["NYC Construction"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
 
-		  nv.utils.windowResize(chart.update);
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_ahv_cityConstruction')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
 
-		  return chart;
-		  
-		});
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
 		}
-	});
-	
-	d3.json("data/activeAHVsRenewal.json", function(error, data) {
-		if (error) return console.error(error);
 		
-		var sortedData = data.sort(function(a,b){
-			return b["count"]-a["count"];
-		}).slice(0,10);
-		console.log(sortedData);
-		
-		cdCountChart(sortedData);
-		
-		function cdCountChart(sortedData){
-		var exampleData = [
-			{
-				key: "totals",
-				values: []
-			}
-		];
-		sortedData.forEach(function(d){
-			d.values = +d.count
-			exampleData[0].values.push(d)
-		})
-		
-		nv.addGraph(function() {
-		  var chart = nv.models.discreteBarChart()
-			.x(function(d) { return d.communityBoard })
-			.y(function(d) { return d.count })
-			.margin({top: 10, right: -10, bottom: -50, left: 30})	
-			.options({height:200, width:400,})
-			.color(['#3D4A57']);
-
-		  chart.yAxis.tickFormat(d3.format(''));
+		function cdCountChart_constructionMinNoise(sortedData_constructionMinNoise){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_constructionMinNoise.forEach(function(d){
+				d.values = +d["Minimal Noise"]
+				exampleData[0].values.push(d)
+			})
 			
-		  d3.select('#chart_AHV_Renewal')
-			.datum(exampleData)
-			.transition().duration(500)
-			.call(chart);
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Minimal Noise"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#8fa4b8']);
 
-		  nv.utils.windowResize(chart.update);
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_ahv_constructionMinNoise')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
 
-		  return chart;
-		});
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
 		}
+		
+		function cdCountChart_emergency(sortedData_emergency){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_emergency.forEach(function(d){
+				d.values = +d["Emergency Work"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Emergency Work"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#70BBFF']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_ahv_emergency')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_safety(sortedData_safety){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_safety.forEach(function(d){
+				d.values = +d["Public Safety"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Public Safety"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#ec940b']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_ahv_safety')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_undueHardship(sortedData_undueHardship){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_undueHardship.forEach(function(d){
+				d.values = +d["Undue Hardship"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Undue Hardship"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_ahv_undueHardship')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_AHVtotal(sortedData_AHVtotal){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_AHVtotal.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 30})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_AHVtotal')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
 	});
 							 
 ///////////SIDEWALK SHEDS/////////////////
@@ -956,6 +1106,313 @@ $(document).ready(function(){
 		}
 	});
 
+///////////COMPLAINTS/////////////////
+
+	$('#cmplnts_afterHours').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').show();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});
+	$('#cmplnts_elevator').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').show();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});
+	$('#cmplnts_illegalConv').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').show();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});	
+	$('#cmplnts_noPermit').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').show();
+	   $('#chart_CD_cmplnts_other').hide();
+	});	
+	$('#cmplnts_other').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').show();
+	});	
+	$('.btn_cmplnts').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+	
+	d3.json("data/complaintTypes_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 45})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8','#70BBFF','#ec940b','#BD4D01'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_Complaints')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+
+	d3.json("data/complaintTypes_CD.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			complaintsTotal += data[i].count;
+		}
+		
+		var sortedData_afterHours = data.sort(function(a,b){
+			return b["After Hours Work"]-a["After Hours Work"];
+		}).slice(0,10);
+
+		var sortedData_elevators = data.sort(function(a,b){
+			return b["Elevator"]-a["Elevator"];
+		}).slice(0,10); 
+		
+		var sortedData_illegalConv = data.sort(function(a,b){
+			return b["Illegal Conversion"]-a["Illegal Conversion"];
+		}).slice(0,10);
+		
+		var sortedData_noPermit = data.sort(function(a,b){
+			return b["Work Without Permit"]-a["Work Without Permit"];
+		}).slice(0,10);
+		
+		var sortedData_other = data.sort(function(a,b){
+			return b["Other"]-a["Other"];
+		}).slice(0,10);
+		
+		var sortedData_total = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_afterHours(sortedData_afterHours);
+		cdCountChart_elevators(sortedData_elevators);
+		cdCountChart_illegalConv(sortedData_illegalConv);
+		cdCountChart_noPermit(sortedData_noPermit);
+		cdCountChart_other(sortedData_other);
+		cdCountChart_total(sortedData_total);
+		
+		function cdCountChart_afterHours(sortedData_afterHours){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_afterHours.forEach(function(d){
+				d.values = +d["After Hours Work"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["After Hours Work"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_cmplnts_afterHours')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_elevators(sortedData_elevators){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_elevators.forEach(function(d){
+				d.values = +d.Elevator
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Elevator })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#8fa4b8']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_cmplnts_elevator')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_illegalConv(sortedData_illegalConv){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_illegalConv.forEach(function(d){
+				d.values = +d["Illegal Conversion"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Illegal Conversion"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#70BBFF']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_cmplnts_illegalConv')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_noPermit(sortedData_noPermit){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_noPermit.forEach(function(d){
+				d.values = +d["Work Without Permit"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Work Without Permit"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#ec940b']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_cmplnts_noPermit')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_other(sortedData_other){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_other.forEach(function(d){
+				d.values = +d.Other
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Other })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_cmplnts_other')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_total(sortedData_total){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_total.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 40})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_cmplnts_total')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+	});
 });
 
 
