@@ -28,6 +28,12 @@ Map control for Community Profile append
 					font-size:2em;
 					word-wrap: break-word;
 			}  
+			
+			
+			.ZZdataHeading.line {
+				width: 95%;
+			}
+			
 		</style>
 	
 </head>
@@ -309,14 +315,18 @@ function handleError(errString,notifyType="console") {
 	return null;
 }
 
+//READ THE JSON or retrieve url
 queue()
 	// .defer(d3.json, "data/CD_toJoin_topoJSON.json")  //no longer used; will have all comm districts 
     .defer(d3.json, "data/CD_topoJSON.json")
 	.defer(d3.json, "data/activeAhvsSummaryAll.json" )
 	.defer(d3.json, "data/activeShedsSummaryAll.json")
+	.defer(d3.json, "data/activeComplaintSummaryAll.json")
 	.defer(d3.json, "data/activePermitSummaryAll.json")	
     .await(ready);  // this can be more dynamic by adding property to json to indicate which metric.
-function ready(error,CD_topoJSON, activeahv, activeshed,activepermit) {  	
+	
+//add result dataset to ready function in same order as json is read
+function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activepermit) {  	
 		//NOTE: if there is an issue with any d3.json, all will fail.
 		// an error is displayed and no maps are rendered.
 		svg.select("#progress-image").remove();	
@@ -336,6 +346,7 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activepermit) {
 				// 4. metric name string used <h2>
 		activeAVHdataset=     (activeahv.length) ? processDataset(activeahv,   "activeAVHdataset",    CD_topoJSON, "AHVs") : handleError("No ahv data");
 		activeSheddataset=    (activeshed.length) ? processDataset(activeshed,  "activeSheddataset",   CD_topoJSON, "Sheds") : handleError("No shed data");
+		activeComplaintdataset=    (activecomplaint.length) ? processDataset(activecomplaint,  "activeComplaintdataset",   CD_topoJSON, "Complaints") : handleError("No complaint data");
 		activePermitdataset = (activepermit.length) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("No permit data"); //default layer
 		assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
