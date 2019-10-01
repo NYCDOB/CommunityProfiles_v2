@@ -37,7 +37,7 @@
 		border: none;
 	}
 
-	#cmplnts_afterHours, #ahv_cityConstruction{
+	#cmplnts_afterHours, #ahv_cityConstruction, #vios_bldgCode, #acc_injuries{
 		background-color: #3D4A57;
 		opacity:0.8;
 	}
@@ -49,7 +49,15 @@
 		background-color: #3D4A57;
 		opacity:1;
 	}
-	#cmplnts_elevator, #ahv_constructionMinNoise{
+	#vios_bldgCode:hover, #vios_bldgCode:focus,#vios_bldgCode:active,#vios_bldgCode.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#acc_injuries:hover, #acc_injuries:focus,#acc_injuries:active,#acc_injuries.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#cmplnts_elevator, #ahv_constructionMinNoise, #vios_elevator{
 		background-color: #8fa4b8;
 		opacity:0.8;
 	}
@@ -61,7 +69,11 @@
 		background-color: #8fa4b8;
 		opacity:1;	
 	}	
-	#cmplnts_illegalConv, #ahv_emergency{
+	#vios_elevator:hover, #vios_elevator:focus, #vios_elevator:active, #vios_elevator.active{
+		background-color: #8fa4b8;
+		opacity:1;	
+	}
+	#cmplnts_illegalConv, #ahv_emergency, #vios_commOrder{
 		background-color: #70BBFF;
 		opacity:0.8;
 	}
@@ -73,7 +85,19 @@
 		background-color: #70BBFF;
 		opacity:1;	
 	}	
-	#cmplnts_noPermit, #ahv_safety{
+	#vios_commOrder:hover, #vios_commOrder:focus, #vios_commOrder:active, #vios_commOrder.active{
+		background-color: #70BBFF;
+		opacity:1;	
+	}
+	#vios_misc{
+		background-color: #9a69b5;
+		opacity:0.8;	
+	}
+	#vios_misc:hover, #vios_misc:focus, #vios_misc:active, #vios_misc.active{
+		background-color: #9a69b5;
+		opacity:1;
+	}
+	#cmplnts_noPermit, #ahv_safety, #vios_noPermit{
 		background-color: #ec940b;
 		opacity:0.8;
 	}
@@ -85,7 +109,11 @@
 		background-color: #ec940b;
 		opacity:1;	
 	}
-	#cmplnts_other, #ahv_undueHardship{
+	#vios_noPermit:hover, #vios_noPermit:focus, #vios_noPermit:active, #vios_noPermit.active{
+		background-color: #ec940b;
+		opacity:1;	
+	}
+	#cmplnts_other, #ahv_undueHardship, #vios_other, #acc_fatalities{
 		background-color: #BD4D01;
 		opacity:0.8;
 	}
@@ -94,6 +122,14 @@
 		opacity:1;
 	}
 	#ahv_undueHardship:hover, #ahv_undueHardship:focus, #ahv_undueHardship:active, #ahv_undueHardship.active{
+		background-color: #BD4D01;
+		opacity:1;	
+	}
+	#vios_other:hover, #vios_other:focus, #vios_other:active, #vios_other.active{
+		background-color: #BD4D01;
+		opacity:1;	
+	}
+	#acc_fatalities:hover, #acc_fatalities:focus, #acc_fatalities:active, #acc_fatalities.active{
 		background-color: #BD4D01;
 		opacity:1;	
 	}
@@ -132,8 +168,8 @@
 			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
 			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
-			<!-- <button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button> -->
-			<!-- <button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Injuries</button> -->
+			<button class="btn btn-outline-success" id="vios" type="button" style="margin-bottom: 7px;" >Violations</button>
+			<button class="btn btn-outline-success" id="injury" type="button" style="margin-bottom: 7px;" >Accidents</button>
 			
 			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
 				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
@@ -327,6 +363,65 @@
 					
 				</div></div>
 			</div>
+			
+			<div class="row" id="violationCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Violations (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_vios_total"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Violation Types by Borough</u></h4>
+					<svg id="chart_Boro_Vios"></svg>
+				</div></div>
+				
+				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Violation Types (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_vios">
+							<button class="btn btn-primary btn-sm active" id="vios_bldgCode" type="button" >Building Maintenance</button>
+							<button class="btn btn-primary btn-sm" id="vios_elevator" type="button" >Elevator Maintenance</button>
+							<button class="btn btn-primary btn-sm" id="vios_commOrder" type="button" >Failure to Comply</button>
+							<button class="btn btn-primary btn-sm" id="vios_misc" type="button" >Miscellaneous</button>
+							<button class="btn btn-primary btn-sm" id="vios_noPermit" type="button" >Work Without Permit</button>
+							<button class="btn btn-primary btn-sm" id="vios_other" type="button" >Other</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_vios_commOrder"></svg>
+					<svg id="chart_CD_vios_bldgCode"></svg>
+					<svg id="chart_CD_vios_elevator"></svg>
+					<svg id="chart_CD_vios_misc"></svg>
+					<svg id="chart_CD_vios_noPermit"></svg>
+					<svg id="chart_CD_vios_other"></svg>
+					
+				</div></div>
+			</div>
+			
+			<div class="row" id="injuryCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Accidents (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_Acc_total"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Accidents by Borough</u></h4>
+					<svg id="chart_Boro_Acc"></svg>
+				</div></div>
+				
+				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Injuries & Fatalities (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_acc">
+							<button class="btn btn-primary btn-sm active" id="acc_injuries" type="button" >Injuries</button>
+							<button class="btn btn-primary btn-sm" id="acc_fatalities" type="button" >Fatalities</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_injuries"></svg>
+					<svg id="chart_CD_fatalities"></svg>
+					
+				</div></div>
+			</div>
+			
 	  </div>
 	  </div>
 	</div>
@@ -356,6 +451,8 @@ $(document).ready(function(){
 		ahvTotal = 0,
 		shedTotal = 0,
 		complaintsTotal = 0,
+		violationsTotal = 0,
+		accidentsTotal = 0,
 		format = d3.format(".1f");
 		//formatK = d3.format(",");
 	
@@ -363,6 +460,9 @@ $(document).ready(function(){
 	$('#ahvCharts').hide();
 	$('#shedCharts').hide();
 	$('#complaintCharts').hide();
+	$('#violationCharts').hide();
+	$('#injuryCharts').hide();
+	
 	document.querySelector("#activePermitdataset").classList.add("active");  //force "selected" appearance
 	
     <!-- $('#commDist').click(function(e) { -->
@@ -399,6 +499,8 @@ $(document).ready(function(){
 	   $('#ahvCharts').hide();
 	   $('#shedCharts').hide();
 	   $('#complaintCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
 	});	
 	$('#activeAVHdataset').click(function(){
 	   $('#metric').text('Active After Hours Variances (AHVs)');
@@ -407,6 +509,8 @@ $(document).ready(function(){
 	   $('#permitCharts').hide();
 	   $('#shedCharts').hide();
 	   $('#complaintCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
 	   $('#chart_CD_ahv_cityConstruction').show();
 	   $('#chart_CD_ahv_constructionMinNoise').hide();
 	   $('#chart_CD_ahv_emergency').hide();
@@ -420,6 +524,8 @@ $(document).ready(function(){
 	   $('#permitCharts').hide();
 	   $('#shedCharts').show();
 	   $('#complaintCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
 	});
 	$('#activeComplaintdataset').click(function(){
 	   $('#metric').text('Complaints (Past 12 Months)');
@@ -428,11 +534,43 @@ $(document).ready(function(){
 	   $('#permitCharts').hide();
 	   $('#shedCharts').hide();
 	   $('#complaintCharts').show();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
 	   $('#chart_CD_cmplnts_afterHours').show();
 	   $('#chart_CD_cmplnts_elevator').hide();
 	   $('#chart_CD_cmplnts_illegalConv').hide();
 	   $('#chart_CD_cmplnts_noPermit').hide();
 	   $('#chart_CD_cmplnts_other').hide();
+	});
+	$('#vios').click(function(){
+	   $('#metric').text('Violations (Past 12 Months)');
+	   $('#total').text(violationsTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#injuryCharts').hide();
+	   $('#violationCharts').show();
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').show();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+
+	});
+	$('#injury').click(function(){
+	   $('#metric').text('Construction-Related Accidents (Past 12 Months)');
+	   $('#total').text(accidentsTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#injuryCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').show();
+	   $('#chart_CD_injuries').show();
+	   $('#chart_CD_fatalities').hide();
 	});
 	<!-- $('#activeViolationdataset').click(function(){ -->
 	   <!-- $('#metric').text('Violations (Past 12 Months)'); -->
@@ -1164,6 +1302,14 @@ $(document).ready(function(){
 			
 			chart.yAxis.tickFormat(d3.format(''));
 			
+			//Default "Other" off
+			data = data.map(function(series){
+				if (series.key === "Other"){
+					series.disabled = true;
+				}
+				return series;
+			});
+			
 		  d3.select('#chart_Boro_Complaints')
 			.datum(data)
 			.transition().duration(500)
@@ -1413,6 +1559,550 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
+///////////VIOLATIONS/////////////////
+	
+	$('#vios_commOrder').click(function(){
+	   $('#chart_CD_vios_commOrder').show();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});
+	$('#vios_bldgCode').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').show();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});
+	$('#vios_elevator').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').show();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});	
+	$('#vios_misc').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').show();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});	
+	$('#vios_noPermit').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').show();
+	   $('#chart_CD_vios_other').hide();
+	});	
+	$('#vios_other').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').show();
+	});	
+	$('.btn_vios').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+	
+	d3.json("data/activeViolationsSummaryByBorough.json", function(error, data) {
+		if (error) return console.error(error);
+		console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8','#70BBFF','#9a69b5','#ec940b','#BD4D01'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+
+			//Default "Other" off
+			data = data.map(function(series){
+				if (series.key === "Other"){
+					series.disabled = true;
+				}
+				return series;
+			});
+			
+		  d3.select('#chart_Boro_Vios')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);		  
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("data/activeViolationsSummaryAll.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			violationsTotal += data[i].count;
+		}
+
+		var sortedData_commOrderVios = data.sort(function(a,b){
+			return b["Failure to Comply"]-a["Failure to Comply"];
+		}).slice(0,10);
+
+		var sortedData_bldgCodeVios = data.sort(function(a,b){
+			return b["Building Maintenance"]-a["Building Maintenance"];
+		}).slice(0,10); 
+		
+		var sortedData_elevatorVios = data.sort(function(a,b){
+			return b["Elevator Maintenance"]-a["Elevator Maintenance"];
+		}).slice(0,10);
+		
+		var sortedData_miscVios = data.sort(function(a,b){
+			return b["Miscellaneous"]-a["Miscellaneous"];
+		}).slice(0,10);
+		
+		var sortedData_noPermitVios = data.sort(function(a,b){
+			return b["Work Without Permit"]-a["Work Without Permit"];
+		}).slice(0,10);
+		
+		var sortedData_otherVios = data.sort(function(a,b){
+			return b["Other"]-a["Other"];
+		}).slice(0,10);
+		
+		var sortedData_totalVios = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_commOrderVios(sortedData_commOrderVios);
+		cdCountChart_bldgCodeVios(sortedData_bldgCodeVios);
+		cdCountChart_elevatorVios(sortedData_elevatorVios);
+		cdCountChart_miscVios(sortedData_miscVios);
+		cdCountChart_noPermitVios(sortedData_noPermitVios);
+		cdCountChart_otherVios(sortedData_otherVios);
+		cdCountChart_totalVios(sortedData_totalVios);
+		
+		function cdCountChart_commOrderVios(sortedData_commOrderVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_commOrderVios.forEach(function(d){
+				d.values = +d["Failure to Comply"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Failure to Comply"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#70BBFF']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_commOrder')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_bldgCodeVios(sortedData_bldgCodeVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_bldgCodeVios.forEach(function(d){
+				d.values = +d["Building Maintenance"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Building Maintenance"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_vios_bldgCode')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_elevatorVios(sortedData_elevatorVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_elevatorVios.forEach(function(d){
+				d.values = +d["Elevator Maintenance"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Elevator Maintenance"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#8fa4b8']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_vios_elevator')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_miscVios(sortedData_miscVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_miscVios.forEach(function(d){
+				d.values = +d.Miscellaneous
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Miscellaneous })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#9a69b5']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_vios_misc')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_noPermitVios(sortedData_noPermitVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_noPermitVios.forEach(function(d){
+				d.values = +d["Work Without Permit"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Work Without Permit"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#ec940b']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_noPermit')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_otherVios(sortedData_otherVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_otherVios.forEach(function(d){
+				d.values = +d.Other
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Other })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_other')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_totalVios(sortedData_totalVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_totalVios.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 40})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_total')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+	});
+	
+///////////ACCIDENTS/////////////////
+	
+	$('#acc_injuries').click(function(){
+	   $('#chart_CD_injuries').show();
+	   $('#chart_CD_fatalities').hide();
+	});
+	$('#acc_fatalities').click(function(){
+	   $('#chart_CD_injuries').hide();
+	   $('#chart_CD_fatalities').show();
+	});
+
+	$('.btn_acc').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+	
+	d3.json("data/activeInjuriesSummaryByBorough.json", function(error, data) {
+		if (error) return console.error(error);
+		console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57'])
+			.reduceXTicks(false)
+			.showLegend(false);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_Acc')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);		  
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("data/activeInjuriesSummaryAll.json", function(error, data) {
+
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			accidentsTotal += data[i].count;
+		}
+
+		
+		var sortedData_injuries = data.sort(function(a,b){
+			return b["Total Injured"]-a["Total Injured"];
+		}).slice(0,10);
+		
+		
+		var sortedData_fatalities = data.sort(function(a,b){
+			return b["Total Death"]-a["Total Death"];
+		}).slice(0,10); 
+		
+		
+		var sortedData_totalAcc = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_injuries(sortedData_injuries);
+		cdCountChart_fatalities(sortedData_fatalities);
+		cdCountChart_totalAcc(sortedData_totalAcc);
+		
+		function cdCountChart_injuries(sortedData_injuries){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_injuries.forEach(function(d){
+				d.values = +d["Total Injured"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Total Injured"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_injuries')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_fatalities(sortedData_fatalities){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_fatalities.forEach(function(d){
+			
+				d.values = +d["Total Death"]
+				if(d.values !=0){
+					exampleData[0].values.push(d)					
+				}
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Total Death"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 30})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			chart.yAxis.tickFormat(d3.format('.0f'));
+			chart.yAxis.tickValues([1,2,3,4,5]);
+			
+			d3.select('#chart_CD_fatalities')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_totalAcc(sortedData_totalAcc){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_totalAcc.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 40})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_Acc_total')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+	});
+	
 });
 
 
