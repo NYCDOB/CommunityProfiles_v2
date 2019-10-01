@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- 
 requirements:
@@ -143,7 +144,7 @@ function assignButtonHandlers() {
 }
 
 
-function buildToolTip(topoID, currentCD) {  //since each metric has unique additional values, need to customize tooltip
+function buildToolTip(topoID, currentCD, countPropertyHeader) {  //since each metric has unique additional values, need to customize tooltip
 		let theParent = document.querySelector("#tooltip");
 		while (theParent.firstChild) {  
 		  theParent.removeChild(theParent.firstChild);
@@ -160,7 +161,7 @@ function buildToolTip(topoID, currentCD) {  //since each metric has unique addit
 			
 		divDataHeading = document.createElement("div")
 		divDataHeading.className="dataHeading line";
-		divDataHeading.innerText="Total: "
+		divDataHeading.innerText=countPropertyHeader+": "
 		let divDataValue = document.createElement("div")
 		divDataValue.className="dataValue val";
 		divDataValue.innerText= (currentCD == undefined) ? "0": currentCD.count;   
@@ -229,7 +230,7 @@ function getPercentiles(dataArray, measureColumn)	{
 	return retval;
 }
 
-function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName) {
+function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName, countPropertyHeader="Total") {
 	let commuteById = d3.map();
 	datasetToProcess.forEach(function(d) { 
 		commuteById.set(d.communityBoard, d);
@@ -238,7 +239,7 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 	let citiAvg = d3.mean(datasetToProcess, function(d) {return d[CURR_SELECT[0]];});
 	let minAvg = d3.min(datasetToProcess, function(d) {return d[CURR_SELECT[0]];});
 	let maxAvg = d3.max(datasetToProcess, function(d) {return d[CURR_SELECT[0]]; });
-	let maxCD = datasetToProcess.filter (function(d) {
+	let maxCD = datasetToProcess.filter (function(d) {  //need error handling here.
 		if (d[CURR_SELECT[0]] == maxAvg) {
 			return d[CURR_SELECT[0]];  
 		}})[0].communityBoard;  //CD with highest count
@@ -273,7 +274,7 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 						
 						let currentCD=commuteById.get(d.id);
 						
-						buildToolTip(  d.id, currentCD );
+						buildToolTip(  d.id, currentCD, countPropertyHeader );
 				})
 		  .on("mouseout", function() {
 				d3.select(this).classed("selected", false);
@@ -315,18 +316,20 @@ function handleError(errString,notifyType="console") {
 	return null;
 }
 
-//READ THE JSON or retrieve url
+//STEP 1:  READ THE JSON or retrieve url
 queue()
 	// .defer(d3.json, "data/CD_toJoin_topoJSON.json")  //no longer used; will have all comm districts 
     .defer(d3.json, "data/CD_topoJSON.json")
 	.defer(d3.json, "data/activeAhvsSummaryAll.json" )
 	.defer(d3.json, "data/activeShedsSummaryAll.json")
 	.defer(d3.json, "data/activeComplaintSummaryAll.json")
+	.defer(d3.json, "data/activeViolationsSummaryAll.json")
+	.defer(d3.json, "data/activeInjuriesSummaryAll.json")
 	.defer(d3.json, "data/activePermitSummaryAll.json")	
     .await(ready);  // this can be more dynamic by adding property to json to indicate which metric.
 	
-//add result dataset to ready function in same order as json is read
-function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activepermit) {  	
+//STEP 2:  add result dataset to ready function in same order as json is read
+function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activeviolation,activeinjury,activepermit) {  	
 		//NOTE: if there is an issue with any d3.json, all will fail.
 		// an error is displayed and no maps are rendered.
 		svg.select("#progress-image").remove();	
@@ -338,15 +341,19 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activepe
 			handleError("Error(s) reading json datasets.\n\n"+error.statusText+"\n"+fileError+"\nContact Dev Squad 212-555-1212", "console" )
 			return;
 		}
+		//STEP 3: 
 		// *dataset variable name must match id of button to control metric's visibility
 		// processDataset() function takes args:
 				// 1. name of dataset returned from d3.defer and defined in ready() arguments
 				// 2. classname string to use for <g> element, must match button id in parent html
 				// 3. d3.json topojson result set
-				// 4. metric name string used <h2>
+				// 4. metric name string used <h2>.
+				// 5. heading to use for count property of json
 		activeAVHdataset=     (activeahv.length) ? processDataset(activeahv,   "activeAVHdataset",    CD_topoJSON, "AHVs") : handleError("No ahv data");
 		activeSheddataset=    (activeshed.length) ? processDataset(activeshed,  "activeSheddataset",   CD_topoJSON, "Sheds") : handleError("No shed data");
 		activeComplaintdataset=    (activecomplaint.length) ? processDataset(activecomplaint,  "activeComplaintdataset",   CD_topoJSON, "Complaints") : handleError("No complaint data");
+		activeViolationdataset=    (activeviolation.length) ? processDataset(activeviolation,  "activeViolationdataset",   CD_topoJSON, "Violations") : handleError("No violation data");
+		activeInjurydataset=       (activeinjury.length)    ? processDataset(activeinjury,     "activeInjurydataset",   CD_topoJSON, "Injuries","Accidents") : handleError("No injury data");
 		activePermitdataset = (activepermit.length) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("No permit data"); //default layer
 		assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
