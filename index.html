@@ -168,8 +168,8 @@
 			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
 			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
-			<button class="btn btn-outline-success" id="vios" type="button" style="margin-bottom: 7px;" >Violations</button>
-			<button class="btn btn-outline-success" id="injury" type="button" style="margin-bottom: 7px;" >Accidents</button>
+			<button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button>
+			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Accidents</button>
 			
 			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
 				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
@@ -542,7 +542,7 @@ $(document).ready(function(){
 	   $('#chart_CD_cmplnts_noPermit').hide();
 	   $('#chart_CD_cmplnts_other').hide();
 	});
-	$('#vios').click(function(){
+	$('#activeViolationdataset').click(function(){
 	   $('#metric').text('Violations (Past 12 Months)');
 	   $('#total').text(violationsTotal);
 	   $('#ahvCharts').hide();
@@ -559,7 +559,7 @@ $(document).ready(function(){
 	   $('#chart_CD_vios_other').hide();
 
 	});
-	$('#injury').click(function(){
+	$('#activeInjurydataset').click(function(){
 	   $('#metric').text('Construction-Related Accidents (Past 12 Months)');
 	   $('#total').text(accidentsTotal);
 	   $('#ahvCharts').hide();
