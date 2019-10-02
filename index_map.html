@@ -355,7 +355,7 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activevi
 		activeSheddataset=    (activeshed.length) ? processDataset(activeshed,  "activeSheddataset",   CD_topoJSON, "Sheds") : handleError("No shed data");
 		activeComplaintdataset=    (activecomplaint.length) ? processDataset(activecomplaint,  "activeComplaintdataset",   CD_topoJSON, "Complaints") : handleError("No complaint data");
 		activeViolationdataset=    (activeviolation.length) ? processDataset(activeviolation,  "activeViolationdataset",   CD_topoJSON, "Violations") : handleError("No violation data");
-		activeInjurydataset=       (activeinjury.length)    ? processDataset(activeinjury,     "activeInjurydataset",   CD_topoJSON, "Injuries","Accidents") : handleError("No injury data");
+		activeInjurydataset=       (activeinjury.length)    ? processDataset(activeinjury,     "activeInjurydataset",   CD_topoJSON, "Injuries") : handleError("No injury data");
 		activePermitdataset = (activepermit.length) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("No permit data"); //default layer
 		assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
