@@ -403,7 +403,7 @@
 					<svg id="chart_CD_Acc_total"></svg>
 				</div></div>
 				<div class="col-sm-6"><div class="mini-box">
-					<h4 style="padding-left:5px;"><u>Accidents by Borough</u></h4>
+					<h4 style="padding-left:5px;"><u>Accident Types by Borough</u></h4>
 					<svg id="chart_Boro_Acc"></svg>
 				</div></div>
 				
@@ -1953,11 +1953,19 @@ $(document).ready(function(){
 			.stacked(true)
 			.staggerLabels(true)
 			.showControls(false)
-			.color(['#3D4A57'])
+			.color(['#3D4A57','#8fa4b8','#70BBFF','#9a69b5','#ec940b','#BD4D01'])
 			.reduceXTicks(false)
-			.showLegend(false);
+			.showLegend(true);
 			
 			chart.yAxis.tickFormat(d3.format(''));
+
+			//Default "Other" off
+			data = data.map(function(series){
+				if (series.key === "Other"){
+					series.disabled = true;
+				}
+				return series;
+			});
 			
 		  d3.select('#chart_Boro_Acc')
 			.datum(data)
