@@ -603,13 +603,13 @@ $(document).ready(function(){
 		for (var i = 0; i < data.length; i++){
 			permitTotal += data[i].count;
 		};
-		console.log(permitTotal);
+		//console.log(permitTotal);
 		
 		
 		var sortedData = data.sort(function(a,b){
 			return b["count"]-a["count"];
 		}).slice(0,10);
-		console.log(sortedData);
+		//console.log(sortedData);
 		
 		cdCountChart(sortedData);
 		
@@ -652,7 +652,7 @@ $(document).ready(function(){
 	
 	d3.json("data/activePermitNBA1_boro.json", function(error, data) {
 		if (error) return console.error(error);
-		console.log(data);
+		//console.log(data);
 
 		//$('#total').text(data.length);
 		
@@ -687,7 +687,7 @@ $(document).ready(function(){
 		var sortedData = data.sort(function(a,b){
 			return b["count"]-a["count"];
 		}).slice(0,10);
-		console.log(sortedData);
+		//console.log(sortedData);
 		
 		cdCountChart(sortedData);
 		
@@ -732,7 +732,7 @@ $(document).ready(function(){
 		var sortedData = data.sort(function(a,b){
 			return b["count"]-a["count"];
 		}).slice(0,10);
-		console.log(sortedData);
+		//console.log(sortedData);
 		
 		cdCountChart(sortedData);
 		
@@ -813,7 +813,7 @@ $(document).ready(function(){
 
 	d3.json("data/activeAhvsSummaryByBorough.json", function(error, data) {
 		if (error) return console.error(error);
-		console.log(data);
+		//console.log(data);
 		
 		nv.addGraph(function() {
 			var chart = nv.models.multiBarChart()
@@ -1088,12 +1088,12 @@ $(document).ready(function(){
 		for (var i = 0; i < data.length; i++){
 			shedTotal += data[i].count;
 		}
-		console.log(shedTotal);
+		//console.log(shedTotal);
 		
 		var sortedData = data.sort(function(a,b){
 			return b["count"]-a["count"];
 		}).slice(0,10);
-		console.log(sortedData);
+		//console.log(sortedData);
 		
 		cdCountChart(sortedData);
 		
@@ -1134,7 +1134,7 @@ $(document).ready(function(){
 	
 	d3.json("data/activeSheds_boro.json", function(error, data) {
 		if (error) return console.error(error);
-		console.log(data);
+		//console.log(data);
 
 
 		//$('#total').text(data.length);
@@ -1171,7 +1171,7 @@ $(document).ready(function(){
 		var sortedData = data.sort(function(a,b){
 			return b["averageAge"]-a["averageAge"];
 		}).slice(0,10);
-		console.log(sortedData);
+		//console.log(sortedData);
 		
 		cdCountChart(sortedData);
 		
@@ -1216,7 +1216,7 @@ $(document).ready(function(){
 		var sortedData = data.sort(function(a,b){
 			return b["SumLinearFeet"]-a["SumLinearFeet"];
 		}).slice(0,10);
-		console.log(sortedData);
+		//console.log(sortedData);
 		
 		cdCountChart(sortedData);
 		
@@ -1297,7 +1297,7 @@ $(document).ready(function(){
 	
 	d3.json("data/complaintTypes_boro.json", function(error, data) {
 		if (error) return console.error(error);
-		console.log(data);
+		//console.log(data);
 		
 		nv.addGraph(function() {
 			var chart = nv.models.multiBarChart()
@@ -1626,7 +1626,7 @@ $(document).ready(function(){
 	
 	d3.json("data/activeViolationsSummaryByBorough.json", function(error, data) {
 		if (error) return console.error(error);
-		console.log(data);
+		//console.log(data);
 		
 		nv.addGraph(function() {
 			var chart = nv.models.multiBarChart()
@@ -1954,7 +1954,7 @@ $(document).ready(function(){
 	
 	d3.json("data/activeInjuriesSummaryByBorough.json", function(error, data) {
 		if (error) return console.error(error);
-		console.log(data);
+		//console.log(data);
 		
 		nv.addGraph(function() {
 			var chart = nv.models.multiBarChart()
