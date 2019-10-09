@@ -149,6 +149,12 @@
 		height: 320px;
 		padding: 10px;
 	}
+	
+	.readme a, .readme a:visited, .readme a:hover {
+	text-decoration: none;
+	color:#cbcdd1;
+	font-size:16px;
+	}
 </style>
 
   
@@ -158,14 +164,17 @@
 		<div class="navbar-header" style="font-size: 35px; color: #FFFFFF;">
 			Community Profiles
 		</div>
-	</div>
+		<div class="navbar-header navbar-right readme" style="margin-top: 20px">
+			<a class="readme" href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/gh-pages/README.md" target="_blank">About</a>
+		</div>
+	  </div>
   </div>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #BDD7EE; margin-top: 50px; border: 0;">
 	<div class="form-inline" style="padding-top: 7px;">
 		<div class="dropdown">	
 			<span class="metrics_txt">Metrics:</span>
-			<button class="btn btn-outline-success ZZactive" id="activePermitdataset" type="button" style="margin-bottom: 7px;" >Permits</button>
+			<button class="btn btn-outline-success active" id="activePermitdataset" type="button" style="margin-bottom: 7px;" >Permits</button>
 			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
 			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
