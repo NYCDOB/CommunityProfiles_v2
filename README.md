@@ -74,12 +74,11 @@ Definitions for elements of each page of the application are listed below.
 
 ## Built With
 
-* [R](https://www.r-project.org/)
-    + Core packages(dplyr, tidyr, RJDBC, ...)
-* [Carto VL](https://carto.com/developers/carto-vl/)
-* [Mapbox GL](https://www.mapbox.com/mapbox-gl-js/api/)
+* [NVD3](http://nvd3.org/)
 * [D3](https://d3js.org/)
-* [Bootstrap](https://getbootstrap.com/)
+* [Bootstrap](https://getbootstrap.com)
+* [jQuery](https://jquery.com/)
+
 
 ## Built by
 
