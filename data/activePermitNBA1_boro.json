@@ -1,0 +1,55 @@
+[
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 296
+		},
+		 {		
+		"x": "Brooklyn",
+		"y": 1586
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 935
+		},
+		 {		
+		"x": "Queens",
+		"y": 1116
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 201
+		} 
+	],
+	"key": "A1"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 401
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 1048
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 288
+		},
+		 {		
+		"x": "Queens",
+		"y": 1208
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 703
+		}
+	],
+	"key": "NB"
+ }
+]
