@@ -1,0 +1,55 @@
+[
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 829
+		},
+		 {		
+		"x": "Brooklyn",
+		"y": 1934
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 2241
+		},
+		 {		
+		"x": "Queens",
+		"y": 865
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 43
+		} 
+	],
+	"key": "Construction or Maintenance"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 502
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 416
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 2410
+		},
+		 {		
+		"x": "Queens",
+		"y": 324
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 15
+		}
+	],
+	"key": "Local Law 11"
+ }
+]
