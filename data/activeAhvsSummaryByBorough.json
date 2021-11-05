@@ -1,0 +1,136 @@
+[
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 0
+		},
+		 {		
+		"x": "Brooklyn",
+		"y": 2
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 3
+		},
+		 {		
+		"x": "Queens",
+		"y": 0
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 1
+		} 
+	],
+	"key": "Emergency Work"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 19
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 42
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 42
+		},
+		 {		
+		"x": "Queens",
+		"y": 34
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 5
+		} 
+	],
+	"key": "Minimal Noise"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 26
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 36
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 20
+		},
+		 {		
+		"x": "Queens",
+		"y": 24
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 4
+		} 
+	],
+	"key": "NYC Construction"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 47
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 91
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 221
+		},
+		 {		
+		"x": "Queens",
+		"y": 53
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Public Safety"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 1
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 4
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 18
+		},
+		 {		
+		"x": "Queens",
+		"y": 11
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		}
+	],
+	"key": "Undue Hardship"
+ }
+]
