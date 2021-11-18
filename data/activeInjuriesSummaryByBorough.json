@@ -1,0 +1,190 @@
+[
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 0
+		},
+		 {		
+		"x": "Brooklyn",
+		"y": 1
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 3
+		},
+		 {		
+		"x": "Queens",
+		"y": 1
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Demolition"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 1
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 0
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 0
+		},
+		 {		
+		"x": "Queens",
+		"y": 0
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Excavation/Soil Work"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 1
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 5
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 9
+		},
+		 {		
+		"x": "Queens",
+		"y": 0
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Material Failure (Fell)"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 2
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 1
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 2
+		},
+		 {		
+		"x": "Queens",
+		"y": 1
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Mechanical Construction Equipment"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 29
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 55
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 168
+		},
+		 {		
+		"x": "Queens",
+		"y": 20
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 3
+		} 
+	],
+	"key": "Other Construction Related"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 0
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 3
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 13
+		},
+		 {		
+		"x": "Queens",
+		"y": 0
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Scaffold/Shoring Installations"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 15
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 42
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 109
+		},
+		 {		
+		"x": "Queens",
+		"y": 28
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 4
+		}
+	],
+	"key": "Worker Fell"
+ }
+]
