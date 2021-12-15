@@ -179,7 +179,7 @@
 			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
 			<button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button>
-			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Accidents</button>
+			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Incidents</button>
 			
 			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
 				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
@@ -409,11 +409,11 @@
 			
 			<div class="row" id="injuryCharts">
 				<div class="col-sm-6"><div class="mini-box">				
-					<h4 style="padding-left:5px;"><u>Accidents (Top 10 Community Districts)</u></h4>
+					<h4 style="padding-left:5px;"><u>Incidents (Top 10 Community Districts)</u></h4>
 					<svg id="chart_CD_Acc_total"></svg>
 				</div></div>
 				<div class="col-sm-6"><div class="mini-box">
-					<h4 style="padding-left:5px;"><u>Accident Types by Borough</u></h4>
+					<h4 style="padding-left:5px;"><u>Incident Types by Borough</u></h4>
 					<svg id="chart_Boro_Acc"></svg>
 				</div></div>
 				
@@ -462,7 +462,7 @@ $(document).ready(function(){
 		shedTotal = 0,
 		complaintsTotal = 0,
 		violationsTotal = 0,
-		accidentsTotal = 0,
+		IncidentsTotal = 0,
 		format = d3.format(".1f");
 		//formatK = d3.format(",");
 	
@@ -570,8 +570,8 @@ $(document).ready(function(){
 
 	});
 	$('#activeInjurydataset').click(function(){
-	   $('#metric').text('Construction-Related Accidents (Past 12 Months)');
-	   $('#total').text(accidentsTotal);
+	   $('#metric').text('Construction-Related Incidents (Past 12 Months)');
+	   $('#total').text(IncidentsTotal);
 	   $('#ahvCharts').hide();
 	   $('#permitCharts').hide();
 	   $('#shedCharts').hide();
@@ -1937,7 +1937,7 @@ $(document).ready(function(){
 		}
 	});
 	
-///////////ACCIDENTS/////////////////
+///////////INCIDENTS/////////////////
 	
 	$('#acc_injuries').click(function(){
 	   $('#chart_CD_injuries').show();
@@ -1995,7 +1995,7 @@ $(document).ready(function(){
 		
 		//GET TOTAL
 		for (var i = 0; i < data.length; i++){
-			accidentsTotal += data[i].count;
+			IncidentsTotal += data[i].count;
 		}
 
 		
