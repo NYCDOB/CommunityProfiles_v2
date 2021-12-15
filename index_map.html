@@ -1,15 +1,7 @@
-
 <!DOCTYPE html>
-<!-- 
-requirements:
-style2.css
-
--->
-<!-- 
-Date: Aug 2019
-Map control for Community Profile append
--->
 <html>
+<!-- requirements:style2.css-->
+<!-- Date: Aug 2019 Map control for Community Profile append -->
 <head>
     <title>Community Profiles</title>
     <link rel="stylesheet" href="style2.css" type="text/css" media="screen" />
@@ -29,28 +21,24 @@ Map control for Community Profile append
 					margin: 0px;
 					font-size:2em;
 					word-wrap: break-word;
+					display: none;
 			}  
-			
-			
 			.ZZdataHeading.line {
 				width: 95%;
-			}
-			
+			}			
 		</style>
-	
 </head>
 <body>
 <div id="main-wrapper">
-
-	<div id="divMapError">		<p></p>		</div> 
-	
-	<!--   div id="noData" style="display:none;"> <h2>No Data Available</h2> </div>  <!--  shown for empty dataset -->
-	<div id="noData" style="display:none;"> <h2>No Data Available</h2> </div>  <!--  shown for empty dataset -->
+	<div id="divMapError">		
+		<p></p>		
+	</div> 	
+	<div id="noData" style="display:none;">
+				 <!--  <h2>Error reading data</h2>   -->
+	</div>  <!--  shown for empty dataset -->
 
     <div class="clr"></div>
 </div><!-- @end #metrics -->    
-		
-
 <div id="tooltip" class="tooltip">
 </div>   
 
@@ -59,27 +47,22 @@ Map control for Community Profile append
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://d3js.org/d3-format.v1.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
 <script>
-
-
 let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
-
-//var width = 1064,
-var width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
+let width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
     height = 768,
     center = [width / 2, height / 2],
     defaultFill = "#E1E1E1";
 
-var projection = d3.geo.mercator()
+	let projection = d3.geo.mercator()
     .scale(75000)
 	.center( [-73.94,40.70] ) 
     .translate([width / 2, height / 2]);
 	
-var path = d3.geo.path()
+	let path = d3.geo.path()
     .projection(projection);
 
-var svg = d3.select("body #main-wrapper").append("svg")
+	let svg = d3.select("body #main-wrapper").append("svg")
     .attr("width", width)
     .attr("height", height)
     .append("g");
@@ -97,17 +80,12 @@ svg.append("svg:image")
     .attr("height", 11)
     .attr("x", width / 2)
     .attr("y", height / 2);
-	
-
-
-
-var g = svg.append("g");
-
-var tooltip = d3.select("#tooltip")
+	let g = svg.append("g");
+	let tooltip = d3.select("#tooltip")
  .attr("class", "tooltip")
  .style("opacity", 0);
-var CURR_SELECT = ["count","totalCount"];
-var COMP_CNT = ["ComplaintCount"];
+ let CURR_SELECT = ["count","totalCount"];
+ let COMP_CNT = ["ComplaintCount"];
 
 function assignButtonHandlers() {
 		let metricbuttons = window.parent.document.querySelectorAll(".dropdown button");
@@ -126,17 +104,16 @@ function assignButtonHandlers() {
 		for ( let ctr=0;  ctr < metricbuttons.length ; ctr++) {
 				$(metricbuttons[ctr]).click( function (e) { 
 							e.preventDefault; 
-
 							let varErrorDiv=window.frames.document.querySelector("#main-wrapper #noData") 
 							if (  !!(window.frames[e.target.id]) ) {  //if a matching dataset, show the map
 									window.frames.document.querySelector("."+e.target.id).style.visibility="visible"
 									varErrorDiv.style.display="none"
-									window.frames.document.querySelector("svg").style.visibility="visible"
-									
+									document.querySelector("#divMapError").style.display="none"
+									window.frames.document.querySelector("svg").style.visibility="visible"									
 							}  else  {
 									varErrorDiv.style.display="block"
-									window.frames.document.querySelector("svg").style.visibility="hidden"
-									
+									document.querySelector("#divMapError").style.display="block"
+									window.frames.document.querySelector("svg").style.visibility="hidden"									
 							}
 							classNamesToHide = window.frames.document.querySelectorAll(  "g [class^='active']:not(."+e.target.id+")" );
 							classNamesToHide.forEach( (svgNode) =>
@@ -144,14 +121,11 @@ function assignButtonHandlers() {
 				})
 		}  // end parent button handler
 }
-
-
 function buildToolTip(topoID, currentCD, countPropertyHeader) {  //since each metric has unique additional values, need to customize tooltip
 		let theParent = document.querySelector("#tooltip");
 		while (theParent.firstChild) {  
 		  theParent.removeChild(theParent.firstChild);
-		}
-		
+		}		
 		commdistrict =topoID
 		boros=["Boro?","Manhattan","Bronx", "Brooklyn","Queens","Staten Island"]
 		newBoro=boros[(''+topoID).substr(0,1)]
@@ -185,16 +159,6 @@ function buildToolTip(topoID, currentCD, countPropertyHeader) {  //since each me
 			}
 		}
 }
-
-
-function getToday() {
-	let today = new Date();
-	let dd = today.getDate();
-	let mm = today.getMonth()+1;
-	let yyyy = today.getFullYear();
-	return (mm + '/' + dd + '/' + yyyy);
-}
-
 function getPercentiles(dataArray, measureColumn)	{
 	let retval = []; 
 	let varname=""; 
@@ -202,10 +166,9 @@ function getPercentiles(dataArray, measureColumn)	{
 	let percentileNames=[];
 	let percentileRange = Math.floor(100/numPercentiles);
 
-	//filter() to remove 0s from sorted array
+	//filter() removes 0s from sorted array
 	let sortedData = dataArray.sort(function(a,b){return a[measureColumn] - b[measureColumn]})
 			.map( 	 (el) => { return el[measureColumn]}  ).filter( function(val) { return val >0}      )
-
 	for (let myctr=percentileRange; myctr <= 100; myctr+=percentileRange) {
 		percentileNum = Math.floor(myctr);
 		varname="percentile"+percentileNum;
@@ -213,7 +176,6 @@ function getPercentiles(dataArray, measureColumn)	{
 		this[varname] = d3.quantile(sortedData,   percentileNum/100); 
 		retval.push(this[varname]);
 	}
-
 	retval[ retval.length-1 ]=parseFloat(sortedData[sortedData.length-1])
 	dataArray.forEach( function(dataRow) {
 		dataRow["Percentile"] = function () {
@@ -231,7 +193,6 @@ function getPercentiles(dataArray, measureColumn)	{
 	})
 	return retval;
 }
-
 function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName, countPropertyHeader="Total") {
 	let commuteById = d3.map();
 	datasetToProcess.forEach(function(d) { 
@@ -312,56 +273,55 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 	   "metricName" :  metricName
 	   })
 }
-
 function handleError(errString,notifyType="console") {
-	(notifyType=="alert") ? alert(errString) : console.log(errString);
-	return null;
+	(notifyType=="alert") ? alert(errString) : console.log(`Error reading ${errString} data`);
+	let varErrorDiv=document.querySelector("#divMapError") 
+	varErrorDiv.innerHTML=`<p>Error reading data</p>`
 }
-
 //STEP 1:  READ THE JSON or retrieve url
-queue()
-	// .defer(d3.json, "data/CD_toJoin_topoJSON.json")  //no longer used; will have all comm districts 
-    .defer(d3.json, "data/CD_topoJSON.json")
-	.defer(d3.json, "data/activeAhvsSummaryAll.json" )
-	.defer(d3.json, "data/activeShedsSummaryAll.json")
-	.defer(d3.json, "data/activeComplaintSummaryAll.json")
-	.defer(d3.json, "data/activeViolationsSummaryAll.json")
-	.defer(d3.json, "data/activeInjuriesSummaryAll.json")
-	.defer(d3.json, "data/activePermitSummaryAll.json")	
-    .await(ready);  // this can be more dynamic by adding property to json to indicate which metric.
-	
+_CD_topoJSON=fetch("data/CD_topoJSON.json");
+_activeAhvsSummaryAll=fetch("data/activeAhvsSummaryAll.json");
+_activeShedsSummaryAll=fetch("data/activeShedsSummaryAll.json");
+_activeComplaintSummaryAll=fetch("data/activeComplaintSummaryAll.json");
+_activeViolationsSummaryAll=fetch("data/activeViolationsSummaryAll.json");
+_activeInjuriesSummaryAll=fetch("data/activeInjuriesSummaryAll.json");
+_activePermitSummaryAll=fetch("data/activePermitSummaryAll.json");	
 //STEP 2:  add result dataset to ready function in same order as json is read
-function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activeviolation,activeinjury,activepermit) {  	
-		//NOTE: if there is an issue with any d3.json, all will fail.
-		// an error is displayed and no maps are rendered.
-		svg.select("#progress-image").remove();	
-		
-		if (error) {  //handle error and exit function immediately
-			let varErrorDiv=document.querySelector("#divMapError p") 
-			//let fileError= error.responseURL.substring( error.responseURL.lastIndexOf("/")+1   )			
-			//let fileError= `Error reading data file(s)\nContact Dev Squad`
-			varErrorDiv.innerHTML=`Error reading data file(s)`
-			varErrorDiv.parentElement.style.display="block"
-			handleError("Error(s) reading json datasets.\n"+error+"\nContact Analytics tmartin@buildings.nyc.gov", "console" )
+Promise.allSettled(	[
+	_CD_topoJSON, 
+	_activeAhvsSummaryAll, 
+	_activeShedsSummaryAll, 
+	_activeComplaintSummaryAll, 
+	_activeViolationsSummaryAll, 
+	_activeInjuriesSummaryAll, 
+	_activePermitSummaryAll	])
+.then(
+    values => {            //values={status,value}
+        svg.select("#progress-image").remove();	
+        return  Promise.allSettled(  values.map( result =>result.value.json()))
+    })
+.then (    
+    fetchResults => {
+		CD_topoJSON=fetchResults[0].value;	
+		activeahv=fetchResults[1].value;	
+		activeshed=fetchResults[2].value;	
+		activecomplaint=fetchResults[3].value;	
+		activeviolation=fetchResults[4].value;	
+		activeinjury=fetchResults[5].value;	
+		activepermit=fetchResults[6].value;	
+        if (fetchResults[0].status=='rejected') { //CD_topoJSON error, no maps can be rendered since boundaries not available
+			handleError(`Cannot read Community District dataset.\nMap cannot render.\nContact Data Analytics tmartin@buildings.nyc.gov`, "alert" )
+			handleError(`Cannot read Community District dataset.\nMap cannot render.\nContact Data Analytics tmartin@buildings.nyc.gov`, "console" )
 			return;
-		}
-		//STEP 3: 
-		// *dataset variable name must match id of button to control metric's visibility
-		// processDataset() function takes args:
-				// 1. name of dataset returned from d3.defer and defined in ready() arguments
-				// 2. classname string to use for <g> element, must match button id in parent html
-				// 3. d3.json topojson result set
-				// 4. metric name string used <h2>.
-				// 5. heading to use for count property of json
-		activeAVHdataset=     (activeahv.length) ? processDataset(activeahv,   "activeAVHdataset",    CD_topoJSON, "AHVs") : handleError("No ahv data");
-		activeSheddataset=    (activeshed.length) ? processDataset(activeshed,  "activeSheddataset",   CD_topoJSON, "Sheds") : handleError("No shed data");
-		activeComplaintdataset=    (activecomplaint.length) ? processDataset(activecomplaint,  "activeComplaintdataset",   CD_topoJSON, "Complaints") : handleError("No complaint data");
-		activeViolationdataset=    (activeviolation.length) ? processDataset(activeviolation,  "activeViolationdataset",   CD_topoJSON, "Violations") : handleError("No violation data");
-		activeInjurydataset=       (activeinjury.length)    ? processDataset(activeinjury,     "activeInjurydataset",   CD_topoJSON, "Injuries") : handleError("No injury data");
-		activePermitdataset = (activepermit.length) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("No permit data"); //default layer
+        };
+		activeAVHdataset=(activeahv) ? processDataset(activeahv, "activeAVHdataset",  CD_topoJSON, "AHVs") : handleError("AHVs");
+		activeSheddataset=(activeshed) ? processDataset(activeshed, "activeSheddataset",  CD_topoJSON, "Sheds") : handleError("Sheds");
+		activeComplaintdataset=(activecomplaint) ? processDataset(activecomplaint, "activeComplaintdataset", CD_topoJSON, "Complaints") : handleError("Complaints");
+		activeViolationdataset=(activeviolation) ? processDataset(activeviolation, "activeViolationdataset", CD_topoJSON, "Violations") : handleError("Violations");
+		activeInjurydataset=(activeinjury)    ? processDataset(activeinjury,  "activeInjurydataset", CD_topoJSON, "Injuries") : handleError("Injuries");
+		activePermitdataset=(activepermit) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("Permits"); //default layer
 		assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
-		
 		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
 		let legend = svg.selectAll("g.legend")
 			.data(ext_color_domain)
@@ -369,12 +329,10 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activevi
 			.style("font-size", "16px")
 			.style("font-family", "Arial, Helvetica, sans-serif")
 			.attr("class", "legend");
-
 		let color2 = d3.scale.linear()
 			.domain(  [  ext_color_domain[0],ext_color_domain[ext_color_domain.length-1]  ] )  //max & min values
 			.range([mapColors[0],mapColors[mapColors.length-1]])
 			.interpolate(d3.interpolateLab);
-
 		let ls_w = 25, ls_h = 25;
 		legend.append("rect")
 			.attr("x", 10)
@@ -394,7 +352,8 @@ function ready(error,CD_topoJSON, activeahv, activeshed,activecomplaint,activevi
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
 		window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
-}
+    }
+);
 </script>
 </body>
 </html>
