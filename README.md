@@ -9,7 +9,7 @@ The dashboard is updated daily, and provides data for the last 12 calendar month
 ## Data Definitions
 Definitions for elements of each page of the application are listed below.
 
-### [Boroughs]
+### Boroughs
 
 | Borough Code | Borough Name |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
