@@ -1,9 +1,24 @@
 ## DOB Community Profiles
 
-The Department of Buildings’ (DOB) Community Profiles application provides an easy way for New Yorkers to quickly see the construction activity in their Community District, and to get an idea of how that compares to the rest of the city. Select a metric from the main menu, and you’ll see a shaded choropleth map showing the areas of highest and lowest activity for that metric across the five boroughs. On the right side of the screen, you’ll see that metric broken down further to show total distribution across the boroughs or to highlight the 10 highest activity Community Districts.
+The Department of Buildings’ (DOB) Community Profiles dashboard provides an easy way for New Yorkers to quickly see the construction activity, complaints and construction incidents in their Community District, and to get an idea of how that compares to the rest of the city. Select a metric from the main menu at the top of the screen, and you’ll see a shaded map showing the areas of highest and lowest activity for that metric across the five boroughs. On the right side of the screen, you’ll see that metric broken down further to show total distribution across the boroughs, and more granular details.
+
+
+The dashboard is updated daily, and provides data for the last 12 calendar months. 
+
 
 ## Data Definitions
 Definitions for elements of each page of the application are listed below.
+
+### Boroughs
+
+| Borough Code | Borough Name |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | Manhattan |
+| 2 | Bronx  |
+| 3 | Brooklyn  |
+| 4 | Queens  |
+| 5 | Staten Island  |
+
 
 ### [Permits](https://www1.nyc.gov/site/buildings/homeowner/permits.page)
 
