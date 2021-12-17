@@ -2,14 +2,8 @@
 <html>
 <head>
   <title>Community Profiles</title>
-  
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-  
-  
-  
-  <!-- <link rel="stylesheet" type="text/css" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css" /> -->
-  <!-- <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" /> -->
-    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/keen-dashboards.css" />
   <link href="build/nv.d3.css" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/png"  href="logo.png">
@@ -151,13 +145,18 @@
 	}
 	
 	.readme a, .readme a:visited, .readme a:hover {
-	text-decoration: none;
-	color:#cbcdd1;
-	font-size:16px;
+        text-decoration: none;
+        color:#cbcdd1;
+        font-size:16px;
+        cursor:pointer;
 	}
+	.readmore a, .readmore a:visited, .readmore a:hover {
+	text-decoration: none;
+		}
+    .boroList {
+        margin-left: 1em;
+    }
 </style>
-
-  
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <a class="logo" href="https://www1.nyc.gov/site/buildings/index.page" target="_blank"> </a>
     <div class="container-fluid">
@@ -165,11 +164,11 @@
 			Community Profiles
 		</div>
 		<div class="navbar-header navbar-right readme" style="margin-top: 20px">
-			<a class="readme" href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/gh-pages/README.md" target="_blank">About</a>
+			<!--  <a class="readme" href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/gh-pages/README.md" target="_blank">About</a>   -->
+			<a class="readme" data-toggle="modal" data-target="#myModal">About</a>
 		</div>
 	  </div>
   </div>
-
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #BDD7EE; margin-top: 50px; border: 0;">
 	<div class="form-inline" style="padding-top: 7px;">
 		<div class="dropdown">	
@@ -180,79 +179,10 @@
 			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
 			<button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button>
 			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Incidents</button>
-			
-			<!-- <span class="metrics_txt" style="padding-left: 300px;">What's happening in <i>your</i> community?</span> -->
-				<!-- <button class="btn btn-primary dropdown-toggle" style="background-color: #3d4a57; margin-bottom: 7px;" id="selected" type="button" data-toggle="dropdown"><span class="selection">Search Your Neighborhood or Community District</span> -->
-				<!-- <span class="caret"></span></button> -->
 
-			<!-- <ul class="dropdown-menu" style="right: 110px; left: auto;"> -->
-			  <!-- <input class="form-control" id="commDist" type="text" placeholder="Search..">   -->
-				<!-- <li><a href="#"><b>BRONX 1</b><i>&nbsp;&nbsp;Melrose, Mott Haven, Port Morris</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 2</b><i>&nbsp;&nbsp;Hunts Point, Longwood</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 3</b><i>&nbsp;&nbsp;Claremont, Crotona Park East, Melrose, Morrisania</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BRONX 4</b><i>&nbsp;&nbsp;Concourse, Concourse Village, East Concourse, Highbridge, Mount Eden</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 5</b><i>&nbsp;&nbsp;Fordham, Morris Heights, Mount Hope, University Heights</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 6</b><i>&nbsp;&nbsp;Bathgate, Belmont, Bronx Park South, East Tremont, West Farms</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BRONX 7</b><i>&nbsp;&nbsp;Bedford Park, Fordham, Kingsbridge Heights, Norwood, University Heights</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 8</b><i>&nbsp;&nbsp;Fieldston, Kingsbridge, Marble Hill (MN), North Riverdale, Riverdale, Spuyten Duyvil</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 9</b><i>&nbsp;&nbsp;Bronx River, Castle Hill, Clason Point, Harding Park, Parkchester, Soundview, Soundview-Bruckner, Unionport</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BRONX 10</b><i>&nbsp;&nbsp;City Island, Co-op City, Country Club, Edgewater Park, Pelham Bay, Schuylerville, Throgs Neck, Westchester Square</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 11</b><i>&nbsp;&nbsp;Allerton, Bronxdale, Indian Village, Morris Park, Pelham Gardens, Pelham Parkway, Van Nest</i></a></li> -->
-				<!-- <li><a href="#"><b>BRONX 12</b><i>&nbsp;&nbsp;Baychester, Eastchester, Edenwald, Olinville, Wakefield, Williamsbridge, Woodlawn</i></a></li>	 -->
-				<!-- <li><a href="#"><b>BROOKLYN 1</b><i>&nbsp;&nbsp;East Williamsburg, Greenpoint, Northside, Southside, Williamsburg</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 2</b><i>&nbsp;&nbsp;Boerum Hill, Brooklyn Heights, Clinton Hill, Downtown Brooklyn, DUMBO, Fort Greene, Fulton Ferry, Navy Yard, Vinegar Hill</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 3</b><i>&nbsp;&nbsp;Bedford-Stuyvesant, Stuyvesant Heights, Tompkins Park North</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BROOKLYN 4</b><i>&nbsp;&nbsp;Bushwick</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 5</b><i>&nbsp;&nbsp;Broadway Junction, City Line, Cypress Hills, East New York, Highland Park, New Lots, Spring Creek, Starrett City</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 6</b><i>&nbsp;&nbsp;Carroll Gardens, Cobble Hill, Columbia St, Gowanus, Park Slope, Red Hook</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BROOKLYN 7</b><i>&nbsp;&nbsp;Sunset Park, Windsor Terrace</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 8</b><i>&nbsp;&nbsp;Crown Heights, Prospect Heights, Weeksville</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 9</b><i>&nbsp;&nbsp;Crown Heights South, Prospect Lefferts Gardens, Wingate</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BROOKLYN 10</b><i>&nbsp;&nbsp;Bay Ridge, Dyker Heights, Fort Hamilton</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 11</b><i>&nbsp;&nbsp;Bath Beach, Bensonhurst, Gravesend, Mapleton</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 12</b><i>&nbsp;&nbsp;Borough Park, Kensington, Ocean Parkway</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BROOKLYN 13</b><i>&nbsp;&nbsp;Brighton Beach, Coney Island, Gravesend, Homecrest, Sea Gate, West Brighton</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 14</b><i>&nbsp;&nbsp;Ditmas Park, Flatbush, Manhattan Terrace, Midwood, Ocean Parkway, Prospect Park South</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 15</b><i>&nbsp;&nbsp;Gerritsen Beach, Gravesend, Homecrest, Kings Highway, Manhattan Beach, Plumb Beach, Sheepshead Bay</i></a></li>	   -->
-				<!-- <li><a href="#"><b>BROOKLYN 16</b><i>&nbsp;&nbsp;Broadway Junction, Brownsville, Ocean Hill</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 17</b><i>&nbsp;&nbsp;East Flatbush, Farragut, Flatbush, Northeast Flatbush, Remsen Village, Rugby, Erasmus</i></a></li> -->
-				<!-- <li><a href="#"><b>BROOKLYN 18</b><i>&nbsp;&nbsp;Bergen Beach, Canarsie, Flatlands, Georgetown, Marine Park, Mill Basin, Mill Island, Paerdegat Basin</i></a></li>   -->
-				<!-- <li><a href="#"><b>MANHATTAN 1</b><i>&nbsp;&nbsp;Battery Park City, Civic Center, Ellis Island, Governors Island, Liberty Island, South Street Seaport, Tribeca, Wall Street, World Trade Center</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 2</b><i>&nbsp;&nbsp;Greenwich Village, Hudson Square, Little Italy, NoHo, SoHo, South Village, West Village</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 3</b><i>&nbsp;&nbsp;Chinatown, East Village, Lower East Side, NoHo, Two Bridges</i></a></li>	   -->
-				<!-- <li><a href="#"><b>MANHATTAN 4</b><i>&nbsp;&nbsp;Chelsea, Clinton, Hudson Yards</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 5</b><i>&nbsp;&nbsp;Flatiron, Gramercy Park, Herald Square, Midtown, Midtown South, Murray Hill, Times Square, Union Square</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 6</b><i>&nbsp;&nbsp;Beekman Place, Gramercy Park, Murray Hill, Peter Cooper Village, Stuyvesant Town, Sutton Place, Tudor City, Turtle Bay</i></a></li>	   -->
-				<!-- <li><a href="#"><b>MANHATTAN 7</b><i>&nbsp;&nbsp;Lincoln Square, Manhattan Valley, Upper West Side</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 8</b><i>&nbsp;&nbsp;Carnegie Hill, Lenox Hill, Roosevelt Island, Upper East Side, Yorkville</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 9</b><i>&nbsp;&nbsp;Hamilton Heights, Manhattanville, Morningside Heights, West Harlem</i></a></li>	   -->
-				<!-- <li><a href="#"><b>MANHATTAN 10</b><i>&nbsp;&nbsp;Central Harlem</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 11</b><i>&nbsp;&nbsp;East Harlem, Harlem, Randall's Island Park, Wards Island Park</i></a></li> -->
-				<!-- <li><a href="#"><b>MANHATTAN 12</b><i>&nbsp;&nbsp;Inwood, Washington Heights</i></a></li>	 -->
-				<!-- <li><a href="#"><b>QUEENS 1</b><i>&nbsp;&nbsp;Astoria, Astoria Heights, Dutch Kills, Long Island City, Queensbridge, Ravenswood, Rikers Island (BX), Steinway</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 2</b><i>&nbsp;&nbsp;Blissville, Hunters Point, Long Island City, Sunnyside, Sunnyside Gardens, Woodside</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 3</b><i>&nbsp;&nbsp;East Elmhurst, Jackson Heights, North Corona</i></a></li>	   -->
-				<!-- <li><a href="#"><b>QUEENS 4</b><i>&nbsp;&nbsp;Corona, Corona Heights, Elmhurst, Lefrak City</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 5</b><i>&nbsp;&nbsp;Glendale, Maspeth, Middle Village, Ridgewood</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 6</b><i>&nbsp;&nbsp;Forest Hills, Forest Hills Gardens, Rego Park</i></a></li>	   -->
-				<!-- <li><a href="#"><b>QUEENS 7</b><i>&nbsp;&nbsp;Auburndale, Bay Terrace, Beechhurst, Clearview, College Point, Downtown Flushing, East Flushing, Flushing, Malba, Murray Hill, Queensboro Hill, Waldheim, Whitestone</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 8</b><i>&nbsp;&nbsp;Briarwood, Fresh Meadows, Hillcrest, Holliswood, Jamaica, Jamaica Estates, Jamaica Hills, Kew Gardens Hills, Pomonok, Utopia</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 9</b><i>&nbsp;&nbsp;Kew Gardens, Ozone Park, Richmond Hill, Woodhaven</i></a></li>	   -->
-				<!-- <li><a href="#"><b>QUEENS 10</b><i>&nbsp;&nbsp;Howard Beach, Lindenwood, Old Howard Beach, Ozone Park, South Ozone Park</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 11</b><i>&nbsp;&nbsp;Auburndale, Bayside, Douglaston, Hollis Hills, Little Neck, Oakland Gardens</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 12</b><i>&nbsp;&nbsp;Hollis, Jamaica, Jamaica Center, North Springfield Gardens, Rochdale, South Jamaica, St. Albans</i></a></li>	   -->
-				<!-- <li><a href="#"><b>QUEENS 13</b><i>&nbsp;&nbsp;Bellaire, Bellerose, Brookville, Cambria Heights, Floral Park, Glen Oaks, Laurelton, New Hyde Park, Queens Village, Rosedale, Springfield Gardens</i></a></li> -->
-				<!-- <li><a href="#"><b>QUEENS 14</b><i>&nbsp;&nbsp;Arverne, Bayswater, Belle Harbor, Breezy Point, Broad Channel, Edgemere, Far Rockaway, Hammels, Neponsit, Rockaway Park, The Rockaways, Roxbury, Seaside, Somerville</i></a></li>	 -->
-				<!-- <li><a href="#"><b>STATEN ISLAND 1</b><i>&nbsp;&nbsp;Arlington, Castleton Corners, Clifton, Elm Park, Fox Hills, Graniteville, Grymes Hill, Howland Hook, Livingston, Mariner's Harbor, New Brighton, Old Place, Park Hill, Port Ivory, Port Richmond, Randall Manor, Rosebank, Shore Acres, Silver Lake, St. George, Stapleton, Sunnyside, Tompkinsville, Ward Hill, West Brighton, West New Brighton, Westerleigh, Willowbrook</i></a></li> -->
-				<!-- <li><a href="#"><b>STATEN ISLAND 2</b><i>&nbsp;&nbsp;Arrochar, Bloomfield, Bulls Head, Chelsea, Concord, Dongan Hills, Egbertville, Emerson Hill, Grant City, Grasmere, Heartland Village, Lighthouse Hill, Manor Heights, Midland Beach, New Dorp, New Dorp Beach, New Springville, Old Town, South Beach, Todt Hill, Travis, Willowbrook</i></a></li> -->
-				<!-- <li><a href="#"><b>STATEN ISLAND 3</b><i>&nbsp;&nbsp;Annadale, Arden Heights, Bay Terrace, Butler Manor, Charleston, Eltingville, Fresh Kills, Great Kills, Greenridge, Huguenot, Oakwood, Oakwood Beach, Oakwood Heights, Pleasant Plains, Prince's Bay, Richmond Town, Richmond Valley, Rossville, Sandy Ground, Tottenville, Woodrow</i></a></li> -->
-			<!-- </ul> -->
 		</div>
 	</div>
 </nav>
-
-
-
 <div class="container-fluid" style="margin-top:10px;margin-bottom:0">  <!--  @## 9/17/19-->
 	<div class="row">
 
@@ -435,11 +365,41 @@
 	  </div>
 	  </div>
 	</div>
-
-
-    <hr>
-
-    <p class="small text-muted" style=" position:relative; bottom:0;">Built by DOB Analytics <a href="https://www1.nyc.gov/site/buildings/dob/analytics-reports.page" target="_blank">Dev Squad</a></p>
+    <!-- <hr> -->
+  <div class="modal fade background-dark" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="font-weight: bold;">About Community Profiles</h4>
+        </div>
+        <div class="modal-body">
+          <p >  
+            The Department of Buildings’ (DOB) Community Profiles dashboard provides an easy way for New Yorkers to quickly see the construction
+             activity, complaints and construction incidents in their Community District, and to get an idea of how that compares
+              to the rest of the city. Select a metric from the main menu at the top of the screen, and you’ll see a shaded map showing 
+              the areas of highest and lowest activity for that metric across the five boroughs. On the right side of the screen, you’ll 
+              see that metric broken down further to show total distribution across the boroughs, and more granular details.</p>
+            <p>The dashboard is updated daily, and provides data for the last 12 calendar months. </p>
+            <p>Each Community District in NYC is assigned a three digit-number. The first digit of the number indicates the borough that the
+             Community District is located in:</p>
+            <div class="boroList">
+            <span>1XX – Manhattan<br></span>
+            <span>2XX – Bronx</span><br>
+            <span>3XX – Brooklyn</span><br>
+            <span>4XX – Queens</span><br>
+            <span>5XX – Staten Island</span> 
+            </div>
+            <p class="small text-right readmore" ><a href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/gh-pages/README.md" target="_blank">More info...</a></p>     
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="small text-muted" style=" position:relative; bottom:0;">Built by DOB Analytics <a href="https://www1.nyc.gov/site/buildings/dob/analytics-reports.page" target="_blank">Dev Squad</a></p>
 
 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script>
@@ -474,33 +434,6 @@ $(document).ready(function(){
 	$('#injuryCharts').hide();
 	
 	document.querySelector("#activePermitdataset").classList.add("active");  //force "selected" appearance
-	
-    <!-- $('#commDist').click(function(e) { -->
-        <!-- e.stopPropagation(); -->
-    <!-- }); -->
-		
-	<!-- $("#commDist").on("keyup", function() { -->
-		<!-- var value = $(this).val().toLowerCase(); -->
-		<!-- $(".dropdown-menu li").filter(function() { -->
-		  <!-- $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) -->
-		<!-- }); -->
-	<!-- }); -->
-	
-	<!-- $(".dropdown-menu").on('click', 'li a', function(){ -->
-	  <!-- var selText = $(this).children("b").html(); -->
-		<!-- $("#geo").text(selText); -->
-
-	 <!-- $(this).parent('li').siblings().removeClass('active'); -->
-	  <!-- $(this).parents('.dropdown').find('.selection').html(selText); -->
-	  <!-- $(this).parents('li').addClass("active"); -->
-	<!-- }); -->
-  
-	<!-- $(function () { -->
-		<!-- $("#dropdown a").click(function () { -->
-			<!-- $("#selected .selection").text($(this).text()); -->
-		<!-- }); -->
-	<!-- }); -->
-
 	
 	$('#activePermitdataset').click(function(){
 	   $('#metric').text('Active Permits: New Buildings (NB) and Major Alterations (A1)');
@@ -582,12 +515,6 @@ $(document).ready(function(){
 	   $('#chart_CD_injuries').show();
 	   $('#chart_CD_fatalities').hide();
 	});
-	<!-- $('#activeViolationdataset').click(function(){ -->
-	   <!-- $('#metric').text('Violations (Past 12 Months)'); -->
-	<!-- }); -->
-	<!-- $('#activeInjurydataset').click(function(){ -->
-	   <!-- $('#metric').text('Construction-Related Injuries'); -->
-	<!-- }); -->
 	
 	$('.form-inline').on('click', '.btn', function() {
 	  $(this).addClass('active').siblings().removeClass('active');
@@ -2122,9 +2049,6 @@ $(document).ready(function(){
 	});
 	
 });
-
-
 </script>
-
 </body>
 </html>
