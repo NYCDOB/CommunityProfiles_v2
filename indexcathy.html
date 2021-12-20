@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Community Profiles</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+  <!--  <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/dist/css/bootstrap.min.css" />   -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> />
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/keen-dashboards.css" />  -->
+  <link rel="stylesheet" crossorigin="anonymous" type="text/css" href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/7fcf7aeea52e8946d10b43ae59eeed8d8eb299b1/assets/css/keen-dashboards.css" />
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.css" rel="stylesheet" type="text/css">
+ 
+ 
+  <!-- <link rel="icon" type="image/png" crossorigin href="dob_logo_white_transparent.png">  -->
+  <link rel="icon" type="image/png" crossorigin href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/d34bdfe2192ed7d087de321295ccd92dd5ba1421/logo.png">
+</head>
+<body class="application">
+<style>
+	html {
+		width:99%;
+		height: 100%;
+		overflow: auto;
+	}
+
+	.metrics_txt{
+		font-size: 25px;
+		color: #666666;
+		font-weight: bold;
+		padding-right: 10px;
+		padding-left: 25px;
+	}
+
+	.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active{
+		color: white;
+		background-color: #bd4d01;
+	}
+	.btn-primary{
+		border: none;
+	}
+
+	#cmplnts_afterHours, #ahv_cityConstruction, #vios_bldgCode, #acc_injuries{
+		background-color: #3D4A57;
+		opacity:0.8;
+	}
+	#cmplnts_afterHours:hover, #cmplnts_afterHours:focus, #cmplnts_afterHours:active, #cmplnts_afterHours.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#ahv_cityConstruction:hover, #ahv_cityConstruction:focus,#ahv_cityConstruction:active,#ahv_cityConstruction.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#vios_bldgCode:hover, #vios_bldgCode:focus,#vios_bldgCode:active,#vios_bldgCode.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#acc_injuries:hover, #acc_injuries:focus,#acc_injuries:active,#acc_injuries.active{
+		background-color: #3D4A57;
+		opacity:1;
+	}
+	#cmplnts_elevator, #ahv_constructionMinNoise, #vios_elevator{
+		background-color: #8fa4b8;
+		opacity:0.8;
+	}
+	#cmplnts_elevator:hover, #cmplnts_elevator:focus, #cmplnts_elevator:active, #cmplnts_elevator.active{
+		background-color: #8fa4b8;
+		opacity:1;
+	}
+	#ahv_constructionMinNoise:hover, #ahv_constructionMinNoise:focus, #ahv_constructionMinNoise:active, #ahv_constructionMinNoise.active{
+		background-color: #8fa4b8;
+		opacity:1;	
+	}	
+	#vios_elevator:hover, #vios_elevator:focus, #vios_elevator:active, #vios_elevator.active{
+		background-color: #8fa4b8;
+		opacity:1;	
+	}
+	#cmplnts_illegalConv, #ahv_emergency, #vios_commOrder{
+		background-color: #70BBFF;
+		opacity:0.8;
+	}
+	#cmplnts_illegalConv:hover, #cmplnts_illegalConv:focus, #cmplnts_illegalConv:active, #cmplnts_illegalConv.active{
+		background-color: #70BBFF;
+		opacity:1;
+	}
+	#ahv_emergency:hover, #ahv_emergency:focus, #ahv_emergency:active, #ahv_emergency.active{
+		background-color: #70BBFF;
+		opacity:1;	
+	}	
+	#vios_commOrder:hover, #vios_commOrder:focus, #vios_commOrder:active, #vios_commOrder.active{
+		background-color: #70BBFF;
+		opacity:1;	
+	}
+	#vios_misc{
+		background-color: #9a69b5;
+		opacity:0.8;	
+	}
+	#vios_misc:hover, #vios_misc:focus, #vios_misc:active, #vios_misc.active{
+		background-color: #9a69b5;
+		opacity:1;
+	}
+	#cmplnts_noPermit, #ahv_safety, #vios_noPermit{
+		background-color: #ec940b;
+		opacity:0.8;
+	}
+	#cmplnts_noPermit:hover, #cmplnts_noPermit:focus, #cmplnts_noPermit:active, #cmplnts_noPermit.active{
+		background-color: #ec940b;
+		opacity:1;
+	}
+	#ahv_safety:hover, #ahv_safety:focus, #ahv_safety:active, #ahv_safety.active{
+		background-color: #ec940b;
+		opacity:1;	
+	}
+	#vios_noPermit:hover, #vios_noPermit:focus, #vios_noPermit:active, #vios_noPermit.active{
+		background-color: #ec940b;
+		opacity:1;	
+	}
+	#cmplnts_other, #ahv_undueHardship, #vios_other, #acc_fatalities{
+		background-color: #BD4D01;
+		opacity:0.8;
+	}
+	#cmplnts_other:hover, #cmplnts_other:focus, #cmplnts_other:active, #cmplnts_other.active{
+		background-color: #BD4D01;
+		opacity:1;
+	}
+	#ahv_undueHardship:hover, #ahv_undueHardship:focus, #ahv_undueHardship:active, #ahv_undueHardship.active{
+		background-color: #BD4D01;
+		opacity:1;	
+	}
+	#vios_other:hover, #vios_other:focus, #vios_other:active, #vios_other.active{
+		background-color: #BD4D01;
+		opacity:1;	
+	}
+	#acc_fatalities:hover, #acc_fatalities:focus, #acc_fatalities:active, #acc_fatalities.active{
+		background-color: #BD4D01;
+		opacity:1;	
+	}
+	
+	.logo {
+		/* background-image: url('data/dob_logo.png');     */
+		/* background-image: url('dob_logo_white_transparent.png');    */
+		background-image: url('https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/dob_logo_white_transparent.png'); 
+		
+		background-repeat: no-repeat;
+		background-position: center;
+		float: right;
+		background-size: 65px;
+		height: 50px;
+		width: 110px;	 
+	}	
+	
+	.mini-box{
+		height: 320px;
+		padding: 10px;
+	}
+	
+	.readme a, .readme a:visited, .readme a:hover {
+        text-decoration: none;
+        color:#cbcdd1;
+        font-size:16px;
+        cursor:pointer;
+	}
+	.readmore a, .readmore a:visited, .readmore a:hover {
+	text-decoration: none;
+		}
+    .boroList {
+        margin-left: 1em;
+    }
+</style>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <a class="logo" href="https://www1.nyc.gov/site/buildings/index.page" target="_blank"> </a>
+    <div class="container-fluid">
+		<div class="navbar-header" style="font-size: 35px; color: #FFFFFF;">
+			Community Profiles
+		</div>
+		<div class="navbar-header navbar-right readme" style="margin-top: 20px">
+			<!--  <a class="readme" href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/gh-pages/README.md" target="_blank">About</a>   -->
+			<a class="readme" data-toggle="modal" data-target="#myModal">About</a>
+		</div>
+	  </div>
+  </div>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #BDD7EE; margin-top: 50px; border: 0;">
+	<div class="form-inline" style="padding-top: 7px;">
+		<div class="dropdown">	
+			<span class="metrics_txt">Metrics:</span>
+			<button class="btn btn-outline-success active" id="activePermitdataset" type="button" style="margin-bottom: 7px;" >Permits</button>
+			<button class="btn btn-outline-success" id="activeAVHdataset" type="button" style="margin-bottom: 7px;" >After Hours Variances</button>
+			<button class="btn btn-outline-success" id="activeSheddataset" type="button" style="margin-bottom: 7px;" >Sidewalk Sheds</button>
+			<button class="btn btn-outline-success" id="activeComplaintdataset" type="button" style="margin-bottom: 7px;" >Complaints</button>
+			<button class="btn btn-outline-success" id="activeViolationdataset" type="button" style="margin-bottom: 7px;" >Violations</button>
+			<button class="btn btn-outline-success" id="activeInjurydataset" type="button" style="margin-bottom: 7px;" >Incidents</button>
+
+		</div>
+	</div>
+</nav>
+<div class="container-fluid" style="margin-top:10px;margin-bottom:0">  <!--  @## 9/17/19-->
+	<div class="row">
+
+	  <div class="col-sm-6">
+		<div class="chart-wrapper" style="border-style: solid; border-color: #3d4a57; border-width: 2px;">
+			  <div class="chart-map">
+				  <div class="map">
+					<!-- iframe width="100%" height="900px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" src="https://nycdob.github.io/D3_ActiveB_AvgAge_CDs"></iframe  -->
+					<iframe width="100%" height:100%  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="" 
+					src="index_mapcathy.html"></iframe>
+				  </div>
+			  </div>		
+		</div>
+	  </div>
+
+	  
+	  <div class="col-sm-6">
+	  <div class="chart-wrapper" style="border-style: solid; border-color: #3d4a57; border-width: 2px; height:790px;">
+	  
+		  <div class="chart-title" style="background-color: #ED7D31; font-size: 24px; color: #FFFFFF;" >
+				<span id="metric">Active Permits: New Buildings (NB) and Major Alterations (A1)</span><br/>
+				<i>Total: <span id="total"></span></i>
+		  </div>
+		
+			<div class="row" id="permitCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Active NB/A1 Permits (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_Permits"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Active NB/A1 Permits by Borough</u></h4>
+					<svg id="chart_Boro_Permits"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Active NB Permits (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_NB"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Active A1 Permits (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_A1"></svg>				
+				</div></div>
+			</div>
+			
+			<div class="row" id="ahvCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Active AHVs (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_AHVtotal"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Reasons For AHVs by Borough</u></h4>
+					<svg id="chart_Boro_AHV"></svg>
+				</div></div>
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Reasons For AHVs (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_ahvs">
+							<button class="btn btn-primary btn-sm active" id="ahv_cityConstruction" type="button" >NYC Construction</button>
+							<button class="btn btn-primary btn-sm" id="ahv_constructionMinNoise" type="button" >Minimal Noise</button>
+							<button class="btn btn-primary btn-sm" id="ahv_emergency" type="button" >Emergency Work</button>
+							<button class="btn btn-primary btn-sm" id="ahv_safety" type="button" >Public Safety</button>
+							<button class="btn btn-primary btn-sm" id="ahv_undueHardship" type="button" >Undue Hardship</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_ahv_cityConstruction"></svg>
+					<svg id="chart_CD_ahv_constructionMinNoise"></svg>
+					<svg id="chart_CD_ahv_emergency"></svg>
+					<svg id="chart_CD_ahv_safety"></svg>
+					<svg id="chart_CD_ahv_undueHardship"></svg>
+					
+				</div></div>
+			</div>
+		  
+			<div class="row" id="shedCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Active Sidewalk Sheds (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_Shed"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Active Sidewalk Sheds by Borough</u></h4>
+					<svg id="chart_Boro_Shed"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Average Age in Days (Top 10 Community Districts)</u></h4>
+					<svg id="chart_Shed_AvgAge"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Total Linear Feet (Top 10 Community Districts)</u></h4>
+					<svg id="chart_Shed_Feet"></svg>				
+				</div></div>
+			</div>
+			
+			<div class="row" id="complaintCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Complaints (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_cmplnts_total"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Complaint Types by Borough</u></h4>
+					<svg id="chart_Boro_Complaints"></svg>
+				</div></div>
+				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Complaint Types (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_cmplnts">
+							<button class="btn btn-primary btn-sm active" id="cmplnts_afterHours" type="button" >After Hours Work</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_elevator" type="button" >Elevator</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_illegalConv" type="button" >Illegal Conversion</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_noPermit" type="button" >Work Without Permit</button>
+							<button class="btn btn-primary btn-sm" id="cmplnts_other" type="button" >Other</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_cmplnts_afterHours"></svg>
+					<svg id="chart_CD_cmplnts_elevator"></svg>
+					<svg id="chart_CD_cmplnts_illegalConv"></svg>
+					<svg id="chart_CD_cmplnts_noPermit"></svg>
+					<svg id="chart_CD_cmplnts_other"></svg>
+					
+				</div></div>
+			</div>
+			
+			<div class="row" id="violationCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Violations (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_vios_total"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Violation Types by Borough</u></h4>
+					<svg id="chart_Boro_Vios"></svg>
+				</div></div>
+				
+				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Violation Types (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_vios">
+							<button class="btn btn-primary btn-sm active" id="vios_bldgCode" type="button" >Building Maintenance</button>
+							<button class="btn btn-primary btn-sm" id="vios_elevator" type="button" >Elevator Maintenance</button>
+							<button class="btn btn-primary btn-sm" id="vios_commOrder" type="button" >Failure to Comply</button>
+							<button class="btn btn-primary btn-sm" id="vios_misc" type="button" >Miscellaneous</button>
+							<button class="btn btn-primary btn-sm" id="vios_noPermit" type="button" >Work Without Permit</button>
+							<button class="btn btn-primary btn-sm" id="vios_other" type="button" >Other</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_vios_commOrder"></svg>
+					<svg id="chart_CD_vios_bldgCode"></svg>
+					<svg id="chart_CD_vios_elevator"></svg>
+					<svg id="chart_CD_vios_misc"></svg>
+					<svg id="chart_CD_vios_noPermit"></svg>
+					<svg id="chart_CD_vios_other"></svg>
+					
+				</div></div>
+			</div>
+			
+			<div class="row" id="injuryCharts">
+				<div class="col-sm-6"><div class="mini-box">				
+					<h4 style="padding-left:5px;"><u>Incidents (Top 10 Community Districts)</u></h4>
+					<svg id="chart_CD_Acc_total"></svg>
+				</div></div>
+				<div class="col-sm-6"><div class="mini-box">
+					<h4 style="padding-left:5px;"><u>Incident Types by Borough</u></h4>
+					<svg id="chart_Boro_Acc"></svg>
+				</div></div>
+				
+				
+				<div class="col-sm-12"><div class="mini-box">
+
+					<h4 style="padding-left:5px; padding-top:35px;"><u>Injuries & Fatalities (Top 10 Community Districts)</u><br/><br/>
+						<div class="btn_acc">
+							<button class="btn btn-primary btn-sm active" id="acc_injuries" type="button" >Injuries</button>
+							<button class="btn btn-primary btn-sm" id="acc_fatalities" type="button" >Fatalities</button>
+						</div>
+					</h4>
+					<svg id="chart_CD_injuries"></svg>
+					<svg id="chart_CD_fatalities"></svg>
+					
+				</div></div>
+			</div>
+			
+	  </div>
+	  </div>
+	</div>
+    <!-- <hr> -->
+  <div class="modal fade background-dark" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="font-weight: bold;">About Community Profiles</h4>
+        </div>
+        <div class="modal-body">
+          <p >  
+            The Department of Buildings’ (DOB) Community Profiles dashboard provides an easy way for New Yorkers to quickly see the construction
+             activity, complaints and construction incidents in their Community District, and to get an idea of how that compares
+              to the rest of the city. Select a metric from the main menu at the top of the screen, and you’ll see a shaded map showing 
+              the areas of highest and lowest activity for that metric across the five boroughs. On the right side of the screen, you’ll 
+              see that metric broken down further to show total distribution across the boroughs, and more granular details.</p>
+            <p>The dashboard is updated daily, and provides data for the last 12 calendar months. </p>
+            <p>Each Community District in NYC is assigned a three digit-number. The first digit of the number indicates the borough that the
+             Community District is located in:</p>
+            <div class="boroList">
+            <span>1XX – Manhattan<br></span>
+            <span>2XX – Bronx</span><br>
+            <span>3XX – Brooklyn</span><br>
+            <span>4XX – Queens</span><br>
+            <span>5XX – Staten Island</span> 
+            </div>
+            <p class="small text-right readmore" ><a href="https://github.com/NYCDOB/CommunityProfiles_v2/blob/gh-pages/README.md" target="_blank">More info...</a></p>     
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="small text-muted" style=" position:relative; bottom:0;">Built by DOB Analytics <a href="https://www1.nyc.gov/site/buildings/dob/analytics-reports.page" target="_blank">Dev Squad</a></p>
+
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.min.js"></script> <!--  **  -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!--  **  -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@3.2.0/dist/js/bootstrap.min.js"></script>  <!--  **  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.3.2/holder.js"></script>  <!--  **  -->
+  <script>    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });  </script>  <!--  **  -->
+  <!-- <script type="text/javascript" src="assets/lib/keen-js/dist/keen.min.js"></script>  -->
+  <script type="text/javascript" src="https://github.com/NYCDOB/CommunityProfiles_v2/blob/7fcf7aeea52e8946d10b43ae59eeed8d8eb299b1/assets/lib/keen-js/dist/keen.min.js"></script> 
+  <!-- <script type="text/javascript" src="assets/js/meta.js"></script>  -->
+  <script type="text/javascript" src="https://github.com/NYCDOB/CommunityProfiles_v2/blob/7fcf7aeea52e8946d10b43ae59eeed8d8eb299b1/assets/js/meta.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.js"></script>  <!--  **  -->
+  
+<script>
+$(document).ready(function(){	
+
+	var permitTotal = 0,
+		ahvTotal = 0,
+		shedTotal = 0,
+		complaintsTotal = 0,
+		violationsTotal = 0,
+		IncidentsTotal = 0,
+		format = d3.format(".1f");
+		//formatK = d3.format(",");
+	
+	$('#permitCharts').show();
+	$('#ahvCharts').hide();
+	$('#shedCharts').hide();
+	$('#complaintCharts').hide();
+	$('#violationCharts').hide();
+	$('#injuryCharts').hide();
+	
+	document.querySelector("#activePermitdataset").classList.add("active");  //force "selected" appearance
+	
+	$('#activePermitdataset').click(function(){
+	   $('#metric').text('Active Permits: New Buildings (NB) and Major Alterations (A1)');
+	   $('#total').text(permitTotal);
+	   $('#permitCharts').show();
+	   $('#ahvCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
+	});	
+	$('#activeAVHdataset').click(function(){
+	   $('#metric').text('Active After Hours Variances (AHVs)');
+	   $('#total').text(ahvTotal);
+	   $('#ahvCharts').show();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
+	   $('#chart_CD_ahv_cityConstruction').show();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});
+	$('#activeSheddataset').click(function(){
+	   $('#metric').text('Active Sidewalk Sheds');
+	   $('#total').text(shedTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').show();
+	   $('#complaintCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
+	});
+	$('#activeComplaintdataset').click(function(){
+	   $('#metric').text('Complaints (Past 12 Months)');
+	   $('#total').text(complaintsTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').show();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').hide();
+	   $('#chart_CD_cmplnts_afterHours').show();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});
+	$('#activeViolationdataset').click(function(){
+	   $('#metric').text('Violations (Past 12 Months)');
+	   $('#total').text(violationsTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#injuryCharts').hide();
+	   $('#violationCharts').show();
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').show();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+
+	});
+	$('#activeInjurydataset').click(function(){
+	   $('#metric').text('Construction-Related Incidents (Past 12 Months)');
+	   $('#total').text(IncidentsTotal);
+	   $('#ahvCharts').hide();
+	   $('#permitCharts').hide();
+	   $('#shedCharts').hide();
+	   $('#complaintCharts').hide();
+	   $('#injuryCharts').hide();
+	   $('#violationCharts').hide();
+	   $('#injuryCharts').show();
+	   $('#chart_CD_injuries').show();
+	   $('#chart_CD_fatalities').hide();
+	});
+	
+	$('.form-inline').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+
+
+///////////ACTIVE PERMITS/////////////////
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitSummary.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			permitTotal += data[i].count;
+		};
+		//console.log(permitTotal);
+		
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		//console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			//.color(['#E64C00']);
+			.color(['#BD4D01']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_Permits')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+		//INITIATE COUNT ON PAGE LOAD
+		$('#total').text(permitTotal);
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitNBA1_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		//console.log(data);
+
+		//$('#total').text(data.length);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_Permits')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitNB.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		//console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#8fa4b8']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_NB')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});
+		}
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitA1.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		//console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			.color(['#3D4A57']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_A1')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+
+///////////AHVs/////////////////
+	
+	$('#ahv_cityConstruction').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').show();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});
+	$('#ahv_constructionMinNoise').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').show();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});
+	$('#ahv_emergency').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').show();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});	
+	$('#ahv_safety').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').show();
+	   $('#chart_CD_ahv_undueHardship').hide();
+	});	
+	$('#ahv_undueHardship').click(function(){
+	   $('#chart_CD_ahv_cityConstruction').hide();
+	   $('#chart_CD_ahv_constructionMinNoise').hide();
+	   $('#chart_CD_ahv_emergency').hide();
+	   $('#chart_CD_ahv_safety').hide();
+	   $('#chart_CD_ahv_undueHardship').show();
+	});	
+	$('.btn_ahvs').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAhvsSummaryByBorough.json", function(error, data) {
+		if (error) return console.error(error);
+		//console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 45})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(["#70BBFF", "#8fa4b8", "#3D4A57", "#ec940b", "#BD4D01"])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_AHV')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAHVs_reason_CD.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			ahvTotal += data[i].count;
+		}
+		
+		var sortedData_cityConstruction = data.sort(function(a,b){
+			return b["NYC Construction"]-a["NYC Construction"];
+		}).slice(0,10);
+		
+		var sortedData_constructionMinNoise = data.sort(function(a,b){
+			return b["Minimal Noise"]-a["Minimal Noise"];
+		}).slice(0,10); 
+		
+		var sortedData_emergency = data.sort(function(a,b){
+			return b["Emergency Work"]-a["Emergency Work"];
+		}).slice(0,10);
+		
+		var sortedData_safety = data.sort(function(a,b){
+			return b["Public Safety"]-a["Public Safety"];
+		}).slice(0,10);
+		
+		var sortedData_undueHardship = data.sort(function(a,b){
+			return b["Undue Hardship"]-a["Undue Hardship"];
+		}).slice(0,10);
+		
+		var sortedData_AHVtotal = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_cityConstruction(sortedData_cityConstruction);
+		cdCountChart_constructionMinNoise(sortedData_constructionMinNoise);
+		cdCountChart_emergency(sortedData_emergency);
+		cdCountChart_safety(sortedData_safety);
+		cdCountChart_undueHardship(sortedData_undueHardship);
+		cdCountChart_AHVtotal(sortedData_AHVtotal);
+		
+		function cdCountChart_cityConstruction(sortedData_cityConstruction){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_cityConstruction.forEach(function(d){
+				d.values = +d["NYC Construction"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["NYC Construction"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_ahv_cityConstruction')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_constructionMinNoise(sortedData_constructionMinNoise){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_constructionMinNoise.forEach(function(d){
+				d.values = +d["Minimal Noise"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Minimal Noise"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#8fa4b8']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_ahv_constructionMinNoise')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_emergency(sortedData_emergency){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_emergency.forEach(function(d){
+				d.values = +d["Emergency Work"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Emergency Work"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#70BBFF']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_ahv_emergency')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_safety(sortedData_safety){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_safety.forEach(function(d){
+				d.values = +d["Public Safety"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Public Safety"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#ec940b']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_ahv_safety')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_undueHardship(sortedData_undueHardship){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_undueHardship.forEach(function(d){
+				d.values = +d["Undue Hardship"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Undue Hardship"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_ahv_undueHardship')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_AHVtotal(sortedData_AHVtotal){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_AHVtotal.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 30})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_AHVtotal')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+	});
+							 
+///////////SIDEWALK SHEDS/////////////////
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeShedsSummary.json", function(error, data) {
+		if (error) return console.error(error);
+
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			shedTotal += data[i].count;
+		}
+		//console.log(shedTotal);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		//console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.count
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.count })
+			.margin({top: 10, right: -10, bottom: -50, left: 30})	
+			.options({height:200, width:400,})
+			//.color(['#E64C00']);
+			.color(['#BD4D01']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_CD_Shed')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeSheds_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		//console.log(data);
+
+
+		//$('#total').text(data.length);
+
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Boro_Shed')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeSheds_AvgAge.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["averageAge"]-a["averageAge"];
+		}).slice(0,10);
+		//console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.averageAge
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return format(d.averageAge) })
+			.margin({top: 10, right: -10, bottom: -50, left: 40})	
+			.options({height:200, width:400,})
+			.color(['#8fa4b8']);
+
+		  chart.yAxis.tickFormat(d3.format(''));
+			
+		  d3.select('#chart_Shed_AvgAge')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});
+		}
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeSheds_Feet.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		var sortedData = data.sort(function(a,b){
+			return b["SumLinearFeet"]-a["SumLinearFeet"];
+		}).slice(0,10);
+		//console.log(sortedData);
+		
+		cdCountChart(sortedData);
+		
+		function cdCountChart(sortedData){
+		var exampleData = [
+			{
+				key: "totals",
+				values: []
+			}
+		];
+		sortedData.forEach(function(d){
+			d.values = +d.SumLinearFeet
+			exampleData[0].values.push(d)
+		})
+		
+		nv.addGraph(function() {
+		  var chart = nv.models.discreteBarChart()
+			.x(function(d) { return d.communityBoard })
+			.y(function(d) { return d.SumLinearFeet })
+			.margin({top: 10, right: -10, bottom: -50, left: 50})	
+			.options({height:200, width:400,})
+			.color(['#3D4A57']);
+
+		  chart.yAxis.tickFormat(d3.format('.2s'));
+			
+		  d3.select('#chart_Shed_Feet')
+			.datum(exampleData)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		});
+		}
+	});
+
+///////////COMPLAINTS/////////////////
+
+	$('#cmplnts_afterHours').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').show();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});
+	$('#cmplnts_elevator').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').show();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});
+	$('#cmplnts_illegalConv').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').show();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').hide();
+	});	
+	$('#cmplnts_noPermit').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').show();
+	   $('#chart_CD_cmplnts_other').hide();
+	});	
+	$('#cmplnts_other').click(function(){
+	   $('#chart_CD_cmplnts_afterHours').hide();
+	   $('#chart_CD_cmplnts_elevator').hide();
+	   $('#chart_CD_cmplnts_illegalConv').hide();
+	   $('#chart_CD_cmplnts_noPermit').hide();
+	   $('#chart_CD_cmplnts_other').show();
+	});	
+	$('.btn_cmplnts').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/complaintTypes_boro.json", function(error, data) {
+		if (error) return console.error(error);
+		//console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 45})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(["#3D4A57", "#8fa4b8", "#70BBFF", "#BD4D01", "#ec940b"])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			//Default "Other" off
+			data = data.map(function(series){
+				if (series.key === "Other"){
+					series.disabled = true;
+				}
+				return series;
+			});
+			
+		  d3.select('#chart_Boro_Complaints')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);
+
+		  return chart;
+		  
+		});		
+	});
+
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/complaintTypes_CD.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			complaintsTotal += data[i].count;
+		}
+		
+		var sortedData_afterHours = data.sort(function(a,b){
+			return b["After Hours Work"]-a["After Hours Work"];
+		}).slice(0,10);
+
+		var sortedData_elevators = data.sort(function(a,b){
+			return b["Elevator"]-a["Elevator"];
+		}).slice(0,10); 
+		
+		var sortedData_illegalConv = data.sort(function(a,b){
+			return b["Illegal Conversion"]-a["Illegal Conversion"];
+		}).slice(0,10);
+		
+		var sortedData_noPermit = data.sort(function(a,b){
+			return b["Work Without Permit"]-a["Work Without Permit"];
+		}).slice(0,10);
+		
+		var sortedData_other = data.sort(function(a,b){
+			return b["Other"]-a["Other"];
+		}).slice(0,10);
+		
+		var sortedData_total = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_afterHours(sortedData_afterHours);
+		cdCountChart_elevators(sortedData_elevators);
+		cdCountChart_illegalConv(sortedData_illegalConv);
+		cdCountChart_noPermit(sortedData_noPermit);
+		cdCountChart_other(sortedData_other);
+		cdCountChart_total(sortedData_total);
+		
+		function cdCountChart_afterHours(sortedData_afterHours){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_afterHours.forEach(function(d){
+				d.values = +d["After Hours Work"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["After Hours Work"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_cmplnts_afterHours')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_elevators(sortedData_elevators){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_elevators.forEach(function(d){
+				d.values = +d.Elevator
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Elevator })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#8fa4b8']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_cmplnts_elevator')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_illegalConv(sortedData_illegalConv){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_illegalConv.forEach(function(d){
+				d.values = +d["Illegal Conversion"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Illegal Conversion"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#70BBFF']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_cmplnts_illegalConv')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_noPermit(sortedData_noPermit){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_noPermit.forEach(function(d){
+				d.values = +d["Work Without Permit"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Work Without Permit"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#ec940b']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_cmplnts_noPermit')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_other(sortedData_other){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_other.forEach(function(d){
+				d.values = +d.Other
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Other })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_cmplnts_other')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_total(sortedData_total){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_total.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 40})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_cmplnts_total')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+	});
+	
+///////////VIOLATIONS/////////////////
+	
+	$('#vios_commOrder').click(function(){
+	   $('#chart_CD_vios_commOrder').show();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});
+	$('#vios_bldgCode').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').show();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});
+	$('#vios_elevator').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').show();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});	
+	$('#vios_misc').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').show();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').hide();
+	});	
+	$('#vios_noPermit').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').show();
+	   $('#chart_CD_vios_other').hide();
+	});	
+	$('#vios_other').click(function(){
+	   $('#chart_CD_vios_commOrder').hide();
+	   $('#chart_CD_vios_bldgCode').hide();
+	   $('#chart_CD_vios_elevator').hide();
+	   $('#chart_CD_vios_misc').hide();
+	   $('#chart_CD_vios_noPermit').hide();
+	   $('#chart_CD_vios_other').show();
+	});	
+	$('.btn_vios').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryByBorough.json", function(error, data) {
+		if (error) return console.error(error);
+		//console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: -10, bottom: -50, left: 40})
+			.options({height:200, width:400,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#3D4A57','#8fa4b8','#70BBFF','#9a69b5','#BD4D01','#ec940b'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+
+			//Default "Other" off
+			data = data.map(function(series){
+				if (series.key === "Other"){
+					series.disabled = true;
+				}
+				return series;
+			});
+			
+		  d3.select('#chart_Boro_Vios')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);		  
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryAll.json", function(error, data) {
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			violationsTotal += data[i].count;
+		}
+
+		var sortedData_commOrderVios = data.sort(function(a,b){
+			return b["Failure to Comply"]-a["Failure to Comply"];
+		}).slice(0,10);
+
+		var sortedData_bldgCodeVios = data.sort(function(a,b){
+			return b["Building Maintenance"]-a["Building Maintenance"];
+		}).slice(0,10); 
+		
+		var sortedData_elevatorVios = data.sort(function(a,b){
+			return b["Elevator Maintenance"]-a["Elevator Maintenance"];
+		}).slice(0,10);
+		
+		var sortedData_miscVios = data.sort(function(a,b){
+			return b["Miscellaneous"]-a["Miscellaneous"];
+		}).slice(0,10);
+		
+		var sortedData_noPermitVios = data.sort(function(a,b){
+			return b["Work Without Permit"]-a["Work Without Permit"];
+		}).slice(0,10);
+		
+		var sortedData_otherVios = data.sort(function(a,b){
+			return b["Other"]-a["Other"];
+		}).slice(0,10);
+		
+		var sortedData_totalVios = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_commOrderVios(sortedData_commOrderVios);
+		cdCountChart_bldgCodeVios(sortedData_bldgCodeVios);
+		cdCountChart_elevatorVios(sortedData_elevatorVios);
+		cdCountChart_miscVios(sortedData_miscVios);
+		cdCountChart_noPermitVios(sortedData_noPermitVios);
+		cdCountChart_otherVios(sortedData_otherVios);
+		cdCountChart_totalVios(sortedData_totalVios);
+		
+		function cdCountChart_commOrderVios(sortedData_commOrderVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_commOrderVios.forEach(function(d){
+				d.values = +d["Failure to Comply"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Failure to Comply"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#70BBFF']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_commOrder')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_bldgCodeVios(sortedData_bldgCodeVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_bldgCodeVios.forEach(function(d){
+				d.values = +d["Building Maintenance"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Building Maintenance"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_vios_bldgCode')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_elevatorVios(sortedData_elevatorVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_elevatorVios.forEach(function(d){
+				d.values = +d["Elevator Maintenance"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Elevator Maintenance"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#8fa4b8']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_vios_elevator')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_miscVios(sortedData_miscVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_miscVios.forEach(function(d){
+				d.values = +d.Miscellaneous
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Miscellaneous })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#9a69b5']);
+
+			chart.yAxis.tickFormat(d3.format(''));
+			
+			d3.select('#chart_CD_vios_misc')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_noPermitVios(sortedData_noPermitVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_noPermitVios.forEach(function(d){
+				d.values = +d["Work Without Permit"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Work Without Permit"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#ec940b']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_noPermit')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_otherVios(sortedData_otherVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_otherVios.forEach(function(d){
+				d.values = +d.Other
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.Other })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_other')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_totalVios(sortedData_totalVios){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_totalVios.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 40})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_vios_total')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+	});
+	
+///////////INCIDENTS/////////////////
+	
+	$('#acc_injuries').click(function(){
+	   $('#chart_CD_injuries').show();
+	   $('#chart_CD_fatalities').hide();
+	});
+	$('#acc_fatalities').click(function(){
+	   $('#chart_CD_injuries').hide();
+	   $('#chart_CD_fatalities').show();
+	});
+
+	$('.btn_acc').on('click', '.btn', function() {
+	  $(this).addClass('active').siblings().removeClass('active');
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryByBorough.json", function(error, data) {
+		if (error) return console.error(error);
+		//console.log(data);
+		
+		nv.addGraph(function() {
+			var chart = nv.models.multiBarChart()
+			.margin({top: 10, right: 20, bottom: -50, left: 40})
+			.options({height:200, width:450,})
+			.stacked(true)
+			.staggerLabels(true)
+			.showControls(false)
+			.color(['#7fc97f','#3D4A57','#8fa4b8','#70BBFF','#9a69b5','#ec940b','#BD4D01'])
+			.reduceXTicks(false)
+			.showLegend(true);
+			
+			chart.yAxis.tickFormat(d3.format(''));
+
+			//Default "Other" off
+			data = data.map(function(series){
+				if (series.key === "Other"){
+					series.disabled = true;
+				}
+				return series;
+			});
+			
+		  d3.select('#chart_Boro_Acc')
+			.datum(data)
+			.transition().duration(500)
+			.call(chart);
+
+		  nv.utils.windowResize(chart.update);		  
+
+		  return chart;
+		  
+		});		
+	});
+	
+	d3.json("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryAllV2.json", function(error, data) {
+
+		if (error) return console.error(error);
+		
+		//GET TOTAL
+		for (var i = 0; i < data.length; i++){
+			IncidentsTotal += data[i].count;
+		}
+
+		
+		var sortedData_injuries = data.sort(function(a,b){
+			return b["Total Injured"]-a["Total Injured"];
+		}).slice(0,10);
+		
+		
+		var sortedData_fatalities = data.sort(function(a,b){
+			return b["Total Death"]-a["Total Death"];
+		}).slice(0,10); 
+		
+		
+		var sortedData_totalAcc = data.sort(function(a,b){
+			return b["count"]-a["count"];
+		}).slice(0,10);
+		
+		cdCountChart_injuries(sortedData_injuries);
+		cdCountChart_fatalities(sortedData_fatalities);
+		cdCountChart_totalAcc(sortedData_totalAcc);
+		
+		function cdCountChart_injuries(sortedData_injuries){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_injuries.forEach(function(d){
+				d.values = +d["Total Injured"]
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Total Injured"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 40})	
+				.options({height:200, width:650,})
+				.color(['#3D4A57']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_injuries')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_fatalities(sortedData_fatalities){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_fatalities.forEach(function(d){
+			
+				d.values = +d["Total Death"]
+				if(d.values !=0){
+					exampleData[0].values.push(d)					
+				}
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d["Total Death"] })
+				.margin({top: 10, right: -10, bottom: -30, left: 30})	
+				.options({height:200, width:650,})
+				.color(['#BD4D01']);
+
+			chart.yAxis.tickFormat(d3.format('.0f'));
+			chart.yAxis.tickValues([1,2,3,4,5]);
+			
+			d3.select('#chart_CD_fatalities')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+		
+		function cdCountChart_totalAcc(sortedData_totalAcc){
+			var exampleData = [
+				{
+					key: "totals",
+					values: []
+				}
+			];
+			sortedData_totalAcc.forEach(function(d){
+				d.values = +d.count
+				exampleData[0].values.push(d)
+			})
+			
+			nv.addGraph(function() {
+			  var chart = nv.models.discreteBarChart()
+				.x(function(d) { return d.communityBoard })
+				.y(function(d) { return d.count })
+				.margin({top: 10, right: -10, bottom: -50, left: 40})	
+				.options({height:200, width:400,})
+				.color(['#BD4D01']);
+
+			  chart.yAxis.tickFormat(d3.format(''));
+				
+			  d3.select('#chart_CD_Acc_total')
+				.datum(exampleData)
+				.transition().duration(500)
+				.call(chart);
+
+			  nv.utils.windowResize(chart.update);
+
+			  return chart;
+			});
+		}
+	});
+	
+});
+</script>
+</body>
+</html>
