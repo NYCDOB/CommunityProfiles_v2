@@ -422,8 +422,11 @@
 <script>
 $(document).ready(function(){	
 
-	var _myFrame = document.querySelector('.myFrame').contentWindow;
-	console.log(_myFrame);
+var _myFrame = document.querySelector('.myFrame').contentWindow;
+console.log(_myFrame);
+
+_myFrame.postmessage( "happy" , "https://nycdob.github.io/CommunityProfiles_v2/index_mapcathy.html")
+
 
 
 window.addEventListener("message", (event) => {
