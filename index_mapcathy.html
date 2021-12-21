@@ -374,7 +374,11 @@ Promise.allSettled(	[
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
 		debugger;
-		window.parent.postmessage( "happy" , "https://nycdob.github.io/CommunityProfiles_v2/indexcathy.html")
+		myparent=window.parent.document;
+		myparent2=window.parent.document;
+
+		myparent.postmessage( "happy" , "https://nycdob.github.io/CommunityProfiles_v2/indexcathy.html")
+
 
 
 window.addEventListener('message', function(e) {
