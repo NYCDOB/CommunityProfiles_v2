@@ -279,13 +279,13 @@ function handleError(errString,notifyType="console") {
 	varErrorDiv.innerHTML=`<p>Error reading data</p>`
 }
 //STEP 1:  READ THE JSON or retrieve url
-_CD_topoJSON=fetch("data/CD_topoJSON.json");
-_activeAhvsSummaryAll=fetch("data/activeAhvsSummaryAll.json");
-_activeShedsSummaryAll=fetch("data/activeShedsSummaryAll.json");
-_activeComplaintSummaryAll=fetch("data/activeComplaintSummaryAll.json");
-_activeViolationsSummaryAll=fetch("data/activeViolationsSummaryAll.json");
-_activeInjuriesSummaryAll=fetch("data/activeInjuriesSummaryAll.json");
-_activePermitSummaryAll=fetch("data/activePermitSummaryAll.json");	
+_CD_topoJSON=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/CD_topoJSON.json");
+_activeAhvsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAhvsSummaryAll.json");
+_activeShedsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeShedsSummaryAll.json");
+_activeComplaintSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeComplaintSummaryAll.json");
+_activeViolationsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryAll.json");
+_activeInjuriesSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryAll.json");
+_activePermitSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitSummaryAll.json");	
 //STEP 2:  add result dataset to ready function in same order as json is read
 Promise.allSettled(	[
 	_CD_topoJSON, 
