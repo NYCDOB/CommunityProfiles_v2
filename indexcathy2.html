@@ -445,7 +445,7 @@
 $(document).ready(function(){	
 
 {
-    let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
+	let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
 
 
 let width = document.querySelector(".chart-wrapper").clientWidth,   //causes CORS error
@@ -466,6 +466,91 @@ let width = document.querySelector(".chart-wrapper").clientWidth,   //causes COR
     .attr("width", width)
     .attr("height", height)
     .append("g");
+
+//STEP 1:  READ THE JSON or retrieve url
+let _CD_topoJSON=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/CD_topoJSON.json");
+let _activeAhvsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAhvsSummaryAll.json");
+let _activeShedsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeShedsSummaryAll.json");
+let _activeComplaintSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeComplaintSummaryAll.json");
+let _activeViolationsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryAll.json");
+let _activeInjuriesSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryAll.json");
+let _activePermitSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitSummaryAll.json");	
+//STEP 2:  add result dataset to ready function in same order as json is read
+Promise.allSettled(	[
+	_CD_topoJSON, 
+	_activeAhvsSummaryAll, 
+	_activeShedsSummaryAll, 
+	_activeComplaintSummaryAll, 
+	_activeViolationsSummaryAll, 
+	_activeInjuriesSummaryAll, 
+	_activePermitSummaryAll	])
+.then(
+    values => {            //values={status,value}
+        svg.select("#progress-image").remove();	
+        return  Promise.allSettled(  values.map( result =>result.value.json()))
+    })
+.then (    
+    fetchResults => {
+		CD_topoJSON=fetchResults[0].value;	
+		activeahv=fetchResults[1].value;	
+		activeshed=fetchResults[2].value;	
+		activecomplaint=fetchResults[3].value;	
+		activeviolation=fetchResults[4].value;	
+		activeinjury=fetchResults[5].value;	
+		activepermit=fetchResults[6].value;	
+        if (fetchResults[0].status=='rejected') { //CD_topoJSON error, no maps can be rendered since boundaries not available
+			handleError(`Cannot read Community District dataset.\nMap cannot render.\nContact Data Analytics tmartin@buildings.nyc.gov`, "alert" )
+			handleError(`Cannot read Community District dataset.\nMap cannot render.\nContact Data Analytics tmartin@buildings.nyc.gov`, "console" )
+			return;
+        };
+		activeAVHdataset=(activeahv) ? processDataset(activeahv, "activeAVHdataset",  CD_topoJSON, "AHVs") : handleError("AHVs");
+		activeSheddataset=(activeshed) ? processDataset(activeshed, "activeSheddataset",  CD_topoJSON, "Sheds") : handleError("Sheds");
+		activeComplaintdataset=(activecomplaint) ? processDataset(activecomplaint, "activeComplaintdataset", CD_topoJSON, "Complaints") : handleError("Complaints");
+		activeViolationdataset=(activeviolation) ? processDataset(activeviolation, "activeViolationdataset", CD_topoJSON, "Violations") : handleError("Violations");
+		activeInjurydataset=(activeinjury)    ? processDataset(activeinjury,  "activeInjurydataset", CD_topoJSON, "Injuries") : handleError("Injuries");
+		activePermitdataset=(activepermit) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("Permits"); //default layer
+		assignButtonHandlers();
+		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
+		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
+		let legend = svg.selectAll("g.legend")
+			.data(ext_color_domain)
+			.enter().append("g")
+			.style("font-size", "16px")
+			.style("font-family", "Arial, Helvetica, sans-serif")
+			.attr("class", "legend");
+		let color2 = d3.scale.linear()
+			.domain(  [  ext_color_domain[0],ext_color_domain[ext_color_domain.length-1]  ] )  //max & min values
+			.range([mapColors[0],mapColors[mapColors.length-1]])
+			.interpolate(d3.interpolateLab);
+		let ls_w = 25, ls_h = 25;
+		legend.append("rect")
+			.attr("x", 10)
+			.attr("y", function(d, i){return height - (i*ls_h) - (-1*ls_h);})
+			.attr('transform', 'translate(10, -630)') //XY position of legend
+			.attr("width", ls_w)
+			.attr("height", ls_h)
+			.style("fill", function(d, i){
+				return (d) ? color2(d)  :"#d6d6d6";
+				})
+			.style("opacity", 1);
+
+		legend.append("text")
+			.attr("x", 40)
+			.attr("y", function(d, i){return height - (i*ls_h) - ls_h - (-69);})
+			.attr('transform', 'translate(10, -630)') // XY position of legend
+			.text(function(d, i){return legend_labels[i];});
+		d3.select(self.frameElement).style("height", height + "px");
+		// window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+		document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+
+
+
+
+
+    }
+);
+
+
 		
 svg.on("wheel.zoom", null);
 svg.on("mousewheel.zoom", null);
@@ -681,88 +766,7 @@ function handleError(errString,notifyType="console") {
 	let varErrorDiv=document.querySelector("#divMapError") 
 	varErrorDiv.innerHTML=`<p>Error reading data</p>`
 }
-//STEP 1:  READ THE JSON or retrieve url
-_CD_topoJSON=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/CD_topoJSON.json");
-_activeAhvsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAhvsSummaryAll.json");
-_activeShedsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeShedsSummaryAll.json");
-_activeComplaintSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeComplaintSummaryAll.json");
-_activeViolationsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryAll.json");
-_activeInjuriesSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryAll.json");
-_activePermitSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitSummaryAll.json");	
-//STEP 2:  add result dataset to ready function in same order as json is read
-Promise.allSettled(	[
-	_CD_topoJSON, 
-	_activeAhvsSummaryAll, 
-	_activeShedsSummaryAll, 
-	_activeComplaintSummaryAll, 
-	_activeViolationsSummaryAll, 
-	_activeInjuriesSummaryAll, 
-	_activePermitSummaryAll	])
-.then(
-    values => {            //values={status,value}
-        svg.select("#progress-image").remove();	
-        return  Promise.allSettled(  values.map( result =>result.value.json()))
-    })
-.then (    
-    fetchResults => {
-		CD_topoJSON=fetchResults[0].value;	
-		activeahv=fetchResults[1].value;	
-		activeshed=fetchResults[2].value;	
-		activecomplaint=fetchResults[3].value;	
-		activeviolation=fetchResults[4].value;	
-		activeinjury=fetchResults[5].value;	
-		activepermit=fetchResults[6].value;	
-        if (fetchResults[0].status=='rejected') { //CD_topoJSON error, no maps can be rendered since boundaries not available
-			handleError(`Cannot read Community District dataset.\nMap cannot render.\nContact Data Analytics tmartin@buildings.nyc.gov`, "alert" )
-			handleError(`Cannot read Community District dataset.\nMap cannot render.\nContact Data Analytics tmartin@buildings.nyc.gov`, "console" )
-			return;
-        };
-		activeAVHdataset=(activeahv) ? processDataset(activeahv, "activeAVHdataset",  CD_topoJSON, "AHVs") : handleError("AHVs");
-		activeSheddataset=(activeshed) ? processDataset(activeshed, "activeSheddataset",  CD_topoJSON, "Sheds") : handleError("Sheds");
-		activeComplaintdataset=(activecomplaint) ? processDataset(activecomplaint, "activeComplaintdataset", CD_topoJSON, "Complaints") : handleError("Complaints");
-		activeViolationdataset=(activeviolation) ? processDataset(activeviolation, "activeViolationdataset", CD_topoJSON, "Violations") : handleError("Violations");
-		activeInjurydataset=(activeinjury)    ? processDataset(activeinjury,  "activeInjurydataset", CD_topoJSON, "Injuries") : handleError("Injuries");
-		activePermitdataset=(activepermit) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("Permits"); //default layer
-		assignButtonHandlers();
-		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
-		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
-		let legend = svg.selectAll("g.legend")
-			.data(ext_color_domain)
-			.enter().append("g")
-			.style("font-size", "16px")
-			.style("font-family", "Arial, Helvetica, sans-serif")
-			.attr("class", "legend");
-		let color2 = d3.scale.linear()
-			.domain(  [  ext_color_domain[0],ext_color_domain[ext_color_domain.length-1]  ] )  //max & min values
-			.range([mapColors[0],mapColors[mapColors.length-1]])
-			.interpolate(d3.interpolateLab);
-		let ls_w = 25, ls_h = 25;
-		legend.append("rect")
-			.attr("x", 10)
-			.attr("y", function(d, i){return height - (i*ls_h) - (-1*ls_h);})
-			.attr('transform', 'translate(10, -630)') //XY position of legend
-			.attr("width", ls_w)
-			.attr("height", ls_h)
-			.style("fill", function(d, i){
-				return (d) ? color2(d)  :"#d6d6d6";
-				})
-			.style("opacity", 1);
 
-		legend.append("text")
-			.attr("x", 40)
-			.attr("y", function(d, i){return height - (i*ls_h) - ls_h - (-69);})
-			.attr('transform', 'translate(10, -630)') // XY position of legend
-			.text(function(d, i){return legend_labels[i];});
-		d3.select(self.frameElement).style("height", height + "px");
-		// window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
-		document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
-
-
-
-
-
-    }
-);
 }
 
 
