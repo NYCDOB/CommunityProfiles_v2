@@ -20,14 +20,14 @@ Definitions for elements of each page of the application are listed below.
 | 5 | Staten Island  |
 
 
-### [Permits](https://www1.nyc.gov/site/buildings/homeowner/permits.page)
+### [Permits](https://www1.nyc.gov/site/buildings/property-or-business-owner/permits-by-type.page)
 
 | Permit Type | Definition |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | NB | New Building: Construction of new structures |
 | A1 | Major Alterations: Alterations that will change use, egress or occupancy |
 
-### [After Hours Variance Reasons](https://www1.nyc.gov/site/buildings/business/after-hours-variances.page) (See [Noise Mitigation Rules](http://www.nyc.gov/html/dep/pdf/law05113.pdf), 24-224 of the Administrative Code)
+### [After Hours Variance Reasons](https://www1.nyc.gov/site/buildings/property-or-business-owner/after-hour-variances-info.page) (See [Noise Mitigation Rules](https://www1.nyc.gov/assets/dep/downloads/pdf/air/noise/noise-code-full-version.pdf), 24-224 of the Administrative Code)
 
 | AHV Type | Definition |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ Definitions for elements of each page of the application are listed below.
 | Construction | Sidewalk protection installed during construction work |
 | Local Law 11 | Sidewalk protection installed because the façade of the building is being repaired in accordance with [Local Law 11 of 1998](https://www1.nyc.gov/assets/buildings/local_laws/locallaw_1998_package.pdf) |
 
-### [Complaints](https://www1.nyc.gov/site/buildings/renter/file-a-complaint.page)
+### [Complaints](https://www1.nyc.gov/site/buildings/dob/file-a-complaint.page)
 
 | Complaint Type | Definition |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +54,7 @@ Definitions for elements of each page of the application are listed below.
 | [Work Without Permit](https://portal.311.nyc.gov/article/?kanumber=KA-01797) | A report of construction work being done without a permit from the Department of Buildings |
 | Other | All other types of complaint |
 
-### [Violations](https://www1.nyc.gov/site/buildings/business/resolving-violations.page) (ECB Violations by [infraction code](http://www1.nyc.gov/assets/buildings/excel/penalty_schedule_with_codes.xlsx))
+### [Violations](https://www1.nyc.gov/site/buildings/safety/dob-violations.page) (ECB Violations by [infraction code](http://www1.nyc.gov/assets/buildings/excel/penalty_schedule_with_codes.xlsx))
 
 | Violation Type | Definition |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -73,7 +73,7 @@ Definitions for elements of each page of the application are listed below.
 | Injury | One or more people were injured during a construction accident. This will indicate the total number of people injured at construction accidents within the Community District over the past 12 months. This number has no relation to the number of accidents. |
 | Fatality | One or more people died as a result of a construction accident. This will indicate the total number of people that died due to construction accidents within the Community District over the past 12 months. This number has no relation to the number of accidents. |
 
-### [Accidents: Type](https://www1.nyc.gov/site/buildings/about/construction-related-accident-reports.page)
+### [Accidents: Type](https://www1.nyc.gov/site/buildings/dob/construction-related-accident-reports.page)
 
 | Accident Type | Definition |
 |-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -97,5 +97,5 @@ Definitions for elements of each page of the application are listed below.
 
 ## Built by
 
-* [DOB Analytics and Data Science Team](https://www1.nyc.gov/site/buildings/about/metrics-reports.page) - If you have questions or feedback, comment here on github or email us at [Analytics@buildings.nyc.gov](mailto:analytics@buildings.nyc.gov).
+* [DOB Analytics and Data Science Team](https://www1.nyc.gov/site/buildings/dob/analytics-reports.page) - If you have questions or feedback, comment here on github or email us at [Analytics@buildings.nyc.gov](mailto:analytics@buildings.nyc.gov).
 
