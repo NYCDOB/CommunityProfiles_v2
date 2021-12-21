@@ -373,7 +373,12 @@ Promise.allSettled(	[
 			.attr('transform', 'translate(10, -630)') // XY position of legend
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
+		
+		window.parent.postmessage( "happy" , "https://nycdob.github.io/CommunityProfiles_v2/indexcathy.html")
+		
 		window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+
+
     }
 );
 </script>
