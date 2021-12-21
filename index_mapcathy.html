@@ -48,7 +48,8 @@
 <script>
 let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
 debugger;
-let width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
+// let width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
+let width =document.querySelector("#main-wrapper").clientWidth,
     height = 768,
     center = [width / 2, height / 2],
     defaultFill = "#E1E1E1";
@@ -88,6 +89,8 @@ svg.append("svg:image")
 
 function assignButtonHandlers() {
 		let metricbuttons = window.parent.document.querySelectorAll(".dropdown button");
+
+
 		//grab the buttons in the parent window
 		//requirement:
 		//the id of the button must follow convention: "active"+[metricname]+"dataset"
@@ -350,7 +353,12 @@ Promise.allSettled(	[
 			.attr('transform', 'translate(10, -630)') // XY position of legend
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
-		window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+		//window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+
+
+
+
+
     }
 );
 </script>
