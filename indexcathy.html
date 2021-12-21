@@ -422,6 +422,22 @@
 <script>
 $(document).ready(function(){	
 
+
+
+window.addEventListener("message", (event) => {
+  // Do we trust the sender of this message?  (might be
+  // different from what we originally opened, for example).
+  if (event.origin !== "https://nycdob.github.io/CommunityProfiles_v2")
+    return;
+
+  // event.source is popup
+  // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+}, false);
+
+
+
+
+
 	var permitTotal = 0,
 		ahvTotal = 0,
 		shedTotal = 0,

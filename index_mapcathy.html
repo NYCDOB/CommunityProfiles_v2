@@ -48,7 +48,30 @@
 <script>
 let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
 debugger;
-// let width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
+
+
+
+window.addEventListener("message", (event) => {
+  // Do we trust the sender of this message?
+  if (event.origin !== "https://nycdob.github.io/CommunityProfiles_v2")
+    return;
+
+  // event.source is window.opener
+  // event.data is "hello there!"
+
+  // Assuming you've verified the origin of the received message (which
+  // you must do in any case), a convenient idiom for replying to a
+  // message is to call postMessage on event.source and provide
+  // event.origin as the targetOrigin.
+  event.source.postMessage("hi there yourself!  the secret response " +
+                           "is: rheeeeet!",
+                           event.origin);
+}, false);
+
+
+
+
+// let width = window.parent.document.querySelector(".chart-wrapper").clientWidth,   //causes CORS error
 let width =document.querySelector("#main-wrapper").clientWidth,
     height = 768,
     center = [width / 2, height / 2],
@@ -353,7 +376,7 @@ Promise.allSettled(	[
 			.attr('transform', 'translate(10, -630)') // XY position of legend
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
-		//window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+		window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
 
 
 
