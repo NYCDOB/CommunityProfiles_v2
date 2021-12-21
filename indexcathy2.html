@@ -499,36 +499,36 @@
 $(document).ready(function(){	
 
 {
+
 	let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
-
-
-let width = document.querySelector(".chart-wrapper").clientWidth,   //causes CORS error
+let map_width = document.querySelector(".chart-wrapper").clientWidth,   //causes CORS error
 //let width =document.querySelector("#main-wrapper").clientWidth,
     height = 768,
-    center = [width / 2, height / 2],
+    center = [map_width / 2, height / 2],
     defaultFill = "#E1E1E1";
 
 	let projection = d3.geo.mercator()
     .scale(75000)
 	.center( [-73.94,40.70] ) 
-    .translate([width / 2, height / 2]);
+    .translate([map_width / 2, height / 2]);
 	
 	let path = d3.geo.path()
     .projection(projection);
 
 	let svg = d3.select("body #main-wrapper").append("svg")
-    .attr("width", width)
+    .attr("width", map_width)
     .attr("height", height)
     .append("g");
-
+	
+	
 //STEP 1:  READ THE JSON or retrieve url
-let _CD_topoJSON=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/CD_topoJSON.json");
-let _activeAhvsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAhvsSummaryAll.json");
-let _activeShedsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeShedsSummaryAll.json");
-let _activeComplaintSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeComplaintSummaryAll.json");
-let _activeViolationsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryAll.json");
-let _activeInjuriesSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryAll.json");
-let _activePermitSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitSummaryAll.json");	
+_CD_topoJSON=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/CD_topoJSON.json");
+_activeAhvsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeAhvsSummaryAll.json");
+_activeShedsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeShedsSummaryAll.json");
+_activeComplaintSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeComplaintSummaryAll.json");
+_activeViolationsSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeViolationsSummaryAll.json");
+_activeInjuriesSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activeInjuriesSummaryAll.json");
+_activePermitSummaryAll=fetch("https://raw.githubusercontent.com/NYCDOB/CommunityProfiles_v2/gh-pages/data/activePermitSummaryAll.json");	
 //STEP 2:  add result dataset to ready function in same order as json is read
 Promise.allSettled(	[
 	_CD_topoJSON, 
@@ -597,10 +597,6 @@ Promise.allSettled(	[
 		// window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
 		document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
 
-
-
-
-
     }
 );
 
@@ -610,14 +606,14 @@ svg.on("wheel.zoom", null);
 svg.on("mousewheel.zoom", null);
 svg.append("rect")
     .attr("class", "overlay")
-    .attr("width", width)
+    .attr("width", map_width)
     .attr("height", height);
 svg.append("svg:image")
     .attr("xlink:href", "https://nycdob.github.io/CommunityProfiles_v2/images/progress-anim.gif")
     .attr("id", "progress-image")
     .attr("width", 43)
     .attr("height", 11)
-    .attr("x", width / 2)
+    .attr("x", map_width / 2)
     .attr("y", height / 2);
 	let g = svg.append("g");
 	let tooltip = d3.select("#tooltip")
@@ -765,7 +761,7 @@ function processDataset(datasetToProcess, currentMetric, CD_topoJSON, metricName
 						d3.select(this.parentNode.appendChild(this)).classed("selected", true);
 						tooltip.transition().duration(100)
 						.style("opacity", 1)
-						if (d3.event.pageX > (width - 200)) {
+						if (d3.event.pageX > (map_width - 200)) {
 							tooltip.style("left", (d3.event.pageX - 210) + "px");
 						} else {
 							tooltip.style("left", (d3.event.pageX + 20) + "px")
@@ -821,8 +817,8 @@ function handleError(errString,notifyType="console") {
 	varErrorDiv.innerHTML=`<p>Error reading data</p>`
 }
 
-}
 
+}
 
 
 
