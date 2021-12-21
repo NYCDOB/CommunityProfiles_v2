@@ -431,6 +431,8 @@ window.addEventListener("message", (event) => {
   // different from what we originally opened, for example).
   if (event.origin !== "https://nycdob.github.io/CommunityProfiles_v2/index_mapcathy.html")
     return;
+	alert("message")
+	document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
 
   // event.source is popup
   // event.data is "hi there yourself!  the secret response is: rheeeeet!"
