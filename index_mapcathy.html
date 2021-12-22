@@ -44,9 +44,32 @@
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://d3js.org/d3-format.v1.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
 <script>
 let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
-let width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
+
+
+
+var eventMethod = window.addEventListener
+ ? "addEventListener"
+ : "attachEvent";
+ var eventer = window[eventMethod];
+ var messageEvent = eventMethod === "attachEvent"
+ ? "onmessage"
+ : "message";
+ eventer(messageEvent, function (e) {
+ //data you receive from parent is stored inside e.data
+ $('#noData').text(e.data);
+ });
+
+
+
+
+
+
+
+// let width = window.parent.document.querySelector(".chart-wrapper").clientWidth,   //causes CORS error
+let width =document.querySelector("#main-wrapper").clientWidth,
     height = 768,
     center = [width / 2, height / 2],
     defaultFill = "#E1E1E1";
@@ -86,6 +109,8 @@ svg.append("svg:image")
 
 function assignButtonHandlers() {
 		let metricbuttons = window.parent.document.querySelectorAll(".dropdown button");
+
+
 		//grab the buttons in the parent window
 		//requirement:
 		//the id of the button must follow convention: "active"+[metricname]+"dataset"
@@ -348,7 +373,22 @@ Promise.allSettled(	[
 			.attr('transform', 'translate(10, -630)') // XY position of legend
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
+		debugger;
+		myparent=window.parent.document;
+		myparent2=window.parent.document;
+
+		myparent.postmessage( "happy" , "https://nycdob.github.io/CommunityProfiles_v2/indexcathy.html")
+
+
+
+window.addEventListener('message', function(e) {
+	debugger;
+var message = e.data;
+});
+
 		window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
+
+
     }
 );
 </script>
