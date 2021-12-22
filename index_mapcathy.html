@@ -374,7 +374,8 @@ Promise.allSettled(	[
 					console.log(parentEvent.data);
 					console.log(parentEvent.origin)
 					// if (   parentEvent.origin == "http://localhost:8000") {
-					if (   parentEvent.origin == "https://nycdob.github.io/CommunityProfiles_v2"     ) {
+					//if (   parentEvent.origin !== "https://nycdob.github.io/CommunityProfiles_v2"     ) {
+					if (   parentEvent.origin !== "https://nycdob.github.io") {
 						console.log("INVALID ORIGIN")
 						return
 					}
