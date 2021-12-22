@@ -47,19 +47,6 @@
 
 <script>
 
-{	//CORS testing block
-window.addEventListener("message",(parentEvent)=>{
-debugger;
-console.log(parentEvent.data);
-console.log(parentEvent.origin)
-if (   parentEvent.origin == "http://localhost:8000") {
-console.log("INVALID ORIGIN")
-return
-}
-console.log("secure connection established.")
-})
-}
-
 
 
 let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
@@ -380,10 +367,28 @@ Promise.allSettled(	[
 
 
 		// window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
-		myparent=window.parent;  //console.log(myparent);
-    	myparent.postMessage( "clickButton",
-			myparent.location.protocol+"//"+myparent.location.hostname+":"+myparent.location.port+myparent.location.pathname
-		)
+
+		{	//CORS testing block
+				window.addEventListener("message",(parentEvent)=>{
+					debugger;
+					console.log(parentEvent.data);
+					console.log(parentEvent.origin)
+					// if (   parentEvent.origin == "http://localhost:8000") {
+					if (   parentEvent.origin == "https://nycdob.github.io/CommunityProfiles_v2"     ) {
+						console.log("INVALID ORIGIN")
+						return
+					}
+					myparent=window.parent;  //console.log(myparent);
+						myparent.postMessage( "clickButton",
+						myparent.location.protocol+"//"+myparent.location.hostname+":"+myparent.location.port+myparent.location.pathname
+						)	
+					console.log("secure connection established.")
+				})
+		}
+
+
+
+
     }
 );
 </script>
