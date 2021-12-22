@@ -345,7 +345,7 @@ Promise.allSettled(	[
 		activeViolationdataset=(activeviolation) ? processDataset(activeviolation, "activeViolationdataset", CD_topoJSON, "Violations") : handleError("Violations");
 		activeInjurydataset=(activeinjury)    ? processDataset(activeinjury,  "activeInjurydataset", CD_topoJSON, "Injuries") : handleError("Injuries");
 		activePermitdataset=(activepermit) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("Permits"); //default layer
-		assignButtonHandlers();
+		//assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
 		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
 		let legend = svg.selectAll("g.legend")

@@ -432,22 +432,22 @@ $(document).ready(function(){
 
 {  //CORS testing block
 
-window.addEventListener("message", (iFrameEvent) => {
-debugger;
-console.log(iFrameEvent.origin);  
-console.log(iFrameEvent.source);  
-console.log(iFrameEvent.data); 
-if (event.origin !== "http://localhost:8000") {
-return;
-}
-console.log(iFrameEvent.data);
-if (iFrameEvent.data == "clickButton")
-{
-document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click()
-iFrameEvent.source.postMessage("received",iFrameEvent.source.location["href"]
-)
-}
-}, false);
+		window.addEventListener("message", (iFrameEvent) => {
+		debugger;
+		console.log(iFrameEvent.origin);  
+		console.log(iFrameEvent.source);  
+		console.log(iFrameEvent.data); 
+		if (event.origin !== "http://localhost:8000") {
+		return;
+		}
+		console.log(iFrameEvent.data);
+		if (iFrameEvent.data == "clickButton")
+		{
+		document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click()
+		iFrameEvent.source.postMessage("received",iFrameEvent.source.location["href"]
+		)
+		}
+		}, false);
 
 }
 
