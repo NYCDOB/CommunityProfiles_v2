@@ -379,8 +379,8 @@ Promise.allSettled(	[
 						return
 					}
 					myparent=window.parent;  //console.log(myparent);
-						myparent.postMessage( "clickButton",
-						myparent.location.protocol+"//"+myparent.location.hostname+":"+myparent.location.port+myparent.location.pathname
+						myparent.postMessage( "clickButton",parentEvent.path[0].location.href
+						//myparent.location.protocol+"//"+myparent.location.hostname+":"+myparent.location.port+myparent.location.pathname
 						)	
 					console.log("secure connection established.")
 				})
