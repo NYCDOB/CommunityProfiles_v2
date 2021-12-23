@@ -430,33 +430,7 @@
 $(document).ready(function(){	
 
 
-{  //CORS testing block
 
-
-debugger;
-
-		const _myFrame=document.querySelector(".myFrame");
-		_myFrame.contentWindow.postMessage("doclick", "https://nycdob.github.io/CommunityProfiles_v2/index_mapcathy.html");
-
-		window.addEventListener("message", (iFrameEvent) => {	
-		debugger;
-		console.log(iFrameEvent.origin);  
-		console.log(iFrameEvent.source);  
-		console.log(iFrameEvent.data); 
-		//if (event.origin !== "http://localhost:8000") {
-		if (event.origin !== "https://nycdob.github.io/CommunityProfiles_v2") {
-		return;
-		}
-		console.log(iFrameEvent.data);
-		if (iFrameEvent.data == "clickButton")
-		{
-		document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click()
-		iFrameEvent.source.postMessage("received",iFrameEvent.source.location["href"]
-		)
-		}
-		}, false);
-
-}
 
 
 
@@ -2091,6 +2065,37 @@ debugger;
 		}
 	});
 	
+
+
+
+
+	{  //CORS testing block
+
+		const _myFrame=document.querySelector(".myFrame");
+		_myFrame.contentWindow.postMessage("doclick", "https://nycdob.github.io/CommunityProfiles_v2/index_mapcathy.html");
+		window.addEventListener("message", (iFrameEvent) => {	
+
+		console.log(iFrameEvent.origin);  
+		console.log(iFrameEvent.source);  
+		console.log(iFrameEvent.data); 
+
+		//if (event.origin !== "http://localhost:8000") {
+		if ( iFrameEvent.origin !== "https://nycdob.github.io" &&  iFrameEvent.origin !== "https://nyc.gov"  &&  iFrameEvent.origin !== "localhost:8000"  ) {
+		return;
+		}
+		console.log(iFrameEvent.data);
+		if (iFrameEvent.data == "clickButton")
+		{
+		document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click()
+		iFrameEvent.source.postMessage("received",iFrameEvent.source.location["href"]
+		)
+		}
+		}, false);
+	}
+
+
+
+
 });
 </script>
 </body>

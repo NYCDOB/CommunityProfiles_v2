@@ -90,17 +90,10 @@ svg.append("svg:image")
  let CURR_SELECT = ["count","totalCount"];
  let COMP_CNT = ["ComplaintCount"];
 
+
 function assignButtonHandlers() {
 	debugger;
 		let metricbuttons = window.parent.document.querySelectorAll(".dropdown button");
-
-
-
-
-
-
-
-
 		//grab the buttons in the parent window
 		//requirement:
 		//the id of the button must follow convention: "active"+[metricname]+"dataset"
@@ -133,6 +126,15 @@ function assignButtonHandlers() {
 				})
 		}  // end parent button handler
 }
+
+
+
+
+
+
+
+
+
 function buildToolTip(topoID, currentCD, countPropertyHeader) {  //since each metric has unique additional values, need to customize tooltip
 		let theParent = document.querySelector("#tooltip");
 		while (theParent.firstChild) {  
@@ -332,7 +334,7 @@ Promise.allSettled(	[
 		activeViolationdataset=(activeviolation) ? processDataset(activeviolation, "activeViolationdataset", CD_topoJSON, "Violations") : handleError("Violations");
 		activeInjurydataset=(activeinjury)    ? processDataset(activeinjury,  "activeInjurydataset", CD_topoJSON, "Injuries") : handleError("Injuries");
 		activePermitdataset=(activepermit) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("Permits"); //default layer
-		//assignButtonHandlers();
+		// assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
 		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
 		let legend = svg.selectAll("g.legend")
@@ -370,15 +372,16 @@ Promise.allSettled(	[
 
 		{	//CORS testing block
 				window.addEventListener("message",(parentEvent)=>{
-					debugger;
+					//debugger;
 					console.log(parentEvent.data);
 					console.log(parentEvent.origin)
 					// if (   parentEvent.origin == "http://localhost:8000") {
 					//if (   parentEvent.origin !== "https://nycdob.github.io/CommunityProfiles_v2"     ) {
-					if (   parentEvent.origin !== "https://nycdob.github.io") {
+					if (   parentEvent.origin !== "https://nycdob.github.io" &&  parentEvent.origin !== "https://nyc.gov"  &&  parentEvent.origin !== "http://localhost:8000"   ) {
 						console.log("INVALID ORIGIN")
 						return
 					}
+					assignButtonHandlers();
 					myparent=window.parent;  //console.log(myparent);
 						myparent.postMessage( "clickButton",parentEvent.path[0].location.href
 						//myparent.location.protocol+"//"+myparent.location.hostname+":"+myparent.location.port+myparent.location.pathname
