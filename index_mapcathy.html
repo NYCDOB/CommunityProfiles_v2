@@ -44,19 +44,13 @@
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://d3js.org/d3-format.v1.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
 <script>
-
-
-
 let mapColors=["#D3E5E8","#B8D0D9","#9CBAC9","#81A5BA","#658FAB","#4A7A9B","#2E648C"]
-
-// let width = window.parent.document.querySelector(".chart-wrapper").clientWidth,   //causes CORS error
-let width =document.querySelector("#main-wrapper").clientWidth,
+let width = window.parent.document.querySelector(".chart-wrapper").clientWidth, 
+//let width =document.querySelector("#main-wrapper").clientWidth,
     height = 768,
     center = [width / 2, height / 2],
     defaultFill = "#E1E1E1";
-
 	let projection = d3.geo.mercator()
     .scale(75000)
 	.center( [-73.94,40.70] ) 
@@ -92,7 +86,6 @@ svg.append("svg:image")
 
 
 function assignButtonHandlers() {
-	debugger;
 		let metricbuttons = window.parent.document.querySelectorAll(".dropdown button");
 		//grab the buttons in the parent window
 		//requirement:
@@ -126,14 +119,6 @@ function assignButtonHandlers() {
 				})
 		}  // end parent button handler
 }
-
-
-
-
-
-
-
-
 
 function buildToolTip(topoID, currentCD, countPropertyHeader) {  //since each metric has unique additional values, need to customize tooltip
 		let theParent = document.querySelector("#tooltip");
@@ -184,9 +169,9 @@ function getPercentiles(dataArray, measureColumn)	{
 	let sortedData = dataArray.sort(function(a,b){return a[measureColumn] - b[measureColumn]})
 			.map( 	 (el) => { return el[measureColumn]}  ).filter( function(val) { return val >0}      )
 	for (let myctr=percentileRange; myctr <= 100; myctr+=percentileRange) {
-		percentileNum = Math.floor(myctr);
-		varname="percentile"+percentileNum;
-		percentileNames.push(varname)
+		let percentileNum = Math.floor(myctr);
+		letvarname="percentile"+percentileNum;
+		percentileNames.push(varname);
 		this[varname] = d3.quantile(sortedData,   percentileNum/100); 
 		retval.push(this[varname]);
 	}
@@ -334,7 +319,7 @@ Promise.allSettled(	[
 		activeViolationdataset=(activeviolation) ? processDataset(activeviolation, "activeViolationdataset", CD_topoJSON, "Violations") : handleError("Violations");
 		activeInjurydataset=(activeinjury)    ? processDataset(activeinjury,  "activeInjurydataset", CD_topoJSON, "Injuries") : handleError("Injuries");
 		activePermitdataset=(activepermit) ? processDataset(activepermit,"activePermitdataset", CD_topoJSON, "Permits") : handleError("Permits"); //default layer
-		// assignButtonHandlers();
+		assignButtonHandlers();
 		let ext_color_domain = globalPercentiles;  //globalPercentils is set in processDataset()
 		let legend_labels = globalPercentiles.map((el,index,arr)=>(index==0)? "LOW" : (index==arr.length-1) ? "HIGH" : "")
 		let legend = svg.selectAll("g.legend")
@@ -365,37 +350,7 @@ Promise.allSettled(	[
 			.attr('transform', 'translate(10, -630)') // XY position of legend
 			.text(function(d, i){return legend_labels[i];});
 		d3.select(self.frameElement).style("height", height + "px");
-
-
-
-		// window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
-
-		{	//CORS testing block
-				window.addEventListener("message",(parentEvent)=>{
-					//debugger;
-					console.log(parentEvent.data);
-					console.log(parentEvent.origin)
-					// if (   parentEvent.origin == "http://localhost:8000") {
-					//if (   parentEvent.origin !== "https://nycdob.github.io/CommunityProfiles_v2"     ) {
-					if (   parentEvent.origin !== "https://nycdob.github.io" &&  parentEvent.origin !== "https://nyc.gov"  &&  parentEvent.origin !== "http://localhost:8000"   ) {
-						console.log("INVALID ORIGIN")
-						return
-					}
-					assignButtonHandlers();
-					myparent=window.parent;  //console.log(myparent);
-						myparent.postMessage( "clickButton",parentEvent.path[0].location.href
-
-
-						//myparent.location.protocol+"//"+myparent.location.hostname+":"+myparent.location.port+myparent.location.pathname
-						)	
-						console.log(myparent);
-					console.log("secure connection established.")
-				})
-		}
-
-
-
-
+		 window.parent.document.querySelector(".dropdown .btn.btn-outline-success:first-of-type").click();
     }
 );
 </script>
