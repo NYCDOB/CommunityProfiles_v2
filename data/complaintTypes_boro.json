@@ -1,0 +1,136 @@
+[
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 256
+		},
+		 {		
+		"x": "Brooklyn",
+		"y": 1179
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 884
+		},
+		 {		
+		"x": "Queens",
+		"y": 653
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 163
+		} 
+	],
+	"key": "After Hours Work"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 3700
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 3554
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 3326
+		},
+		 {		
+		"x": "Queens",
+		"y": 1930
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 199
+		} 
+	],
+	"key": "Elevator"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 3162
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 7766
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 1621
+		},
+		 {		
+		"x": "Queens",
+		"y": 14179
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 1558
+		} 
+	],
+	"key": "Illegal Conversion"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 13794
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 44997
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 28162
+		},
+		 {		
+		"x": "Queens",
+		"y": 28642
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 6136
+		} 
+	],
+	"key": "Other"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 1413
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 6456
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 997
+		},
+		 {		
+		"x": "Queens",
+		"y": 6838
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 1616
+		}
+	],
+	"key": "Work Without Permit"
+ }
+]
