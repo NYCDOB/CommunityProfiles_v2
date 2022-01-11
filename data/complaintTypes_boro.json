@@ -1,0 +1,55 @@
+[
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 2
+		},
+		 {		
+		"x": "Brooklyn",
+		"y": 3
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 1
+		},
+		 {		
+		"x": "Queens",
+		"y": 7
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Other"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 0
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 6
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 7
+		},
+		 {		
+		"x": "Queens",
+		"y": 1
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		}
+	],
+	"key": "Work Without Permit"
+ }
+]
