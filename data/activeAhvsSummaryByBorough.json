@@ -3,24 +3,24 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 1
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 4
-		},
-		 {		
 		"x": "Bronx",
 		"y": 0
 		},
 		 {		
-		"x": "Staten Island",
+		"x": "Brooklyn",
 		"y": 0
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 3
 		},
 		 {		
 		"x": "Queens",
 		"y": 0
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 1
 		} 
 	],
 	"key": "Emergency Work"
@@ -29,25 +29,25 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 78
+		"x": "Bronx",
+		"y": 21
 		}
 ,
 		 {		
-		"x": "Staten Island",
-		"y": 18
-		},
-		 {		
-		"x": "Bronx",
-		"y": 32
+		"x": "Brooklyn",
+		"y": 56
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 181
+		"y": 110
 		},
 		 {		
 		"x": "Queens",
-		"y": 59
+		"y": 32
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 9
 		} 
 	],
 	"key": "Minimal Noise"
@@ -56,25 +56,25 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 39
+		"x": "Bronx",
+		"y": 13
 		}
 ,
 		 {		
-		"x": "Queens",
-		"y": 29
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 12
+		"x": "Brooklyn",
+		"y": 25
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 30
+		"y": 15
 		},
 		 {		
-		"x": "Bronx",
-		"y": 31
+		"x": "Queens",
+		"y": 19
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 8
 		} 
 	],
 	"key": "NYC Construction"
@@ -83,25 +83,25 @@
 	"values": 
 	[
 		{		
-		"x": "Queens",
-		"y": 72
+		"x": "Bronx",
+		"y": 40
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 107
+		"y": 82
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 414
+		"y": 256
+		},
+		 {		
+		"x": "Queens",
+		"y": 41
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 4
-		},
-		 {		
-		"x": "Bronx",
-		"y": 71
+		"y": 1
 		} 
 	],
 	"key": "Public Safety"
@@ -110,25 +110,25 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 9
+		"x": "Bronx",
+		"y": 1
 		}
 ,
 		 {		
-		"x": "Queens",
-		"y": 14
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 1
-		},
-		 {		
-		"x": "Bronx",
-		"y": 5
+		"x": "Brooklyn",
+		"y": 11
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 15
+		"y": 10
+		},
+		 {		
+		"x": "Queens",
+		"y": 6
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
 		}
 	],
 	"key": "Undue Hardship"
