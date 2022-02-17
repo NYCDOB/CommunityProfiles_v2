@@ -3,10 +3,6 @@
 	"values": 
 	[
 		{		
-		"x": "Bronx",
-		"y": 0
-		},
-		 {		
 		"x": "Brooklyn",
 		"y": 1
 		},
@@ -15,12 +11,16 @@
 		"y": 4
 		},
 		 {		
-		"x": "Queens",
+		"x": "Staten Island",
+		"y": 1
+		},
+		 {		
+		"x": "Bronx",
 		"y": 0
 		},
 		 {		
-		"x": "Staten Island",
-		"y": 1
+		"x": "Queens",
+		"y": 0
 		} 
 	],
 	"key": "Emergency Work"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 20
+		"y": 19
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 46
+		"y": 45
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 138
+		"y": 143
 		},
 		 {		
 		"x": "Queens",
-		"y": 25
+		"y": 26
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 9
+		"y": 8
 		} 
 	],
 	"key": "Minimal Noise"
@@ -57,12 +57,12 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 30
+		"y": 32
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 34
+		"y": 40
 		},
 		 {		
 		"x": "Manhattan",
@@ -70,7 +70,7 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 26
+		"y": 29
 		},
 		 {		
 		"x": "Staten Island",
@@ -93,7 +93,7 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 291
+		"y": 290
 		},
 		 {		
 		"x": "Queens",
