@@ -1,173 +1,53 @@
 [
  {
-	"communityBoard": "103",
-	"count": 2000,
-	"Failure to Comply": 550,
-	"Miscellaneous": 212,
-	"Building Maintenance": 215,
-	"Elevator Maintenance": 103,
-	"Work Without Permit": 105,
-	"Other": 815
- },
- {
-	"communityBoard": "105",
-	"count": 2264,
-	"Failure to Comply": 309,
-	"Miscellaneous": 591,
-	"Building Maintenance": 70,
-	"Elevator Maintenance": 211,
-	"Work Without Permit": 49,
-	"Other": 1034
- },
- {
-	"communityBoard": "108",
-	"count": 1671,
-	"Failure to Comply": 180,
-	"Miscellaneous": 279,
-	"Building Maintenance": 114,
-	"Elevator Maintenance": 147,
-	"Work Without Permit": 68,
-	"Other": 883
- },
- {
-	"communityBoard": "201",
-	"count": 806,
-	"Failure to Comply": 180,
-	"Miscellaneous": 72,
-	"Building Maintenance": 114,
-	"Elevator Maintenance": 42,
-	"Work Without Permit": 32,
-	"Other": 366
- },
- {
-	"communityBoard": "301",
-	"count": 2788,
-	"Failure to Comply": 501,
-	"Miscellaneous": 509,
-	"Building Maintenance": 174,
-	"Elevator Maintenance": 87,
-	"Work Without Permit": 124,
-	"Other": 1393
- },
- {
-	"communityBoard": "310",
-	"count": 805,
-	"Failure to Comply": 122,
-	"Miscellaneous": 122,
-	"Building Maintenance": 68,
-	"Elevator Maintenance": 76,
-	"Work Without Permit": 67,
-	"Other": 350
- },
- {
-	"communityBoard": "312",
-	"count": 1435,
-	"Failure to Comply": 286,
-	"Miscellaneous": 210,
-	"Building Maintenance": 142,
-	"Elevator Maintenance": 64,
-	"Work Without Permit": 102,
-	"Other": 631
- },
- {
-	"communityBoard": "356",
-	"count": 0,
-	"Failure to Comply": 0,
-	"Miscellaneous": 0,
-	"Building Maintenance": 0,
-	"Elevator Maintenance": 0,
-	"Work Without Permit": 0,
-	"Other": 0
- },
- {
-	"communityBoard": "403",
-	"count": 1078,
-	"Failure to Comply": 438,
-	"Miscellaneous": 78,
-	"Building Maintenance": 87,
-	"Elevator Maintenance": 51,
-	"Work Without Permit": 69,
-	"Other": 355
- },
- {
-	"communityBoard": "405",
-	"count": 914,
-	"Failure to Comply": 185,
-	"Miscellaneous": 82,
-	"Building Maintenance": 102,
-	"Elevator Maintenance": 24,
-	"Work Without Permit": 85,
-	"Other": 436
- },
- {
-	"communityBoard": "413",
-	"count": 970,
-	"Failure to Comply": 326,
-	"Miscellaneous": 73,
-	"Building Maintenance": 112,
-	"Elevator Maintenance": 13,
-	"Work Without Permit": 75,
-	"Other": 371
- },
- {
-	"communityBoard": "480",
-	"count": 2,
-	"Failure to Comply": 0,
-	"Miscellaneous": 0,
-	"Building Maintenance": 1,
-	"Elevator Maintenance": 0,
-	"Work Without Permit": 1,
-	"Other": 0
- },
- {
 	"communityBoard": "106",
-	"count": 1108,
-	"Failure to Comply": 142,
+	"count": 1104,
+	"Failure to Comply": 141,
 	"Miscellaneous": 229,
 	"Building Maintenance": 85,
-	"Elevator Maintenance": 67,
+	"Elevator Maintenance": 66,
 	"Work Without Permit": 32,
-	"Other": 553
+	"Other": 551
  },
  {
 	"communityBoard": "107",
-	"count": 1694,
-	"Failure to Comply": 319,
-	"Miscellaneous": 207,
-	"Building Maintenance": 133,
+	"count": 1691,
+	"Failure to Comply": 316,
+	"Miscellaneous": 206,
+	"Building Maintenance": 132,
 	"Elevator Maintenance": 80,
-	"Work Without Permit": 52,
-	"Other": 903
+	"Work Without Permit": 53,
+	"Other": 904
  },
  {
 	"communityBoard": "112",
-	"count": 1262,
-	"Failure to Comply": 358,
+	"count": 1251,
+	"Failure to Comply": 354,
 	"Miscellaneous": 56,
-	"Building Maintenance": 137,
-	"Elevator Maintenance": 167,
+	"Building Maintenance": 136,
+	"Elevator Maintenance": 160,
 	"Work Without Permit": 74,
-	"Other": 470
+	"Other": 471
  },
  {
 	"communityBoard": "202",
-	"count": 553,
+	"count": 552,
 	"Failure to Comply": 163,
 	"Miscellaneous": 44,
 	"Building Maintenance": 64,
-	"Elevator Maintenance": 33,
+	"Elevator Maintenance": 29,
 	"Work Without Permit": 21,
-	"Other": 228
+	"Other": 231
  },
  {
 	"communityBoard": "206",
-	"count": 963,
+	"count": 960,
 	"Failure to Comply": 289,
 	"Miscellaneous": 97,
-	"Building Maintenance": 109,
+	"Building Maintenance": 108,
 	"Elevator Maintenance": 51,
-	"Work Without Permit": 38,
-	"Other": 379
+	"Work Without Permit": 37,
+	"Other": 378
  },
  {
 	"communityBoard": "226",
@@ -191,41 +71,41 @@
  },
  {
 	"communityBoard": "302",
-	"count": 1619,
+	"count": 1627,
 	"Failure to Comply": 229,
-	"Miscellaneous": 320,
+	"Miscellaneous": 322,
 	"Building Maintenance": 129,
 	"Elevator Maintenance": 32,
 	"Work Without Permit": 69,
-	"Other": 840
+	"Other": 846
  },
  {
 	"communityBoard": "303",
-	"count": 2289,
+	"count": 2294,
 	"Failure to Comply": 748,
-	"Miscellaneous": 293,
+	"Miscellaneous": 294,
 	"Building Maintenance": 218,
 	"Elevator Maintenance": 34,
-	"Work Without Permit": 104,
-	"Other": 892
+	"Work Without Permit": 105,
+	"Other": 895
  },
  {
 	"communityBoard": "311",
-	"count": 826,
+	"count": 828,
 	"Failure to Comply": 172,
-	"Miscellaneous": 102,
-	"Building Maintenance": 104,
+	"Miscellaneous": 103,
+	"Building Maintenance": 105,
 	"Elevator Maintenance": 54,
 	"Work Without Permit": 63,
 	"Other": 331
  },
  {
 	"communityBoard": "313",
-	"count": 676,
-	"Failure to Comply": 235,
+	"count": 673,
+	"Failure to Comply": 236,
 	"Miscellaneous": 35,
 	"Building Maintenance": 52,
-	"Elevator Maintenance": 80,
+	"Elevator Maintenance": 76,
 	"Work Without Permit": 28,
 	"Other": 246
  },
@@ -241,173 +121,173 @@
  },
  {
 	"communityBoard": "404",
-	"count": 1039,
-	"Failure to Comply": 217,
-	"Miscellaneous": 131,
+	"count": 1034,
+	"Failure to Comply": 220,
+	"Miscellaneous": 128,
 	"Building Maintenance": 82,
 	"Elevator Maintenance": 48,
-	"Work Without Permit": 104,
-	"Other": 457
+	"Work Without Permit": 103,
+	"Other": 453
  },
  {
 	"communityBoard": "406",
-	"count": 619,
+	"count": 617,
 	"Failure to Comply": 44,
 	"Miscellaneous": 100,
-	"Building Maintenance": 47,
+	"Building Maintenance": 46,
 	"Elevator Maintenance": 67,
 	"Work Without Permit": 35,
-	"Other": 326
+	"Other": 325
  },
  {
 	"communityBoard": "502",
-	"count": 600,
-	"Failure to Comply": 97,
+	"count": 602,
+	"Failure to Comply": 98,
 	"Miscellaneous": 53,
 	"Building Maintenance": 89,
 	"Elevator Maintenance": 2,
 	"Work Without Permit": 47,
-	"Other": 312
+	"Other": 313
  },
  {
 	"communityBoard": "104",
-	"count": 1720,
-	"Failure to Comply": 445,
-	"Miscellaneous": 205,
+	"count": 1719,
+	"Failure to Comply": 446,
+	"Miscellaneous": 206,
 	"Building Maintenance": 152,
-	"Elevator Maintenance": 64,
+	"Elevator Maintenance": 63,
 	"Work Without Permit": 65,
-	"Other": 789
+	"Other": 787
  },
  {
 	"communityBoard": "109",
-	"count": 1132,
+	"count": 1129,
 	"Failure to Comply": 286,
 	"Miscellaneous": 69,
 	"Building Maintenance": 81,
 	"Elevator Maintenance": 182,
 	"Work Without Permit": 67,
-	"Other": 447
+	"Other": 444
  },
  {
 	"communityBoard": "307",
-	"count": 1267,
+	"count": 1264,
 	"Failure to Comply": 153,
-	"Miscellaneous": 169,
+	"Miscellaneous": 167,
 	"Building Maintenance": 99,
-	"Elevator Maintenance": 185,
+	"Elevator Maintenance": 186,
 	"Work Without Permit": 87,
-	"Other": 574
+	"Other": 572
  },
  {
 	"communityBoard": "308",
-	"count": 1155,
+	"count": 1145,
 	"Failure to Comply": 323,
-	"Miscellaneous": 113,
-	"Building Maintenance": 140,
+	"Miscellaneous": 112,
+	"Building Maintenance": 135,
 	"Elevator Maintenance": 21,
 	"Work Without Permit": 49,
-	"Other": 509
+	"Other": 505
  },
  {
 	"communityBoard": "309",
-	"count": 943,
+	"count": 944,
 	"Failure to Comply": 176,
 	"Miscellaneous": 81,
-	"Building Maintenance": 110,
-	"Elevator Maintenance": 98,
-	"Work Without Permit": 45,
-	"Other": 433
+	"Building Maintenance": 111,
+	"Elevator Maintenance": 97,
+	"Work Without Permit": 47,
+	"Other": 432
  },
  {
 	"communityBoard": "317",
-	"count": 1271,
-	"Failure to Comply": 460,
+	"count": 1275,
+	"Failure to Comply": 461,
 	"Miscellaneous": 93,
-	"Building Maintenance": 121,
+	"Building Maintenance": 122,
 	"Elevator Maintenance": 109,
-	"Work Without Permit": 80,
+	"Work Without Permit": 82,
 	"Other": 408
  },
  {
 	"communityBoard": "318",
-	"count": 824,
+	"count": 828,
 	"Failure to Comply": 287,
 	"Miscellaneous": 73,
 	"Building Maintenance": 89,
 	"Elevator Maintenance": 31,
-	"Work Without Permit": 93,
-	"Other": 251
+	"Work Without Permit": 94,
+	"Other": 254
  },
  {
 	"communityBoard": "407",
-	"count": 1948,
-	"Failure to Comply": 445,
+	"count": 1949,
+	"Failure to Comply": 444,
 	"Miscellaneous": 286,
 	"Building Maintenance": 81,
-	"Elevator Maintenance": 108,
-	"Work Without Permit": 114,
-	"Other": 914
+	"Elevator Maintenance": 110,
+	"Work Without Permit": 113,
+	"Other": 915
  },
  {
 	"communityBoard": "408",
-	"count": 991,
+	"count": 990,
 	"Failure to Comply": 168,
 	"Miscellaneous": 133,
-	"Building Maintenance": 98,
+	"Building Maintenance": 97,
 	"Elevator Maintenance": 46,
-	"Work Without Permit": 67,
-	"Other": 479
+	"Work Without Permit": 66,
+	"Other": 480
  },
  {
 	"communityBoard": "409",
-	"count": 885,
-	"Failure to Comply": 350,
-	"Miscellaneous": 60,
-	"Building Maintenance": 71,
-	"Elevator Maintenance": 31,
+	"count": 887,
+	"Failure to Comply": 351,
+	"Miscellaneous": 61,
+	"Building Maintenance": 73,
+	"Elevator Maintenance": 29,
 	"Work Without Permit": 93,
 	"Other": 280
  },
  {
 	"communityBoard": "410",
-	"count": 880,
+	"count": 881,
 	"Failure to Comply": 273,
 	"Miscellaneous": 72,
 	"Building Maintenance": 83,
 	"Elevator Maintenance": 14,
 	"Work Without Permit": 123,
-	"Other": 315
+	"Other": 316
  },
  {
 	"communityBoard": "411",
-	"count": 783,
+	"count": 780,
 	"Failure to Comply": 82,
-	"Miscellaneous": 101,
+	"Miscellaneous": 100,
 	"Building Maintenance": 93,
 	"Elevator Maintenance": 12,
-	"Work Without Permit": 71,
-	"Other": 424
+	"Work Without Permit": 70,
+	"Other": 423
  },
  {
 	"communityBoard": "412",
-	"count": 1857,
+	"count": 1856,
 	"Failure to Comply": 547,
 	"Miscellaneous": 151,
-	"Building Maintenance": 262,
+	"Building Maintenance": 260,
 	"Elevator Maintenance": 58,
 	"Work Without Permit": 138,
-	"Other": 701
+	"Other": 702
  },
  {
 	"communityBoard": "414",
-	"count": 679,
+	"count": 674,
 	"Failure to Comply": 182,
 	"Miscellaneous": 58,
 	"Building Maintenance": 76,
-	"Elevator Maintenance": 37,
-	"Work Without Permit": 63,
-	"Other": 263
+	"Elevator Maintenance": 36,
+	"Work Without Permit": 62,
+	"Other": 260
  },
  {
 	"communityBoard": "595",
@@ -420,44 +300,164 @@
 	"Other": 0
  },
  {
+	"communityBoard": "103",
+	"count": 2001,
+	"Failure to Comply": 552,
+	"Miscellaneous": 212,
+	"Building Maintenance": 215,
+	"Elevator Maintenance": 103,
+	"Work Without Permit": 105,
+	"Other": 814
+ },
+ {
+	"communityBoard": "105",
+	"count": 2254,
+	"Failure to Comply": 310,
+	"Miscellaneous": 591,
+	"Building Maintenance": 69,
+	"Elevator Maintenance": 211,
+	"Work Without Permit": 49,
+	"Other": 1024
+ },
+ {
+	"communityBoard": "108",
+	"count": 1675,
+	"Failure to Comply": 181,
+	"Miscellaneous": 279,
+	"Building Maintenance": 114,
+	"Elevator Maintenance": 147,
+	"Work Without Permit": 69,
+	"Other": 885
+ },
+ {
+	"communityBoard": "201",
+	"count": 808,
+	"Failure to Comply": 180,
+	"Miscellaneous": 72,
+	"Building Maintenance": 114,
+	"Elevator Maintenance": 42,
+	"Work Without Permit": 32,
+	"Other": 368
+ },
+ {
+	"communityBoard": "301",
+	"count": 2798,
+	"Failure to Comply": 503,
+	"Miscellaneous": 508,
+	"Building Maintenance": 175,
+	"Elevator Maintenance": 87,
+	"Work Without Permit": 121,
+	"Other": 1404
+ },
+ {
+	"communityBoard": "310",
+	"count": 805,
+	"Failure to Comply": 122,
+	"Miscellaneous": 122,
+	"Building Maintenance": 68,
+	"Elevator Maintenance": 75,
+	"Work Without Permit": 67,
+	"Other": 351
+ },
+ {
+	"communityBoard": "312",
+	"count": 1441,
+	"Failure to Comply": 287,
+	"Miscellaneous": 210,
+	"Building Maintenance": 145,
+	"Elevator Maintenance": 64,
+	"Work Without Permit": 102,
+	"Other": 633
+ },
+ {
+	"communityBoard": "356",
+	"count": 0,
+	"Failure to Comply": 0,
+	"Miscellaneous": 0,
+	"Building Maintenance": 0,
+	"Elevator Maintenance": 0,
+	"Work Without Permit": 0,
+	"Other": 0
+ },
+ {
+	"communityBoard": "403",
+	"count": 1082,
+	"Failure to Comply": 438,
+	"Miscellaneous": 79,
+	"Building Maintenance": 88,
+	"Elevator Maintenance": 51,
+	"Work Without Permit": 70,
+	"Other": 356
+ },
+ {
+	"communityBoard": "405",
+	"count": 912,
+	"Failure to Comply": 185,
+	"Miscellaneous": 81,
+	"Building Maintenance": 102,
+	"Elevator Maintenance": 24,
+	"Work Without Permit": 85,
+	"Other": 435
+ },
+ {
+	"communityBoard": "413",
+	"count": 973,
+	"Failure to Comply": 326,
+	"Miscellaneous": 74,
+	"Building Maintenance": 111,
+	"Elevator Maintenance": 13,
+	"Work Without Permit": 73,
+	"Other": 376
+ },
+ {
+	"communityBoard": "480",
+	"count": 2,
+	"Failure to Comply": 0,
+	"Miscellaneous": 0,
+	"Building Maintenance": 1,
+	"Elevator Maintenance": 0,
+	"Work Without Permit": 1,
+	"Other": 0
+ },
+ {
 	"communityBoard": "101",
 	"count": 877,
 	"Failure to Comply": 101,
-	"Miscellaneous": 195,
+	"Miscellaneous": 194,
 	"Building Maintenance": 56,
 	"Elevator Maintenance": 43,
 	"Work Without Permit": 18,
-	"Other": 464
+	"Other": 465
  },
  {
 	"communityBoard": "102",
-	"count": 1514,
+	"count": 1513,
 	"Failure to Comply": 348,
 	"Miscellaneous": 221,
 	"Building Maintenance": 117,
 	"Elevator Maintenance": 49,
 	"Work Without Permit": 77,
-	"Other": 702
+	"Other": 701
  },
  {
 	"communityBoard": "110",
-	"count": 1219,
-	"Failure to Comply": 276,
-	"Miscellaneous": 93,
-	"Building Maintenance": 143,
-	"Elevator Maintenance": 144,
+	"count": 1225,
+	"Failure to Comply": 275,
+	"Miscellaneous": 94,
+	"Building Maintenance": 145,
+	"Elevator Maintenance": 143,
 	"Work Without Permit": 46,
-	"Other": 517
+	"Other": 522
  },
  {
 	"communityBoard": "111",
-	"count": 987,
-	"Failure to Comply": 161,
+	"count": 981,
+	"Failure to Comply": 160,
 	"Miscellaneous": 104,
 	"Building Maintenance": 95,
-	"Elevator Maintenance": 161,
+	"Elevator Maintenance": 155,
 	"Work Without Permit": 25,
-	"Other": 441
+	"Other": 442
  },
  {
 	"communityBoard": "164",
@@ -471,43 +471,43 @@
  },
  {
 	"communityBoard": "203",
-	"count": 982,
-	"Failure to Comply": 448,
+	"count": 972,
+	"Failure to Comply": 447,
 	"Miscellaneous": 81,
-	"Building Maintenance": 67,
+	"Building Maintenance": 62,
 	"Elevator Maintenance": 57,
-	"Work Without Permit": 28,
-	"Other": 301
+	"Work Without Permit": 26,
+	"Other": 299
  },
  {
 	"communityBoard": "204",
-	"count": 1289,
+	"count": 1292,
 	"Failure to Comply": 323,
 	"Miscellaneous": 89,
-	"Building Maintenance": 110,
+	"Building Maintenance": 112,
 	"Elevator Maintenance": 167,
 	"Work Without Permit": 64,
-	"Other": 536
+	"Other": 537
  },
  {
 	"communityBoard": "205",
-	"count": 1508,
+	"count": 1510,
 	"Failure to Comply": 576,
 	"Miscellaneous": 76,
 	"Building Maintenance": 110,
 	"Elevator Maintenance": 200,
 	"Work Without Permit": 61,
-	"Other": 485
+	"Other": 487
  },
  {
 	"communityBoard": "207",
-	"count": 1295,
-	"Failure to Comply": 467,
-	"Miscellaneous": 68,
+	"count": 1306,
+	"Failure to Comply": 470,
+	"Miscellaneous": 70,
 	"Building Maintenance": 87,
 	"Elevator Maintenance": 129,
-	"Work Without Permit": 59,
-	"Other": 485
+	"Work Without Permit": 60,
+	"Other": 490
  },
  {
 	"communityBoard": "208",
@@ -521,38 +521,38 @@
  },
  {
 	"communityBoard": "209",
-	"count": 913,
-	"Failure to Comply": 321,
+	"count": 914,
+	"Failure to Comply": 322,
 	"Miscellaneous": 42,
-	"Building Maintenance": 95,
+	"Building Maintenance": 96,
 	"Elevator Maintenance": 86,
-	"Work Without Permit": 51,
-	"Other": 318
+	"Work Without Permit": 52,
+	"Other": 316
  },
  {
 	"communityBoard": "210",
-	"count": 515,
-	"Failure to Comply": 153,
+	"count": 514,
+	"Failure to Comply": 154,
 	"Miscellaneous": 51,
-	"Building Maintenance": 65,
+	"Building Maintenance": 64,
 	"Elevator Maintenance": 15,
-	"Work Without Permit": 45,
+	"Work Without Permit": 44,
 	"Other": 186
  },
  {
 	"communityBoard": "211",
-	"count": 649,
+	"count": 653,
 	"Failure to Comply": 182,
 	"Miscellaneous": 29,
 	"Building Maintenance": 97,
 	"Elevator Maintenance": 68,
 	"Work Without Permit": 31,
-	"Other": 242
+	"Other": 246
  },
  {
 	"communityBoard": "212",
-	"count": 1067,
-	"Failure to Comply": 435,
+	"count": 1066,
+	"Failure to Comply": 434,
 	"Miscellaneous": 74,
 	"Building Maintenance": 134,
 	"Elevator Maintenance": 31,
@@ -571,83 +571,83 @@
  },
  {
 	"communityBoard": "304",
-	"count": 1414,
-	"Failure to Comply": 507,
-	"Miscellaneous": 134,
-	"Building Maintenance": 143,
+	"count": 1424,
+	"Failure to Comply": 513,
+	"Miscellaneous": 135,
+	"Building Maintenance": 144,
 	"Elevator Maintenance": 20,
 	"Work Without Permit": 59,
-	"Other": 551
+	"Other": 553
  },
  {
 	"communityBoard": "305",
-	"count": 1772,
-	"Failure to Comply": 713,
-	"Miscellaneous": 107,
-	"Building Maintenance": 228,
+	"count": 1781,
+	"Failure to Comply": 714,
+	"Miscellaneous": 108,
+	"Building Maintenance": 231,
 	"Elevator Maintenance": 122,
-	"Work Without Permit": 79,
-	"Other": 523
+	"Work Without Permit": 80,
+	"Other": 526
  },
  {
 	"communityBoard": "306",
-	"count": 1330,
+	"count": 1318,
 	"Failure to Comply": 137,
-	"Miscellaneous": 220,
+	"Miscellaneous": 218,
 	"Building Maintenance": 137,
 	"Elevator Maintenance": 60,
-	"Work Without Permit": 81,
-	"Other": 695
+	"Work Without Permit": 80,
+	"Other": 686
  },
  {
 	"communityBoard": "314",
-	"count": 1123,
-	"Failure to Comply": 251,
+	"count": 1125,
+	"Failure to Comply": 254,
 	"Miscellaneous": 106,
-	"Building Maintenance": 102,
+	"Building Maintenance": 101,
 	"Elevator Maintenance": 162,
 	"Work Without Permit": 57,
 	"Other": 445
  },
  {
 	"communityBoard": "315",
-	"count": 1365,
+	"count": 1368,
 	"Failure to Comply": 238,
 	"Miscellaneous": 185,
 	"Building Maintenance": 89,
 	"Elevator Maintenance": 197,
-	"Work Without Permit": 98,
-	"Other": 558
+	"Work Without Permit": 99,
+	"Other": 560
  },
  {
 	"communityBoard": "316",
-	"count": 933,
+	"count": 931,
 	"Failure to Comply": 368,
 	"Miscellaneous": 77,
 	"Building Maintenance": 156,
 	"Elevator Maintenance": 33,
 	"Work Without Permit": 31,
-	"Other": 268
+	"Other": 266
  },
  {
 	"communityBoard": "401",
-	"count": 1524,
+	"count": 1521,
 	"Failure to Comply": 262,
-	"Miscellaneous": 280,
-	"Building Maintenance": 125,
-	"Elevator Maintenance": 50,
+	"Miscellaneous": 279,
+	"Building Maintenance": 124,
+	"Elevator Maintenance": 49,
 	"Work Without Permit": 71,
 	"Other": 736
  },
  {
 	"communityBoard": "402",
-	"count": 947,
+	"count": 954,
 	"Failure to Comply": 177,
-	"Miscellaneous": 147,
-	"Building Maintenance": 57,
+	"Miscellaneous": 148,
+	"Building Maintenance": 56,
 	"Elevator Maintenance": 64,
 	"Work Without Permit": 56,
-	"Other": 446
+	"Other": 453
  },
  {
 	"communityBoard": "481",
@@ -691,22 +691,22 @@
  },
  {
 	"communityBoard": "501",
-	"count": 1028,
-	"Failure to Comply": 357,
-	"Miscellaneous": 55,
-	"Building Maintenance": 187,
+	"count": 1026,
+	"Failure to Comply": 353,
+	"Miscellaneous": 56,
+	"Building Maintenance": 186,
 	"Elevator Maintenance": 5,
 	"Work Without Permit": 86,
-	"Other": 338
+	"Other": 340
  },
  {
 	"communityBoard": "503",
-	"count": 510,
+	"count": 509,
 	"Failure to Comply": 115,
 	"Miscellaneous": 57,
 	"Building Maintenance": 67,
 	"Elevator Maintenance": 3,
 	"Work Without Permit": 49,
-	"Other": 219
+	"Other": 218
  }
 ]
