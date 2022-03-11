@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1154
+		"y": 1156
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2297
+		"y": 2302
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1399
+		"y": 1398
 		},
 		 {		
 		"x": "Queens",
-		"y": 1361
+		"y": 1355
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 366
+		"y": 364
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,20 +30,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 914
+		"y": 910
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1432
+		"y": 1434
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1378
+		"y": 1375
 		},
 		 {		
 		"x": "Queens",
-		"y": 615
+		"y": 610
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,7 +57,7 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3751
+		"y": 3741
 		}
 ,
 		 {		
@@ -66,15 +66,15 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 3487
+		"y": 3484
 		},
 		 {		
 		"x": "Queens",
-		"y": 3649
+		"y": 3659
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 561
+		"y": 566
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 826
+		"y": 820
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3069
+		"y": 3067
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 2497
+		"y": 2485
 		},
 		 {		
 		"x": "Queens",
-		"y": 1777
+		"y": 1778
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 173
+		"y": 172
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4280
+		"y": 4276
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 10086
+		"y": 10077
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 8022
+		"y": 7989
 		},
 		 {		
 		"x": "Queens",
-		"y": 6606
+		"y": 6603
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 869
+		"y": 870
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 527
+		"y": 526
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1322
+		"y": 1323
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 670
+		"y": 669
 		},
 		 {		
 		"x": "Queens",
-		"y": 1155
+		"y": 1149
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 180
+		"y": 181
 		}
 	],
 	"key": "Work Without Permit"
