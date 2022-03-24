@@ -16,7 +16,7 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 2
+		"y": 1
 		},
 		 {		
 		"x": "Staten Island",
@@ -35,11 +35,11 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 63
+		"y": 62
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 134
+		"y": 143
 		},
 		 {		
 		"x": "Queens",
@@ -62,19 +62,19 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 39
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 22
-		},
-		 {		
-		"x": "Queens",
 		"y": 41
 		},
 		 {		
+		"x": "Manhattan",
+		"y": 21
+		},
+		 {		
+		"x": "Queens",
+		"y": 40
+		},
+		 {		
 		"x": "Staten Island",
-		"y": 9
+		"y": 10
 		} 
 	],
 	"key": "NYC Construction"
@@ -89,15 +89,15 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 84
+		"y": 82
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 295
+		"y": 293
 		},
 		 {		
 		"x": "Queens",
-		"y": 59
+		"y": 58
 		},
 		 {		
 		"x": "Staten Island",
