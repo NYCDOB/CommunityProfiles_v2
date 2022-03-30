@@ -1,93 +1,228 @@
 [
  {
-	"count": 4004,
+	"count": 3183,
+	"communityBoard": "104",
+	"After Hours Work": 79,
+	"Elevator": 172,
+	"Illegal Conversion": 131,
+	"Other": 2702,
+	"Work Without Permit": 99
+ },
+ {
+	"count": 2133,
+	"communityBoard": "109",
+	"After Hours Work": 42,
+	"Elevator": 409,
+	"Illegal Conversion": 157,
+	"Other": 1458,
+	"Work Without Permit": 67
+ },
+ {
+	"count": 3669,
+	"communityBoard": "307",
+	"After Hours Work": 37,
+	"Elevator": 181,
+	"Illegal Conversion": 530,
+	"Other": 2485,
+	"Work Without Permit": 436
+ },
+ {
+	"count": 2679,
+	"communityBoard": "308",
+	"After Hours Work": 54,
+	"Elevator": 88,
+	"Illegal Conversion": 232,
+	"Other": 2063,
+	"Work Without Permit": 242
+ },
+ {
+	"count": 2566,
+	"communityBoard": "309",
+	"After Hours Work": 66,
+	"Elevator": 388,
+	"Illegal Conversion": 179,
+	"Other": 1683,
+	"Work Without Permit": 250
+ },
+ {
+	"count": 3354,
+	"communityBoard": "317",
+	"After Hours Work": 53,
+	"Elevator": 339,
+	"Illegal Conversion": 621,
+	"Other": 2001,
+	"Work Without Permit": 340
+ },
+ {
+	"count": 3214,
+	"communityBoard": "318",
+	"After Hours Work": 25,
+	"Elevator": 62,
+	"Illegal Conversion": 813,
+	"Other": 1712,
+	"Work Without Permit": 602
+ },
+ {
+	"count": 6135,
+	"communityBoard": "407",
+	"After Hours Work": 81,
+	"Elevator": 246,
+	"Illegal Conversion": 1576,
+	"Other": 3486,
+	"Work Without Permit": 746
+ },
+ {
+	"count": 3289,
+	"communityBoard": "408",
+	"After Hours Work": 45,
+	"Elevator": 125,
+	"Illegal Conversion": 793,
+	"Other": 1839,
+	"Work Without Permit": 487
+ },
+ {
+	"count": 3898,
+	"communityBoard": "409",
+	"After Hours Work": 34,
+	"Elevator": 78,
+	"Illegal Conversion": 1675,
+	"Other": 1562,
+	"Work Without Permit": 549
+ },
+ {
+	"count": 5096,
+	"communityBoard": "410",
+	"After Hours Work": 25,
+	"Elevator": 10,
+	"Illegal Conversion": 2397,
+	"Other": 1853,
+	"Work Without Permit": 811
+ },
+ {
+	"count": 2987,
+	"communityBoard": "411",
+	"After Hours Work": 51,
+	"Elevator": 26,
+	"Illegal Conversion": 629,
+	"Other": 1642,
+	"Work Without Permit": 639
+ },
+ {
+	"count": 5957,
+	"communityBoard": "412",
+	"After Hours Work": 24,
+	"Elevator": 228,
+	"Illegal Conversion": 1896,
+	"Other": 3042,
+	"Work Without Permit": 767
+ },
+ {
+	"count": 2003,
+	"communityBoard": "414",
+	"After Hours Work": 14,
+	"Elevator": 222,
+	"Illegal Conversion": 288,
+	"Other": 1226,
+	"Work Without Permit": 253
+ },
+ {
+	"count": 0,
+	"communityBoard": "595",
+	"After Hours Work": 0,
+	"Elevator": 0,
+	"Illegal Conversion": 0,
+	"Other": 0,
+	"Work Without Permit": 0
+ },
+ {
+	"count": 4000,
 	"communityBoard": "103",
-	"After Hours Work": 92,
+	"After Hours Work": 91,
 	"Elevator": 234,
 	"Illegal Conversion": 321,
-	"Other": 3220,
+	"Other": 3217,
 	"Work Without Permit": 137
  },
  {
-	"count": 3248,
+	"count": 3252,
 	"communityBoard": "105",
-	"After Hours Work": 82,
+	"After Hours Work": 85,
 	"Elevator": 298,
 	"Illegal Conversion": 86,
-	"Other": 2654,
+	"Other": 2655,
 	"Work Without Permit": 128
  },
  {
-	"count": 3855,
+	"count": 3857,
 	"communityBoard": "108",
 	"After Hours Work": 106,
-	"Elevator": 267,
-	"Illegal Conversion": 134,
-	"Other": 3267,
+	"Elevator": 268,
+	"Illegal Conversion": 136,
+	"Other": 3266,
 	"Work Without Permit": 81
  },
  {
-	"count": 1527,
+	"count": 1532,
 	"communityBoard": "201",
 	"After Hours Work": 12,
 	"Elevator": 255,
-	"Illegal Conversion": 96,
-	"Other": 1099,
-	"Work Without Permit": 65
+	"Illegal Conversion": 97,
+	"Other": 1106,
+	"Work Without Permit": 62
  },
  {
-	"count": 7867,
+	"count": 7891,
 	"communityBoard": "301",
 	"After Hours Work": 166,
-	"Elevator": 291,
+	"Elevator": 290,
 	"Illegal Conversion": 387,
-	"Other": 6346,
-	"Work Without Permit": 677
+	"Other": 6367,
+	"Work Without Permit": 681
  },
  {
-	"count": 3395,
+	"count": 3386,
 	"communityBoard": "310",
 	"After Hours Work": 44,
-	"Elevator": 205,
-	"Illegal Conversion": 633,
-	"Other": 1909,
-	"Work Without Permit": 604
+	"Elevator": 204,
+	"Illegal Conversion": 627,
+	"Other": 1912,
+	"Work Without Permit": 599
  },
  {
-	"count": 4387,
+	"count": 4386,
 	"communityBoard": "312",
 	"After Hours Work": 84,
 	"Elevator": 122,
 	"Illegal Conversion": 597,
 	"Other": 3085,
-	"Work Without Permit": 499
+	"Work Without Permit": 498
  },
  {
 	"count": 2913,
 	"communityBoard": "403",
 	"After Hours Work": 34,
-	"Elevator": 175,
-	"Illegal Conversion": 762,
-	"Other": 1627,
-	"Work Without Permit": 315
+	"Elevator": 184,
+	"Illegal Conversion": 761,
+	"Other": 1620,
+	"Work Without Permit": 314
  },
  {
-	"count": 4725,
+	"count": 4726,
 	"communityBoard": "405",
 	"After Hours Work": 102,
-	"Elevator": 33,
-	"Illegal Conversion": 1207,
-	"Other": 2535,
-	"Work Without Permit": 848
+	"Elevator": 31,
+	"Illegal Conversion": 1209,
+	"Other": 2533,
+	"Work Without Permit": 851
  },
  {
-	"count": 3869,
+	"count": 3847,
 	"communityBoard": "413",
 	"After Hours Work": 41,
 	"Elevator": 13,
-	"Illegal Conversion": 1384,
-	"Other": 1756,
-	"Work Without Permit": 675
+	"Illegal Conversion": 1372,
+	"Other": 1748,
+	"Work Without Permit": 673
  },
  {
 	"count": 2,
@@ -117,75 +252,75 @@
 	"Work Without Permit": 51
  },
  {
-	"count": 3877,
+	"count": 3870,
 	"communityBoard": "107",
 	"After Hours Work": 122,
 	"Elevator": 366,
-	"Illegal Conversion": 158,
-	"Other": 3140,
-	"Work Without Permit": 91
+	"Illegal Conversion": 161,
+	"Other": 3129,
+	"Work Without Permit": 92
  },
  {
-	"count": 2621,
+	"count": 2627,
 	"communityBoard": "112",
 	"After Hours Work": 61,
-	"Elevator": 466,
+	"Elevator": 473,
 	"Illegal Conversion": 228,
-	"Other": 1803,
+	"Other": 1802,
 	"Work Without Permit": 63
  },
  {
 	"count": 836,
 	"communityBoard": "202",
 	"After Hours Work": 8,
-	"Elevator": 161,
+	"Elevator": 162,
 	"Illegal Conversion": 69,
 	"Other": 563,
-	"Work Without Permit": 35
+	"Work Without Permit": 34
  },
  {
-	"count": 1780,
+	"count": 1788,
 	"communityBoard": "206",
 	"After Hours Work": 18,
 	"Elevator": 260,
 	"Illegal Conversion": 205,
-	"Other": 1223,
+	"Other": 1231,
 	"Work Without Permit": 74
  },
  {
-	"count": 3829,
+	"count": 3843,
 	"communityBoard": "302",
-	"After Hours Work": 108,
-	"Elevator": 143,
-	"Illegal Conversion": 83,
-	"Other": 3251,
+	"After Hours Work": 105,
+	"Elevator": 142,
+	"Illegal Conversion": 82,
+	"Other": 3270,
 	"Work Without Permit": 244
  },
  {
 	"count": 5277,
 	"communityBoard": "303",
 	"After Hours Work": 95,
-	"Elevator": 163,
-	"Illegal Conversion": 399,
-	"Other": 4190,
-	"Work Without Permit": 430
+	"Elevator": 160,
+	"Illegal Conversion": 400,
+	"Other": 4189,
+	"Work Without Permit": 433
  },
  {
-	"count": 3206,
+	"count": 3211,
 	"communityBoard": "311",
 	"After Hours Work": 46,
 	"Elevator": 101,
-	"Illegal Conversion": 640,
-	"Other": 1951,
-	"Work Without Permit": 468
+	"Illegal Conversion": 645,
+	"Other": 1948,
+	"Work Without Permit": 471
  },
  {
-	"count": 1825,
+	"count": 1834,
 	"communityBoard": "313",
 	"After Hours Work": 19,
 	"Elevator": 159,
-	"Illegal Conversion": 211,
-	"Other": 1272,
+	"Illegal Conversion": 216,
+	"Other": 1276,
 	"Work Without Permit": 164
  },
  {
@@ -198,31 +333,31 @@
 	"Work Without Permit": 2
  },
  {
-	"count": 2561,
+	"count": 2565,
 	"communityBoard": "404",
 	"After Hours Work": 20,
-	"Elevator": 216,
-	"Illegal Conversion": 710,
-	"Other": 1439,
-	"Work Without Permit": 176
+	"Elevator": 218,
+	"Illegal Conversion": 706,
+	"Other": 1444,
+	"Work Without Permit": 177
  },
  {
-	"count": 2040,
+	"count": 2035,
 	"communityBoard": "406",
 	"After Hours Work": 28,
-	"Elevator": 233,
-	"Illegal Conversion": 224,
-	"Other": 1276,
+	"Elevator": 232,
+	"Illegal Conversion": 222,
+	"Other": 1274,
 	"Work Without Permit": 279
  },
  {
-	"count": 2984,
+	"count": 2986,
 	"communityBoard": "502",
 	"After Hours Work": 62,
-	"Elevator": 33,
-	"Illegal Conversion": 456,
-	"Other": 1882,
-	"Work Without Permit": 551
+	"Elevator": 32,
+	"Illegal Conversion": 457,
+	"Other": 1887,
+	"Work Without Permit": 548
  },
  {
 	"count": 0,
@@ -243,346 +378,211 @@
 	"Work Without Permit": 0
  },
  {
-	"count": 3196,
-	"communityBoard": "104",
-	"After Hours Work": 79,
-	"Elevator": 172,
-	"Illegal Conversion": 131,
-	"Other": 2715,
-	"Work Without Permit": 99
- },
- {
-	"count": 2138,
-	"communityBoard": "109",
-	"After Hours Work": 42,
-	"Elevator": 409,
-	"Illegal Conversion": 157,
-	"Other": 1462,
-	"Work Without Permit": 68
- },
- {
-	"count": 3668,
-	"communityBoard": "307",
-	"After Hours Work": 37,
-	"Elevator": 183,
-	"Illegal Conversion": 528,
-	"Other": 2487,
-	"Work Without Permit": 433
- },
- {
-	"count": 2677,
-	"communityBoard": "308",
-	"After Hours Work": 54,
-	"Elevator": 88,
-	"Illegal Conversion": 232,
-	"Other": 2061,
-	"Work Without Permit": 242
- },
- {
-	"count": 2570,
-	"communityBoard": "309",
-	"After Hours Work": 66,
-	"Elevator": 388,
-	"Illegal Conversion": 181,
-	"Other": 1684,
-	"Work Without Permit": 251
- },
- {
-	"count": 3358,
-	"communityBoard": "317",
-	"After Hours Work": 52,
-	"Elevator": 341,
-	"Illegal Conversion": 621,
-	"Other": 2004,
-	"Work Without Permit": 340
- },
- {
-	"count": 3215,
-	"communityBoard": "318",
-	"After Hours Work": 25,
-	"Elevator": 65,
-	"Illegal Conversion": 812,
-	"Other": 1709,
-	"Work Without Permit": 604
- },
- {
-	"count": 6153,
-	"communityBoard": "407",
-	"After Hours Work": 81,
-	"Elevator": 249,
-	"Illegal Conversion": 1582,
-	"Other": 3493,
-	"Work Without Permit": 748
- },
- {
-	"count": 3290,
-	"communityBoard": "408",
-	"After Hours Work": 45,
-	"Elevator": 124,
-	"Illegal Conversion": 793,
-	"Other": 1842,
-	"Work Without Permit": 486
- },
- {
-	"count": 3894,
-	"communityBoard": "409",
-	"After Hours Work": 35,
-	"Elevator": 78,
-	"Illegal Conversion": 1674,
-	"Other": 1555,
-	"Work Without Permit": 552
- },
- {
-	"count": 5108,
-	"communityBoard": "410",
-	"After Hours Work": 25,
-	"Elevator": 10,
-	"Illegal Conversion": 2402,
-	"Other": 1859,
-	"Work Without Permit": 812
- },
- {
-	"count": 2997,
-	"communityBoard": "411",
-	"After Hours Work": 50,
-	"Elevator": 26,
-	"Illegal Conversion": 639,
-	"Other": 1640,
-	"Work Without Permit": 642
- },
- {
-	"count": 5953,
-	"communityBoard": "412",
-	"After Hours Work": 24,
-	"Elevator": 228,
-	"Illegal Conversion": 1893,
-	"Other": 3041,
-	"Work Without Permit": 767
- },
- {
-	"count": 2006,
-	"communityBoard": "414",
-	"After Hours Work": 14,
-	"Elevator": 223,
-	"Illegal Conversion": 288,
-	"Other": 1228,
-	"Work Without Permit": 253
- },
- {
-	"count": 0,
-	"communityBoard": "595",
-	"After Hours Work": 0,
-	"Elevator": 0,
-	"Illegal Conversion": 0,
-	"Other": 0,
-	"Work Without Permit": 0
- },
- {
-	"count": 1851,
+	"count": 1856,
 	"communityBoard": "101",
-	"After Hours Work": 46,
+	"After Hours Work": 47,
 	"Elevator": 129,
 	"Illegal Conversion": 44,
-	"Other": 1572,
+	"Other": 1576,
 	"Work Without Permit": 60
  },
  {
-	"count": 3472,
+	"count": 3481,
 	"communityBoard": "102",
-	"After Hours Work": 83,
+	"After Hours Work": 84,
 	"Elevator": 103,
-	"Illegal Conversion": 174,
-	"Other": 2938,
-	"Work Without Permit": 174
+	"Illegal Conversion": 173,
+	"Other": 2949,
+	"Work Without Permit": 172
  },
  {
-	"count": 2832,
+	"count": 2835,
 	"communityBoard": "110",
-	"After Hours Work": 51,
+	"After Hours Work": 50,
 	"Elevator": 513,
-	"Illegal Conversion": 188,
-	"Other": 2011,
-	"Work Without Permit": 69
+	"Illegal Conversion": 189,
+	"Other": 2013,
+	"Work Without Permit": 70
  },
  {
-	"count": 1804,
+	"count": 1808,
 	"communityBoard": "111",
 	"After Hours Work": 31,
 	"Elevator": 316,
-	"Illegal Conversion": 102,
-	"Other": 1317,
+	"Illegal Conversion": 105,
+	"Other": 1318,
 	"Work Without Permit": 38
  },
  {
-	"count": 1397,
+	"count": 1396,
 	"communityBoard": "203",
 	"After Hours Work": 25,
 	"Elevator": 258,
 	"Illegal Conversion": 133,
-	"Other": 954,
+	"Other": 953,
 	"Work Without Permit": 27
  },
  {
-	"count": 2333,
+	"count": 2336,
 	"communityBoard": "204",
 	"After Hours Work": 18,
-	"Elevator": 663,
-	"Illegal Conversion": 206,
-	"Other": 1396,
+	"Elevator": 664,
+	"Illegal Conversion": 205,
+	"Other": 1399,
 	"Work Without Permit": 50
  },
  {
-	"count": 2283,
+	"count": 2284,
 	"communityBoard": "205",
 	"After Hours Work": 22,
 	"Elevator": 661,
-	"Illegal Conversion": 243,
-	"Other": 1283,
-	"Work Without Permit": 74
+	"Illegal Conversion": 242,
+	"Other": 1287,
+	"Work Without Permit": 72
  },
  {
 	"count": 2123,
 	"communityBoard": "207",
-	"After Hours Work": 21,
+	"After Hours Work": 20,
 	"Elevator": 517,
 	"Illegal Conversion": 227,
-	"Other": 1267,
+	"Other": 1268,
 	"Work Without Permit": 91
  },
  {
-	"count": 1578,
+	"count": 1577,
 	"communityBoard": "208",
 	"After Hours Work": 41,
-	"Elevator": 198,
+	"Elevator": 199,
 	"Illegal Conversion": 126,
-	"Other": 1052,
-	"Work Without Permit": 161
+	"Other": 1049,
+	"Work Without Permit": 162
  },
  {
-	"count": 2726,
+	"count": 2718,
 	"communityBoard": "209",
 	"After Hours Work": 22,
-	"Elevator": 533,
+	"Elevator": 534,
 	"Illegal Conversion": 633,
-	"Other": 1366,
-	"Work Without Permit": 172
+	"Other": 1359,
+	"Work Without Permit": 170
  },
  {
-	"count": 2079,
+	"count": 2064,
 	"communityBoard": "210",
 	"After Hours Work": 17,
 	"Elevator": 86,
-	"Illegal Conversion": 581,
-	"Other": 1073,
-	"Work Without Permit": 322
+	"Illegal Conversion": 576,
+	"Other": 1067,
+	"Work Without Permit": 318
  },
  {
-	"count": 1822,
+	"count": 1825,
 	"communityBoard": "211",
 	"After Hours Work": 14,
 	"Elevator": 219,
 	"Illegal Conversion": 380,
-	"Other": 932,
-	"Work Without Permit": 277
+	"Other": 933,
+	"Work Without Permit": 279
  },
  {
-	"count": 2488,
+	"count": 2487,
 	"communityBoard": "212",
 	"After Hours Work": 23,
 	"Elevator": 179,
 	"Illegal Conversion": 607,
-	"Other": 1519,
+	"Other": 1518,
 	"Work Without Permit": 160
  },
  {
-	"count": 3553,
+	"count": 3567,
 	"communityBoard": "304",
 	"After Hours Work": 60,
 	"Elevator": 69,
-	"Illegal Conversion": 445,
-	"Other": 2690,
+	"Illegal Conversion": 448,
+	"Other": 2701,
 	"Work Without Permit": 289
  },
  {
-	"count": 4390,
+	"count": 4395,
 	"communityBoard": "305",
 	"After Hours Work": 44,
-	"Elevator": 208,
-	"Illegal Conversion": 905,
-	"Other": 2907,
-	"Work Without Permit": 326
+	"Elevator": 205,
+	"Illegal Conversion": 915,
+	"Other": 2903,
+	"Work Without Permit": 328
  },
  {
-	"count": 3495,
+	"count": 3500,
 	"communityBoard": "306",
 	"After Hours Work": 89,
-	"Elevator": 74,
-	"Illegal Conversion": 112,
-	"Other": 2958,
+	"Elevator": 73,
+	"Illegal Conversion": 111,
+	"Other": 2965,
 	"Work Without Permit": 262
  },
  {
-	"count": 3053,
+	"count": 3054,
 	"communityBoard": "314",
 	"After Hours Work": 38,
 	"Elevator": 533,
-	"Illegal Conversion": 332,
-	"Other": 1809,
-	"Work Without Permit": 341
+	"Illegal Conversion": 333,
+	"Other": 1807,
+	"Work Without Permit": 343
  },
  {
-	"count": 3885,
+	"count": 3893,
 	"communityBoard": "315",
 	"After Hours Work": 56,
 	"Elevator": 372,
-	"Illegal Conversion": 422,
-	"Other": 2470,
-	"Work Without Permit": 565
+	"Illegal Conversion": 421,
+	"Other": 2478,
+	"Work Without Permit": 566
  },
  {
-	"count": 1683,
+	"count": 1677,
 	"communityBoard": "316",
 	"After Hours Work": 4,
-	"Elevator": 98,
+	"Elevator": 97,
 	"Illegal Conversion": 278,
-	"Other": 1199,
-	"Work Without Permit": 104
+	"Other": 1195,
+	"Work Without Permit": 103
  },
  {
-	"count": 4348,
+	"count": 4360,
 	"communityBoard": "401",
 	"After Hours Work": 97,
 	"Elevator": 143,
-	"Illegal Conversion": 730,
-	"Other": 3002,
-	"Work Without Permit": 376
+	"Illegal Conversion": 731,
+	"Other": 3016,
+	"Work Without Permit": 373
  },
  {
-	"count": 2807,
+	"count": 2810,
 	"communityBoard": "402",
 	"After Hours Work": 55,
-	"Elevator": 146,
-	"Illegal Conversion": 456,
-	"Other": 1860,
+	"Elevator": 149,
+	"Illegal Conversion": 458,
+	"Other": 1858,
 	"Work Without Permit": 290
  },
  {
-	"count": 3914,
+	"count": 3917,
 	"communityBoard": "501",
-	"After Hours Work": 44,
-	"Elevator": 127,
-	"Illegal Conversion": 779,
-	"Other": 2355,
-	"Work Without Permit": 609
+	"After Hours Work": 45,
+	"Elevator": 124,
+	"Illegal Conversion": 777,
+	"Other": 2364,
+	"Work Without Permit": 607
  },
  {
-	"count": 3004,
+	"count": 3002,
 	"communityBoard": "503",
 	"After Hours Work": 47,
 	"Elevator": 9,
-	"Illegal Conversion": 411,
-	"Other": 1960,
-	"Work Without Permit": 577
+	"Illegal Conversion": 415,
+	"Other": 1957,
+	"Work Without Permit": 574
  },
  {
 	"count": 1,
@@ -594,12 +594,12 @@
 	"Work Without Permit": 0
  },
  {
-	"count": 16,
+	"count": 15,
 	"communityBoard": "164",
 	"After Hours Work": 0,
 	"Elevator": 0,
 	"Illegal Conversion": 0,
-	"Other": 16,
+	"Other": 15,
 	"Work Without Permit": 0
  },
  {
