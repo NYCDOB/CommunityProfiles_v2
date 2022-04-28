@@ -12,12 +12,12 @@
  },
  {
 	"communityBoard": "102",
-	"count": 17,
+	"count": 16,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 0,
-	"Other": 11,
+	"Other": 10,
 	"Scaffold/Shoring Installations": 1,
 	"Worker Fell": 6
  },
@@ -45,12 +45,12 @@
  },
  {
 	"communityBoard": "105",
-	"count": 103,
+	"count": 102,
 	"Demolition": 3,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 3,
 	"Mechanical Construction Equipment": 1,
-	"Other": 68,
+	"Other": 67,
 	"Scaffold/Shoring Installations": 3,
 	"Worker Fell": 25
  },
@@ -111,14 +111,14 @@
  },
  {
 	"communityBoard": "111",
-	"count": 7,
+	"count": 8,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 0,
 	"Other": 4,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 3
+	"Worker Fell": 4
  },
  {
 	"communityBoard": "112",
@@ -243,14 +243,14 @@
  },
  {
 	"communityBoard": "210",
-	"count": 2,
+	"count": 1,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 0,
 	"Other": 1,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 1
+	"Worker Fell": 0
  },
  {
 	"communityBoard": "211",
@@ -320,22 +320,22 @@
  },
  {
 	"communityBoard": "302",
-	"count": 28,
+	"count": 27,
 	"Demolition": 1,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 0,
 	"Other": 19,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 9
+	"Worker Fell": 8
  },
  {
 	"communityBoard": "303",
-	"count": 7,
+	"count": 6,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
-	"Mechanical Construction Equipment": 1,
+	"Mechanical Construction Equipment": 0,
 	"Other": 4,
 	"Scaffold/Shoring Installations": 0,
 	"Worker Fell": 2
@@ -624,7 +624,7 @@
 	"Mechanical Construction Equipment": 0,
 	"Other": 1,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 0
+	"Worker Fell": 1
  },
  {
 	"communityBoard": "410",
