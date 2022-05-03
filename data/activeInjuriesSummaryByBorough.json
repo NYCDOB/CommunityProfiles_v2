@@ -111,6 +111,33 @@
 	[
 		{		
 		"x": "Bronx",
+		"y": 7
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 0
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 0
+		},
+		 {		
+		"x": "Queens",
+		"y": 0
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
+		} 
+	],
+	"key": "Not Yet Determined"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
 		"y": 36
 		}
 ,
@@ -120,7 +147,7 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 170
+		"y": 171
 		},
 		 {		
 		"x": "Queens",
