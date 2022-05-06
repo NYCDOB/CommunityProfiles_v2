@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1157
+		"y": 1152
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2158
+		"y": 2169
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1350
+		"y": 1346
 		},
 		 {		
 		"x": "Queens",
-		"y": 1321
+		"y": 1304
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 292
+		"y": 291
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,20 +30,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1125
+		"y": 1136
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1485
+		"y": 1498
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1311
+		"y": 1335
 		},
 		 {		
 		"x": "Queens",
-		"y": 555
+		"y": 554
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3391
+		"y": 3377
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 5140
+		"y": 5116
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 3187
+		"y": 3179
 		},
 		 {		
 		"x": "Queens",
-		"y": 3181
+		"y": 3162
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 519
+		"y": 517
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,12 +84,12 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 821
+		"y": 819
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3171
+		"y": 3168
 		},
 		 {		
 		"x": "Manhattan",
@@ -97,11 +97,11 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 1758
+		"y": 1759
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 204
+		"y": 202
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4309
+		"y": 4296
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 10279
+		"y": 10276
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 7576
+		"y": 7549
 		},
 		 {		
 		"x": "Queens",
-		"y": 6815
+		"y": 6811
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 773
+		"y": 770
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 493
+		"y": 492
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1271
+		"y": 1270
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 673
+		"y": 665
 		},
 		 {		
 		"x": "Queens",
-		"y": 1037
+		"y": 1032
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 163
+		"y": 161
 		}
 	],
 	"key": "Work Without Permit"
