@@ -3,27 +3,81 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 1
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 4
-		},
-		 {		
 		"x": "Bronx",
 		"y": 0
 		},
 		 {		
-		"x": "Staten Island",
+		"x": "Brooklyn",
 		"y": 0
 		},
 		 {		
+		"x": "Manhattan",
+		"y": 2
+		},
+		 {		
 		"x": "Queens",
+		"y": 1
+		},
+		 {		
+		"x": "Staten Island",
 		"y": 0
 		} 
 	],
 	"key": "Emergency Work"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 13
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 26
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 124
+		},
+		 {		
+		"x": "Queens",
+		"y": 18
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 2
+		} 
+	],
+	"key": "Minimal Noise"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 12
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 19
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 15
+		},
+		 {		
+		"x": "Queens",
+		"y": 15
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 6
+		} 
+	],
+	"key": "NYC Construction"
  },
  {
 	"values": 
@@ -35,73 +89,19 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 44
+		"y": 33
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 161
+		"y": 199
 		},
 		 {		
 		"x": "Queens",
-		"y": 48
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 17
-		} 
-	],
-	"key": "Minimal Noise"
- },
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 26
-		}
-,
-		 {		
-		"x": "Brooklyn",
-		"y": 29
-		},
-		 {		
-		"x": "Manhattan",
 		"y": 22
 		},
 		 {		
-		"x": "Queens",
-		"y": 26
-		},
-		 {		
 		"x": "Staten Island",
-		"y": 8
-		} 
-	],
-	"key": "NYC Construction"
- },
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 38
-		}
-,
-		 {		
-		"x": "Brooklyn",
-		"y": 66
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 292
-		},
-		 {		
-		"x": "Queens",
-		"y": 50
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 5
+		"y": 1
 		} 
 	],
 	"key": "Public Safety"
@@ -110,25 +110,25 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 9
+		"x": "Bronx",
+		"y": 0
 		}
 ,
 		 {		
+		"x": "Brooklyn",
+		"y": 6
+		},
+		 {		
 		"x": "Manhattan",
-		"y": 12
+		"y": 6
 		},
 		 {		
 		"x": "Queens",
-		"y": 9
+		"y": 0
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
-		},
-		 {		
-		"x": "Bronx",
-		"y": 0
+		"y": 1
 		}
 	],
 	"key": "Undue Hardship"
