@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1146
+		"y": 1153
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2150
+		"y": 2152
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1330
+		"y": 1335
 		},
 		 {		
 		"x": "Queens",
-		"y": 1293
+		"y": 1299
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 291
+		"y": 292
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,20 +30,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1128
+		"y": 1129
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1487
+		"y": 1493
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1322
+		"y": 1328
 		},
 		 {		
 		"x": "Queens",
-		"y": 543
+		"y": 554
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3314
+		"y": 3304
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 5072
+		"y": 5064
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 3153
+		"y": 3146
 		},
 		 {		
 		"x": "Queens",
-		"y": 3138
+		"y": 3139
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 515
+		"y": 516
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 811
+		"y": 836
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3151
+		"y": 3175
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 2032
+		"y": 2049
 		},
 		 {		
 		"x": "Queens",
-		"y": 1744
+		"y": 1760
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 200
+		"y": 205
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4264
+		"y": 4323
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 10206
+		"y": 10312
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 7471
+		"y": 7543
 		},
 		 {		
 		"x": "Queens",
-		"y": 6773
+		"y": 6848
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 767
+		"y": 775
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 488
+		"y": 491
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1260
+		"y": 1267
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 659
+		"y": 664
 		},
 		 {		
 		"x": "Queens",
-		"y": 1026
+		"y": 1030
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 159
+		"y": 160
 		}
 	],
 	"key": "Work Without Permit"
