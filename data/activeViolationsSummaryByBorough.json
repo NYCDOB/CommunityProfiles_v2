@@ -4,11 +4,11 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1096
+		"y": 1091
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2113
+		"y": 2108
 		},
 		 {		
 		"x": "Manhattan",
@@ -16,11 +16,11 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 1189
+		"y": 1185
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 299
+		"y": 295
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,20 +30,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1171
+		"y": 1165
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1420
+		"y": 1417
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1285
+		"y": 1279
 		},
 		 {		
 		"x": "Queens",
-		"y": 496
+		"y": 494
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 2935
+		"y": 2894
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 4590
+		"y": 4567
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 2859
+		"y": 2792
 		},
 		 {		
 		"x": "Queens",
-		"y": 2909
+		"y": 2890
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 490
+		"y": 484
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 781
+		"y": 777
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3070
+		"y": 3058
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1979
+		"y": 1961
 		},
 		 {		
 		"x": "Queens",
-		"y": 1757
+		"y": 1758
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 219
+		"y": 220
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4143
+		"y": 4146
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9987
+		"y": 9981
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 7208
+		"y": 7168
 		},
 		 {		
 		"x": "Queens",
-		"y": 6667
+		"y": 6646
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 755
+		"y": 754
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 478
+		"y": 479
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1245
+		"y": 1246
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 669
+		"y": 673
 		},
 		 {		
 		"x": "Queens",
-		"y": 974
+		"y": 972
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 146
+		"y": 147
 		}
 	],
 	"key": "Work Without Permit"
