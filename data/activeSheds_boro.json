@@ -1,55 +1,52 @@
 [
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 971
-		},
-		 {		
-		"x": "Brooklyn",
-		"y": 2075
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 2236
-		},
-		 {		
-		"x": "Queens",
-		"y": 890
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 75
-		} 
-	],
-	"key": "Construction or Maintenance"
- },
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 482
-		}
-,
-		 {		
-		"x": "Brooklyn",
-		"y": 482
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 2176
-		},
-		 {		
-		"x": "Queens",
-		"y": 342
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 13
-		}
-	],
-	"key": "Local Law 11"
- }
+  {
+    "values": [
+      {
+        "x": "Bronx",
+        "y": 971
+      },
+      {
+        "x": "Brooklyn",
+        "y": 2075
+      },
+      {
+        "x": "Manhattan",
+        "y": 2236
+      },
+      {
+        "x": "Queens",
+        "y": 890
+      },
+      {
+        "x": "Staten Island",
+        "y": 75
+      }
+    ],
+    "key": "Construction or Maintenance"
+  },
+  {
+    "values": [
+      {
+        "x": "Bronx",
+        "y": 482
+      },
+      {
+        "x": "Brooklyn",
+        "y": 482
+      },
+      {
+        "x": "Manhattan",
+        "y": 2176
+      },
+      {
+        "x": "Queens",
+        "y": 342
+      },
+      {
+        "x": "Staten Island",
+        "y": 13
+      }
+    ],
+    "key": "Local Law 11"
+  }
 ]
