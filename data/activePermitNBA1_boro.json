@@ -1,55 +1,52 @@
 [
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 241
-		},
-		 {		
-		"x": "Brooklyn",
-		"y": 1169
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 811
-		},
-		 {		
-		"x": "Queens",
-		"y": 763
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 157
-		} 
-	],
-	"key": "A1"
- },
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 615
-		}
-,
-		 {		
-		"x": "Brooklyn",
-		"y": 1469
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 369
-		},
-		 {		
-		"x": "Queens",
-		"y": 1421
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 912
-		}
-	],
-	"key": "NB"
- }
+  {
+    "values": [
+      {
+        "x": "Bronx",
+        "y": 241
+      },
+      {
+        "x": "Brooklyn",
+        "y": 1169
+      },
+      {
+        "x": "Manhattan",
+        "y": 811
+      },
+      {
+        "x": "Queens",
+        "y": 763
+      },
+      {
+        "x": "Staten Island",
+        "y": 157
+      }
+    ],
+    "key": "A1"
+  },
+  {
+    "values": [
+      {
+        "x": "Bronx",
+        "y": 615
+      },
+      {
+        "x": "Brooklyn",
+        "y": 1469
+      },
+      {
+        "x": "Manhattan",
+        "y": 369
+      },
+      {
+        "x": "Queens",
+        "y": 1421
+      },
+      {
+        "x": "Staten Island",
+        "y": 912
+      }
+    ],
+    "key": "NB"
+  }
 ]
