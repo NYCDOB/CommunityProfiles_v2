@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1073
+		"y": 1057
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2065
+		"y": 2063
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1255
+		"y": 1247
 		},
 		 {		
 		"x": "Queens",
-		"y": 1150
+		"y": 1146
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 248
+		"y": 247
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,12 +30,12 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1159
+		"y": 1157
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1388
+		"y": 1395
 		},
 		 {		
 		"x": "Manhattan",
@@ -43,7 +43,7 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 438
+		"y": 441
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 2358
+		"y": 2329
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3206
+		"y": 3199
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1810
+		"y": 1747
 		},
 		 {		
 		"x": "Queens",
-		"y": 1884
+		"y": 1882
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 338
+		"y": 336
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 721
+		"y": 723
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2803
+		"y": 2805
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1767
+		"y": 1766
 		},
 		 {		
 		"x": "Queens",
-		"y": 1555
+		"y": 1557
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 183
+		"y": 182
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4038
+		"y": 4021
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9405
+		"y": 9434
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 6846
+		"y": 6840
 		},
 		 {		
 		"x": "Queens",
-		"y": 6221
+		"y": 6213
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 614
+		"y": 602
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 456
+		"y": 452
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1215
+		"y": 1213
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 630
+		"y": 631
 		},
 		 {		
 		"x": "Queens",
-		"y": 840
+		"y": 836
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 104
+		"y": 103
 		}
 	],
 	"key": "Work Without Permit"
