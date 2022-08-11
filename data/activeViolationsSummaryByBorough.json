@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1062
+		"y": 1056
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2027
+		"y": 2017
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1270
+		"y": 1267
 		},
 		 {		
 		"x": "Queens",
-		"y": 1112
+		"y": 1107
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 258
+		"y": 253
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1157
+		"y": 1163
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1422
+		"y": 1420
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1133
+		"y": 1131
 		},
 		 {		
 		"x": "Queens",
-		"y": 446
+		"y": 445
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 8
+		"y": 9
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 2101
+		"y": 2088
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2811
+		"y": 2781
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1394
+		"y": 1359
 		},
 		 {		
 		"x": "Queens",
-		"y": 1683
+		"y": 1671
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 313
+		"y": 304
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,20 +84,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 735
+		"y": 736
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2817
+		"y": 2815
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1696
+		"y": 1689
 		},
 		 {		
 		"x": "Queens",
-		"y": 1555
+		"y": 1559
 		},
 		 {		
 		"x": "Staten Island",
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4100
+		"y": 4091
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9438
+		"y": 9421
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 6666
+		"y": 6647
 		},
 		 {		
 		"x": "Queens",
-		"y": 6212
+		"y": 6198
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 599
+		"y": 596
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 449
+		"y": 452
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1249
+		"y": 1248
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 613
+		"y": 612
 		},
 		 {		
 		"x": "Queens",
-		"y": 792
+		"y": 786
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 98
+		"y": 95
 		}
 	],
 	"key": "Work Without Permit"
