@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 943
+		"y": 941
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 1843
+		"y": 1827
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1167
+		"y": 1164
 		},
 		 {		
 		"x": "Queens",
-		"y": 918
+		"y": 921
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 228
+		"y": 226
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 996
+		"y": 990
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1400
+		"y": 1397
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 931
+		"y": 923
 		},
 		 {		
 		"x": "Queens",
-		"y": 466
+		"y": 467
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 12
+		"y": 11
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,20 +57,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 934
+		"y": 928
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1295
+		"y": 1258
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 680
+		"y": 677
 		},
 		 {		
 		"x": "Queens",
-		"y": 884
+		"y": 877
 		},
 		 {		
 		"x": "Staten Island",
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 716
+		"y": 710
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2611
+		"y": 2601
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1301
+		"y": 1303
 		},
 		 {		
 		"x": "Queens",
-		"y": 1467
+		"y": 1470
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 177
+		"y": 178
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3775
+		"y": 3798
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9028
+		"y": 8986
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5875
+		"y": 5928
 		},
 		 {		
 		"x": "Queens",
-		"y": 5794
+		"y": 5796
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 547
+		"y": 556
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 490
+		"y": 493
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1363
+		"y": 1358
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 603
+		"y": 600
 		},
 		 {		
 		"x": "Queens",
-		"y": 776
+		"y": 777
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 102
+		"y": 103
 		}
 	],
 	"key": "Work Without Permit"
