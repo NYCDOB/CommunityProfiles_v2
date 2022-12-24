@@ -8,19 +8,19 @@
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 1742
+		"y": 1736
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1140
+		"y": 1139
 		},
 		 {		
 		"x": "Queens",
-		"y": 892
+		"y": 893
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 237
+		"y": 238
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 915
+		"y": 917
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1312
+		"y": 1311
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 878
+		"y": 877
 		},
 		 {		
 		"x": "Queens",
-		"y": 430
+		"y": 427
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 13
+		"y": 18
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 671
+		"y": 670
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 850
+		"y": 845
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 570
+		"y": 568
 		},
 		 {		
 		"x": "Queens",
-		"y": 633
+		"y": 628
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 143
+		"y": 144
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 696
+		"y": 695
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2595
+		"y": 2587
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1252
+		"y": 1250
 		},
 		 {		
 		"x": "Queens",
-		"y": 1385
+		"y": 1386
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 176
+		"y": 175
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3874
+		"y": 3877
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9020
+		"y": 9003
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 6107
+		"y": 6108
 		},
 		 {		
 		"x": "Queens",
-		"y": 5629
+		"y": 5612
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 604
+		"y": 605
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 514
+		"y": 512
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1399
+		"y": 1397
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 616
+		"y": 617
 		},
 		 {		
 		"x": "Queens",
-		"y": 738
+		"y": 736
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 114
+		"y": 115
 		}
 	],
 	"key": "Work Without Permit"
