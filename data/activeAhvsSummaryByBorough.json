@@ -4,26 +4,80 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 0
+		"y": 2
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 1
+		"y": 2
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1
-		},
-		 {		
-		"x": "Queens",
-		"y": 0
+		"y": 5
 		},
 		 {		
 		"x": "Staten Island",
 		"y": 0
+		},
+		 {		
+		"x": "Queens",
+		"y": 0
 		} 
 	],
 	"key": "Emergency Work"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 40
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 76
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 130
+		},
+		 {		
+		"x": "Queens",
+		"y": 48
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 2
+		} 
+	],
+	"key": "Minimal Noise"
+ },
+ {
+	"values": 
+	[
+		{		
+		"x": "Bronx",
+		"y": 28
+		}
+,
+		 {		
+		"x": "Brooklyn",
+		"y": 63
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 23
+		},
+		 {		
+		"x": "Queens",
+		"y": 31
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 14
+		} 
+	],
+	"key": "NYC Construction"
  },
  {
 	"values": 
@@ -35,69 +89,15 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 54
+		"y": 67
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 38
+		"y": 304
 		},
 		 {		
 		"x": "Queens",
-		"y": 49
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 1
-		} 
-	],
-	"key": "Minimal Noise"
- },
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 23
-		}
-,
-		 {		
-		"x": "Brooklyn",
-		"y": 27
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 19
-		},
-		 {		
-		"x": "Queens",
-		"y": 20
-		},
-		 {		
-		"x": "Staten Island",
-		"y": 6
-		} 
-	],
-	"key": "NYC Construction"
- },
- {
-	"values": 
-	[
-		{		
-		"x": "Bronx",
-		"y": 42
-		}
-,
-		 {		
-		"x": "Brooklyn",
-		"y": 53
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 179
-		},
-		 {		
-		"x": "Queens",
-		"y": 52
+		"y": 46
 		},
 		 {		
 		"x": "Staten Island",
@@ -116,15 +116,15 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 11
+		"y": 26
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 9
+		"y": 12
 		},
 		 {		
 		"x": "Queens",
-		"y": 7
+		"y": 8
 		},
 		 {		
 		"x": "Staten Island",
