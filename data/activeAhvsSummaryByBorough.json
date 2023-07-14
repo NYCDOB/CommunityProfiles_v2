@@ -3,16 +3,16 @@
 	"values": 
 	[
 		{		
-		"x": "Bronx",
-		"y": 1
-		},
-		 {		
 		"x": "Manhattan",
 		"y": 7
 		},
 		 {		
 		"x": "Queens",
 		"y": 1
+		},
+		 {		
+		"x": "Bronx",
+		"y": 0
 		},
 		 {		
 		"x": "Staten Island",
@@ -39,11 +39,11 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 136
+		"y": 145
 		},
 		 {		
 		"x": "Queens",
-		"y": 60
+		"y": 57
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,16 +57,16 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 36
+		"y": 34
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 70
+		"y": 69
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 29
+		"y": 28
 		},
 		 {		
 		"x": "Queens",
@@ -74,7 +74,7 @@
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 8
+		"y": 7
 		} 
 	],
 	"key": "NYC Construction"
@@ -93,11 +93,11 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 296
+		"y": 302
 		},
 		 {		
 		"x": "Queens",
-		"y": 55
+		"y": 56
 		},
 		 {		
 		"x": "Staten Island",
@@ -116,7 +116,7 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 21
+		"y": 19
 		},
 		 {		
 		"x": "Manhattan",
