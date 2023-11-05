@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 123
+		"y": 1022
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 128
+		"y": 1829
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 262
+		"y": 1678
 		},
 		 {		
 		"x": "Queens",
-		"y": 80
+		"y": 853
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 212
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 233
+		"y": 921
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 139
+		"y": 1534
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 0
+		"y": 834
 		},
 		 {		
 		"x": "Queens",
-		"y": 55
+		"y": 341
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 49
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 42
+		"y": 244
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 34
+		"y": 364
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 37
+		"y": 269
 		},
 		 {		
 		"x": "Queens",
-		"y": 5
+		"y": 210
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 34
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 118
+		"y": 879
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 167
+		"y": 1937
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 218
+		"y": 1396
 		},
 		 {		
 		"x": "Queens",
-		"y": 117
+		"y": 1229
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 2
+		"y": 150
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 498
+		"y": 3814
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 539
+		"y": 7357
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 804
+		"y": 5654
 		},
 		 {		
 		"x": "Queens",
-		"y": 276
+		"y": 4589
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 7
+		"y": 607
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 76
+		"y": 591
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 92
+		"y": 1539
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 107
+		"y": 713
 		},
 		 {		
 		"x": "Queens",
-		"y": 93
+		"y": 1002
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 1
+		"y": 218
 		}
 	],
 	"key": "Work Without Permit"
