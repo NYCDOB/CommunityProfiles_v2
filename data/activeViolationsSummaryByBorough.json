@@ -8,7 +8,7 @@
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 1827
+		"y": 1826
 		},
 		 {		
 		"x": "Manhattan",
@@ -47,7 +47,7 @@
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 49
+		"y": 48
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -84,12 +84,12 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 880
+		"y": 878
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1934
+		"y": 1932
 		},
 		 {		
 		"x": "Manhattan",
@@ -97,7 +97,7 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 1229
+		"y": 1228
 		},
 		 {		
 		"x": "Staten Island",
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3810
+		"y": 3809
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 7337
+		"y": 7334
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5629
+		"y": 5627
 		},
 		 {		
 		"x": "Queens",
-		"y": 4577
+		"y": 4572
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 607
+		"y": 606
 		} 
 	],
 	"key": "Other"
@@ -138,12 +138,12 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 594
+		"y": 593
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1541
+		"y": 1539
 		},
 		 {		
 		"x": "Manhattan",
@@ -151,11 +151,11 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 1004
+		"y": 1003
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 217
+		"y": 216
 		}
 	],
 	"key": "Work Without Permit"
