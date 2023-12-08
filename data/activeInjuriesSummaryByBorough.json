@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 15
+		"y": 16
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 14
+		"y": 21
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 24
+		"y": 30
 		},
 		 {		
 		"x": "Queens",
-		"y": 9
+		"y": 10
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 1
+		"y": 3
 		} 
 	],
 	"key": "Material Failure (Fell)"
@@ -84,20 +84,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 6
+		"y": 8
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 12
+		"y": 15
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 26
+		"y": 31
 		},
 		 {		
 		"x": "Queens",
-		"y": 3
+		"y": 5
 		},
 		 {		
 		"x": "Staten Island",
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 23
+		"y": 20
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 51
+		"y": 42
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 74
+		"y": 62
 		},
 		 {		
 		"x": "Queens",
-		"y": 22
+		"y": 19
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 7
+		"y": 4
 		} 
 	],
 	"key": "Other Construction Related"
@@ -197,11 +197,11 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 149
+		"y": 150
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 131
+		"y": 134
 		},
 		 {		
 		"x": "Queens",
