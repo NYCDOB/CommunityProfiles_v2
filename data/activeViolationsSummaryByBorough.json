@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 115
+		"y": 1171
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 309
+		"y": 1917
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 76
+		"y": 1652
 		},
 		 {		
 		"x": "Queens",
-		"y": 1
+		"y": 826
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 187
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 133
+		"y": 933
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9
+		"y": 1530
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 0
+		"y": 799
 		},
 		 {		
 		"x": "Queens",
-		"y": 63
+		"y": 344
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 39
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 26
+		"y": 249
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 92
+		"y": 375
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 22
+		"y": 392
 		},
 		 {		
 		"x": "Queens",
-		"y": 0
+		"y": 231
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 34
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 73
+		"y": 824
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 271
+		"y": 1761
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 63
+		"y": 1344
 		},
 		 {		
 		"x": "Queens",
-		"y": 0
+		"y": 1188
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 135
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 312
+		"y": 3430
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1028
+		"y": 6878
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 208
+		"y": 4831
 		},
 		 {		
 		"x": "Queens",
-		"y": 13
+		"y": 4301
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 551
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 70
+		"y": 618
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 250
+		"y": 1526
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 29
+		"y": 700
 		},
 		 {		
 		"x": "Queens",
-		"y": 0
+		"y": 1056
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 0
+		"y": 222
 		}
 	],
 	"key": "Work Without Permit"
