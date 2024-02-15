@@ -1,14 +1,14 @@
 [
  {
 	"communityBoard": "101",
-	"count": 20,
+	"count": 21,
 	"Demolition": 1,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 2,
 	"Mechanical Construction Equipment": 4,
 	"Other": 4,
 	"Scaffold/Shoring Installations": 2,
-	"Worker Fell": 8
+	"Worker Fell": 9
  },
  {
 	"communityBoard": "102",
@@ -34,12 +34,12 @@
  },
  {
 	"communityBoard": "104",
-	"count": 25,
+	"count": 24,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 2,
 	"Mechanical Construction Equipment": 12,
-	"Other": 3,
+	"Other": 2,
 	"Scaffold/Shoring Installations": 2,
 	"Worker Fell": 6
  },
@@ -49,8 +49,8 @@
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 14,
-	"Mechanical Construction Equipment": 2,
-	"Other": 25,
+	"Mechanical Construction Equipment": 3,
+	"Other": 24,
 	"Scaffold/Shoring Installations": 1,
 	"Worker Fell": 35
  },
@@ -81,9 +81,9 @@
 	"count": 26,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
-	"Material Failure (Fell)": 1,
+	"Material Failure (Fell)": 2,
 	"Mechanical Construction Equipment": 1,
-	"Other": 7,
+	"Other": 6,
 	"Scaffold/Shoring Installations": 0,
 	"Worker Fell": 17
  },
@@ -331,12 +331,12 @@
  },
  {
 	"communityBoard": "303",
-	"count": 7,
+	"count": 6,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 2,
 	"Mechanical Construction Equipment": 0,
-	"Other": 1,
+	"Other": 0,
 	"Scaffold/Shoring Installations": 0,
 	"Worker Fell": 5
  },
@@ -353,13 +353,13 @@
  },
  {
 	"communityBoard": "305",
-	"count": 18,
+	"count": 17,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 1,
 	"Other": 4,
-	"Scaffold/Shoring Installations": 1,
+	"Scaffold/Shoring Installations": 0,
 	"Worker Fell": 12
  },
  {
@@ -368,8 +368,8 @@
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 1,
-	"Mechanical Construction Equipment": 2,
-	"Other": 6,
+	"Mechanical Construction Equipment": 3,
+	"Other": 5,
 	"Scaffold/Shoring Installations": 0,
 	"Worker Fell": 20
  },
