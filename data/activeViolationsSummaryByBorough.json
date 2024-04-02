@@ -39,7 +39,7 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 792
+		"y": 790
 		},
 		 {		
 		"x": "Queens",
@@ -47,7 +47,7 @@
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 36
+		"y": 35
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -93,11 +93,11 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 904
+		"y": 903
 		},
 		 {		
 		"x": "Queens",
-		"y": 918
+		"y": 917
 		},
 		 {		
 		"x": "Staten Island",
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3545
+		"y": 3544
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 6445
+		"y": 6438
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5067
+		"y": 5065
 		},
 		 {		
 		"x": "Queens",
-		"y": 4168
+		"y": 4167
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 535
+		"y": 534
 		} 
 	],
 	"key": "Other"
