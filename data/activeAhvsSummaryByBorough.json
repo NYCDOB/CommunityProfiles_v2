@@ -3,23 +3,23 @@
 	"values": 
 	[
 		{		
-		"x": "Queens",
-		"y": 1
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 6
-		},
-		 {		
 		"x": "Bronx",
 		"y": 0
 		},
 		 {		
-		"x": "Staten Island",
-		"y": 0
+		"x": "Brooklyn",
+		"y": 1
 		},
 		 {		
-		"x": "Brooklyn",
+		"x": "Manhattan",
+		"y": 3
+		},
+		 {		
+		"x": "Queens",
+		"y": 1
+		},
+		 {		
+		"x": "Staten Island",
 		"y": 0
 		} 
 	],
@@ -29,25 +29,25 @@
 	"values": 
 	[
 		{		
-		"x": "Staten Island",
-		"y": 7
+		"x": "Bronx",
+		"y": 15
 		}
 ,
 		 {		
-		"x": "Queens",
-		"y": 30
-		},
-		 {		
 		"x": "Brooklyn",
-		"y": 74
-		},
-		 {		
-		"x": "Bronx",
-		"y": 31
+		"y": 55
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 113
+		"y": 74
+		},
+		 {		
+		"x": "Queens",
+		"y": 15
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 2
 		} 
 	],
 	"key": "Minimal Noise"
@@ -56,25 +56,25 @@
 	"values": 
 	[
 		{		
-		"x": "Queens",
-		"y": 60
+		"x": "Bronx",
+		"y": 43
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 80
+		"y": 68
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 64
+		"y": 32
+		},
+		 {		
+		"x": "Queens",
+		"y": 33
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 15
-		},
-		 {		
-		"x": "Bronx",
-		"y": 68
+		"y": 9
 		} 
 	],
 	"key": "NYC Construction"
@@ -83,25 +83,25 @@
 	"values": 
 	[
 		{		
-		"x": "Queens",
-		"y": 40
+		"x": "Bronx",
+		"y": 11
 		}
 ,
 		 {		
-		"x": "Staten Island",
-		"y": 2
-		},
-		 {		
 		"x": "Brooklyn",
-		"y": 78
+		"y": 34
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 299
+		"y": 177
 		},
 		 {		
-		"x": "Bronx",
-		"y": 39
+		"x": "Queens",
+		"y": 16
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 1
 		} 
 	],
 	"key": "Public Safety"
@@ -110,25 +110,25 @@
 	"values": 
 	[
 		{		
-		"x": "Brooklyn",
-		"y": 12
+		"x": "Bronx",
+		"y": 3
 		}
 ,
 		 {		
+		"x": "Brooklyn",
+		"y": 10
+		},
+		 {		
+		"x": "Manhattan",
+		"y": 11
+		},
+		 {		
 		"x": "Queens",
-		"y": 8
+		"y": 4
 		},
 		 {		
 		"x": "Staten Island",
 		"y": 1
-		},
-		 {		
-		"x": "Manhattan",
-		"y": 23
-		},
-		 {		
-		"x": "Bronx",
-		"y": 5
 		}
 	],
 	"key": "Undue Hardship"
