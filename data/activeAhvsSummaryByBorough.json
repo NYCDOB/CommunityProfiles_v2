@@ -8,11 +8,11 @@
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2
+		"y": 3
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 3
+		"y": 4
 		},
 		 {		
 		"x": "Queens",
@@ -30,16 +30,16 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 21
+		"y": 20
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 76
+		"y": 73
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 96
+		"y": 106
 		},
 		 {		
 		"x": "Queens",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 55
+		"y": 56
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 85
+		"y": 86
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 57
+		"y": 58
 		},
 		 {		
 		"x": "Queens",
-		"y": 64
+		"y": 65
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 18
+		"y": 17
 		} 
 	],
 	"key": "NYC Construction"
@@ -84,16 +84,16 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 20
+		"y": 21
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 70
+		"y": 68
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 228
+		"y": 239
 		},
 		 {		
 		"x": "Queens",
@@ -101,7 +101,7 @@
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 3
+		"y": 2
 		} 
 	],
 	"key": "Public Safety"
@@ -116,7 +116,7 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 16
+		"y": 17
 		},
 		 {		
 		"x": "Manhattan",
