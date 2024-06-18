@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 309
+		"y": 310
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 1454
+		"y": 1459
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1021
+		"y": 1019
 		},
 		 {		
 		"x": "Queens",
-		"y": 760
+		"y": 758
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 159
+		"y": 156
 		} 
 	],
 	"key": "After Hours Work"
@@ -30,20 +30,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4326
+		"y": 4344
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 4043
+		"y": 4054
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 3377
+		"y": 3420
 		},
 		 {		
 		"x": "Queens",
-		"y": 1947
+		"y": 1976
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 3853
+		"y": 3873
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 6831
+		"y": 6864
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1262
+		"y": 1265
 		},
 		 {		
 		"x": "Queens",
-		"y": 12629
+		"y": 12664
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 1054
+		"y": 1055
 		} 
 	],
 	"key": "Illegal Conversion"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 16683
+		"y": 16712
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 46280
+		"y": 46444
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 27708
+		"y": 27804
 		},
 		 {		
 		"x": "Queens",
-		"y": 28043
+		"y": 28113
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 5502
+		"y": 5514
 		} 
 	],
 	"key": "Other"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1378
+		"y": 1380
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 11696
+		"y": 11721
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 849
+		"y": 850
 		},
 		 {		
 		"x": "Queens",
-		"y": 7709
+		"y": 7745
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 1973
+		"y": 1982
 		}
 	],
 	"key": "Work Without Permit"
