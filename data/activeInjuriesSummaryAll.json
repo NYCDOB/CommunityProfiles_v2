@@ -111,25 +111,25 @@
  },
  {
 	"communityBoard": "111",
-	"count": 8,
+	"count": 9,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 4,
 	"Other": 1,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 4
+	"Worker Fell": 5
  },
  {
 	"communityBoard": "112",
-	"count": 22,
+	"count": 21,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 1,
 	"Mechanical Construction Equipment": 6,
 	"Other": 5,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 10
+	"Worker Fell": 9
  },
  {
 	"communityBoard": "164",
@@ -309,14 +309,14 @@
  },
  {
 	"communityBoard": "301",
-	"count": 37,
+	"count": 38,
 	"Demolition": 1,
 	"Excavation/Soil Work": 1,
 	"Material Failure (Fell)": 9,
 	"Mechanical Construction Equipment": 3,
 	"Other": 10,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 13
+	"Worker Fell": 14
  },
  {
 	"communityBoard": "302",
@@ -364,11 +364,11 @@
  },
  {
 	"communityBoard": "306",
-	"count": 31,
+	"count": 30,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 2,
-	"Mechanical Construction Equipment": 3,
+	"Mechanical Construction Equipment": 2,
 	"Other": 7,
 	"Scaffold/Shoring Installations": 1,
 	"Worker Fell": 18
@@ -386,14 +386,14 @@
  },
  {
 	"communityBoard": "308",
-	"count": 5,
+	"count": 6,
 	"Demolition": 0,
 	"Excavation/Soil Work": 0,
 	"Material Failure (Fell)": 1,
 	"Mechanical Construction Equipment": 0,
 	"Other": 2,
 	"Scaffold/Shoring Installations": 0,
-	"Worker Fell": 2
+	"Worker Fell": 3
  },
  {
 	"communityBoard": "309",
@@ -584,12 +584,12 @@
  },
  {
 	"communityBoard": "406",
-	"count": 10,
+	"count": 9,
 	"Demolition": 0,
 	"Excavation/Soil Work": 2,
 	"Material Failure (Fell)": 0,
 	"Mechanical Construction Equipment": 0,
-	"Other": 2,
+	"Other": 1,
 	"Scaffold/Shoring Installations": 0,
 	"Worker Fell": 6
  },
