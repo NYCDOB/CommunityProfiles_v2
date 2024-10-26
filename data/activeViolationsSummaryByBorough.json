@@ -4,15 +4,15 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1256
+		"y": 1253
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 1816
+		"y": 1821
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1209
+		"y": 1214
 		},
 		 {		
 		"x": "Queens",
@@ -20,7 +20,7 @@
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 264
+		"y": 267
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1091
+		"y": 1085
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1004
+		"y": 1000
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 800
+		"y": 795
 		},
 		 {		
 		"x": "Queens",
-		"y": 340
+		"y": 342
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 43
+		"y": 44
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -62,15 +62,15 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 838
+		"y": 837
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 849
+		"y": 850
 		},
 		 {		
 		"x": "Queens",
-		"y": 545
+		"y": 533
 		},
 		 {		
 		"x": "Staten Island",
@@ -84,20 +84,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 237
+		"y": 236
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 639
+		"y": 641
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 766
+		"y": 767
 		},
 		 {		
 		"x": "Queens",
-		"y": 568
+		"y": 565
 		},
 		 {		
 		"x": "Staten Island",
@@ -111,20 +111,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4436
+		"y": 4468
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 7479
+		"y": 7495
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 6229
+		"y": 6266
 		},
 		 {		
 		"x": "Queens",
-		"y": 5056
+		"y": 5068
 		},
 		 {		
 		"x": "Staten Island",
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 860
+		"y": 862
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2126
+		"y": 2122
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 755
+		"y": 757
 		},
 		 {		
 		"x": "Queens",
-		"y": 1514
+		"y": 1517
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 366
+		"y": 367
 		}
 	],
 	"key": "Work Without Permit"
