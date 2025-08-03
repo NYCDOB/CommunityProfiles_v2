@@ -4,11 +4,11 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1447
+		"y": 1446
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2219
+		"y": 2226
 		},
 		 {		
 		"x": "Manhattan",
@@ -16,11 +16,11 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 1757
+		"y": 1768
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 393
+		"y": 392
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 860
+		"y": 853
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 723
+		"y": 727
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 897
+		"y": 898
 		},
 		 {		
 		"x": "Queens",
-		"y": 291
+		"y": 289
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 32
+		"y": 33
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 522
+		"y": 530
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1032
+		"y": 1027
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 425
+		"y": 434
 		},
 		 {		
 		"x": "Queens",
-		"y": 798
+		"y": 812
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 264
+		"y": 263
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 667
+		"y": 662
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1228
+		"y": 1224
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 595
+		"y": 590
 		},
 		 {		
 		"x": "Queens",
-		"y": 1277
+		"y": 1271
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 195
+		"y": 193
 		} 
 	],
 	"key": "Miscellaneous"
@@ -116,19 +116,19 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9194
+		"y": 9190
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5384
+		"y": 5342
 		},
 		 {		
 		"x": "Queens",
-		"y": 6009
+		"y": 6008
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 887
+		"y": 886
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1091
+		"y": 1084
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2954
+		"y": 2970
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 934
+		"y": 921
 		},
 		 {		
 		"x": "Queens",
-		"y": 2334
+		"y": 2336
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 607
+		"y": 605
 		}
 	],
 	"key": "Work Without Permit"
