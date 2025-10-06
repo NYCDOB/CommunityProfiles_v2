@@ -8,15 +8,15 @@
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 338
-		},
-		 {		
-		"x": "Manhattan",
 		"y": 337
 		},
 		 {		
+		"x": "Manhattan",
+		"y": 335
+		},
+		 {		
 		"x": "Queens",
-		"y": 216
+		"y": 214
 		},
 		 {		
 		"x": "Staten Island",
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1134
+		"y": 1126
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2818
+		"y": 2812
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 699
+		"y": 698
 		},
 		 {		
 		"x": "Queens",
-		"y": 2167
+		"y": 2160
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 1302
+		"y": 1299
 		}
 	],
 	"key": "NB"
