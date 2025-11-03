@@ -3,8 +3,12 @@
 	"values": 
 	[
 		{		
+		"x": "Bronx",
+		"y": 2
+		},
+		 {		
 		"x": "Brooklyn",
-		"y": 1
+		"y": 3
 		},
 		 {		
 		"x": "Queens",
@@ -12,11 +16,7 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 3
-		},
-		 {		
-		"x": "Bronx",
-		"y": 0
+		"y": 9
 		},
 		 {		
 		"x": "Staten Island",
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Staten Island",
-		"y": 18
+		"y": 11
 		}
 ,
 		 {		
 		"x": "Queens",
-		"y": 55
+		"y": 41
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 90
-		},
-		 {		
-		"x": "Bronx",
-		"y": 46
+		"y": 66
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 192
+		"y": 133
+		},
+		 {		
+		"x": "Bronx",
+		"y": 41
 		} 
 	],
 	"key": "Minimal Noise"
@@ -56,25 +56,25 @@
 	"values": 
 	[
 		{		
-		"x": "Queens",
-		"y": 89
+		"x": "Brooklyn",
+		"y": 156
 		}
 ,
 		 {		
-		"x": "Brooklyn",
-		"y": 182
+		"x": "Queens",
+		"y": 77
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 94
+		"y": 74
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 29
+		"y": 25
 		},
 		 {		
 		"x": "Bronx",
-		"y": 87
+		"y": 70
 		} 
 	],
 	"key": "NYC Construction"
@@ -84,12 +84,12 @@
 	[
 		{		
 		"x": "Queens",
-		"y": 70
+		"y": 51
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 51
+		"y": 60
 		},
 		 {		
 		"x": "Staten Island",
@@ -97,7 +97,7 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 464
+		"y": 352
 		},
 		 {		
 		"x": "Bronx",
@@ -111,7 +111,7 @@
 	[
 		{		
 		"x": "Brooklyn",
-		"y": 14
+		"y": 15
 		}
 ,
 		 {		
@@ -119,16 +119,16 @@
 		"y": 10
 		},
 		 {		
-		"x": "Staten Island",
-		"y": 5
-		},
-		 {		
 		"x": "Manhattan",
-		"y": 45
+		"y": 36
 		},
 		 {		
 		"x": "Bronx",
-		"y": 14
+		"y": 15
+		},
+		 {		
+		"x": "Staten Island",
+		"y": 0
 		}
 	],
 	"key": "Undue Hardship"
