@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1496
+		"y": 1500
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2611
+		"y": 2612
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1273
+		"y": 1277
 		},
 		 {		
 		"x": "Queens",
-		"y": 1899
+		"y": 1905
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 386
+		"y": 391
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,20 +30,20 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 851
+		"y": 852
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 800
+		"y": 806
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 856
+		"y": 862
 		},
 		 {		
 		"x": "Queens",
-		"y": 261
+		"y": 263
 		},
 		 {		
 		"x": "Staten Island",
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 472
+		"y": 474
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1537
+		"y": 1552
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 951
+		"y": 953
 		},
 		 {		
 		"x": "Queens",
-		"y": 963
+		"y": 983
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 253
+		"y": 252
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 361
+		"y": 362
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 693
+		"y": 695
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 418
+		"y": 417
 		},
 		 {		
 		"x": "Queens",
-		"y": 574
+		"y": 580
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 188
+		"y": 187
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4915
+		"y": 4925
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9975
+		"y": 9984
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5476
+		"y": 5486
 		},
 		 {		
 		"x": "Queens",
-		"y": 6118
+		"y": 6128
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 867
+		"y": 873
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1079
+		"y": 1088
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3439
+		"y": 3445
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1043
+		"y": 1052
 		},
 		 {		
 		"x": "Queens",
-		"y": 2791
+		"y": 2815
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 773
+		"y": 775
 		}
 	],
 	"key": "Work Without Permit"
