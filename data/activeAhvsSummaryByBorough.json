@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Manhattan",
-		"y": 158
+		"y": 163
 		}
 ,
 		 {		
 		"x": "Staten Island",
-		"y": 10
+		"y": 12
 		},
 		 {		
 		"x": "Queens",
-		"y": 29
+		"y": 34
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 60
+		"y": 66
 		},
 		 {		
 		"x": "Bronx",
-		"y": 18
+		"y": 22
 		} 
 	],
 	"key": "Minimal Noise"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Queens",
-		"y": 81
+		"y": 82
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 156
+		"y": 166
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 105
+		"y": 96
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 18
+		"y": 22
 		},
 		 {		
 		"x": "Bronx",
-		"y": 87
+		"y": 90
 		} 
 	],
 	"key": "NYC Construction"
@@ -84,7 +84,7 @@
 	[
 		{		
 		"x": "Queens",
-		"y": 58
+		"y": 46
 		}
 ,
 		 {		
@@ -93,15 +93,15 @@
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 62
+		"y": 55
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 387
+		"y": 380
 		},
 		 {		
 		"x": "Bronx",
-		"y": 4
+		"y": 8
 		} 
 	],
 	"key": "Public Safety"
@@ -124,11 +124,11 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 41
+		"y": 40
 		},
 		 {		
 		"x": "Bronx",
-		"y": 19
+		"y": 18
 		}
 	],
 	"key": "Undue Hardship"
