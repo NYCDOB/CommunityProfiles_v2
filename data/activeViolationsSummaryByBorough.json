@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1512
+		"y": 1528
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 2656
+		"y": 2684
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1321
+		"y": 1328
 		},
 		 {		
 		"x": "Queens",
-		"y": 1949
+		"y": 1952
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 350
+		"y": 351
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 971
+		"y": 987
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 937
+		"y": 961
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1017
+		"y": 1051
 		},
 		 {		
 		"x": "Queens",
-		"y": 299
+		"y": 301
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 26
+		"y": 29
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 400
+		"y": 337
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1811
+		"y": 1776
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1024
+		"y": 987
 		},
 		 {		
 		"x": "Queens",
-		"y": 1212
+		"y": 1179
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 253
+		"y": 252
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 393
+		"y": 395
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 658
+		"y": 654
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 416
+		"y": 414
 		},
 		 {		
 		"x": "Queens",
-		"y": 551
+		"y": 547
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 191
+		"y": 189
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 4737
+		"y": 4747
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9851
+		"y": 9952
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5201
+		"y": 5246
 		},
 		 {		
 		"x": "Queens",
-		"y": 6262
+		"y": 6272
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 802
+		"y": 803
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1036
+		"y": 1039
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3375
+		"y": 3369
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1017
+		"y": 1012
 		},
 		 {		
 		"x": "Queens",
-		"y": 2841
+		"y": 2848
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 734
+		"y": 732
 		}
 	],
 	"key": "Work Without Permit"
