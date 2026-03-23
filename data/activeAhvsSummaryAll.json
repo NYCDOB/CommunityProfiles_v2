@@ -1,75 +1,75 @@
 [
  {
-	"count": 53,
+	"count": 52,
 	"communityBoard": "101",
 	"NYC Construction": 2,
-	"Minimal Noise": 20,
-	"Emergency Work": 5,
-	"Public Safety": 21,
-	"Undue Hardship": 5
+	"Minimal Noise": 22,
+	"Emergency Work": 4,
+	"Public Safety": 20,
+	"Undue Hardship": 4
  },
  {
-	"count": 25,
+	"count": 24,
 	"communityBoard": "102",
 	"NYC Construction": 0,
-	"Minimal Noise": 12,
+	"Minimal Noise": 11,
 	"Emergency Work": 0,
 	"Public Safety": 13,
 	"Undue Hardship": 0
  },
  {
-	"count": 13,
+	"count": 11,
 	"communityBoard": "103",
-	"NYC Construction": 5,
+	"NYC Construction": 3,
 	"Minimal Noise": 3,
 	"Emergency Work": 0,
 	"Public Safety": 4,
 	"Undue Hardship": 1
  },
  {
-	"count": 64,
+	"count": 65,
 	"communityBoard": "104",
 	"NYC Construction": 2,
-	"Minimal Noise": 10,
+	"Minimal Noise": 8,
 	"Emergency Work": 0,
-	"Public Safety": 47,
+	"Public Safety": 50,
 	"Undue Hardship": 5
  },
  {
-	"count": 275,
+	"count": 247,
 	"communityBoard": "105",
 	"NYC Construction": 1,
-	"Minimal Noise": 51,
+	"Minimal Noise": 45,
 	"Emergency Work": 9,
-	"Public Safety": 202,
-	"Undue Hardship": 12
+	"Public Safety": 183,
+	"Undue Hardship": 9
  },
  {
-	"count": 53,
+	"count": 45,
 	"communityBoard": "106",
 	"NYC Construction": 8,
-	"Minimal Noise": 14,
+	"Minimal Noise": 12,
 	"Emergency Work": 1,
-	"Public Safety": 26,
-	"Undue Hardship": 4
- },
- {
-	"count": 42,
-	"communityBoard": "107",
-	"NYC Construction": 11,
-	"Minimal Noise": 10,
-	"Emergency Work": 4,
-	"Public Safety": 15,
+	"Public Safety": 22,
 	"Undue Hardship": 2
  },
  {
-	"count": 38,
+	"count": 35,
+	"communityBoard": "107",
+	"NYC Construction": 6,
+	"Minimal Noise": 9,
+	"Emergency Work": 4,
+	"Public Safety": 15,
+	"Undue Hardship": 1
+ },
+ {
+	"count": 33,
 	"communityBoard": "108",
 	"NYC Construction": 3,
 	"Minimal Noise": 10,
 	"Emergency Work": 0,
-	"Public Safety": 22,
-	"Undue Hardship": 3
+	"Public Safety": 19,
+	"Undue Hardship": 1
  },
  {
 	"count": 7,
@@ -81,12 +81,12 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 17,
+	"count": 8,
 	"communityBoard": "110",
-	"NYC Construction": 6,
+	"NYC Construction": 4,
 	"Minimal Noise": 1,
 	"Emergency Work": 0,
-	"Public Safety": 10,
+	"Public Safety": 3,
 	"Undue Hardship": 0
  },
  {
@@ -99,9 +99,9 @@
 	"Undue Hardship": 2
  },
  {
-	"count": 27,
+	"count": 23,
 	"communityBoard": "112",
-	"NYC Construction": 22,
+	"NYC Construction": 18,
 	"Minimal Noise": 0,
 	"Emergency Work": 0,
 	"Public Safety": 5,
@@ -117,13 +117,13 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 25,
+	"count": 20,
 	"communityBoard": "201",
-	"NYC Construction": 16,
+	"NYC Construction": 12,
 	"Minimal Noise": 3,
 	"Emergency Work": 0,
 	"Public Safety": 2,
-	"Undue Hardship": 4
+	"Undue Hardship": 3
  },
  {
 	"count": 9,
@@ -137,38 +137,38 @@
  {
 	"count": 18,
 	"communityBoard": "203",
-	"NYC Construction": 15,
+	"NYC Construction": 13,
 	"Minimal Noise": 0,
 	"Emergency Work": 0,
-	"Public Safety": 1,
-	"Undue Hardship": 2
+	"Public Safety": 2,
+	"Undue Hardship": 3
  },
  {
-	"count": 28,
+	"count": 29,
 	"communityBoard": "204",
-	"NYC Construction": 16,
+	"NYC Construction": 18,
 	"Minimal Noise": 3,
 	"Emergency Work": 0,
 	"Public Safety": 0,
-	"Undue Hardship": 9
+	"Undue Hardship": 8
  },
  {
-	"count": 9,
+	"count": 8,
 	"communityBoard": "205",
 	"NYC Construction": 5,
 	"Minimal Noise": 0,
 	"Emergency Work": 0,
 	"Public Safety": 0,
-	"Undue Hardship": 4
+	"Undue Hardship": 3
  },
  {
-	"count": 18,
+	"count": 19,
 	"communityBoard": "206",
 	"NYC Construction": 6,
 	"Minimal Noise": 3,
 	"Emergency Work": 0,
 	"Public Safety": 0,
-	"Undue Hardship": 9
+	"Undue Hardship": 10
  },
  {
 	"count": 9,
@@ -189,19 +189,19 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 9,
+	"count": 7,
 	"communityBoard": "209",
-	"NYC Construction": 8,
+	"NYC Construction": 6,
 	"Minimal Noise": 0,
 	"Emergency Work": 0,
 	"Public Safety": 1,
 	"Undue Hardship": 0
  },
  {
-	"count": 12,
+	"count": 7,
 	"communityBoard": "210",
-	"NYC Construction": 10,
-	"Minimal Noise": 2,
+	"NYC Construction": 7,
+	"Minimal Noise": 0,
 	"Emergency Work": 0,
 	"Public Safety": 0,
 	"Undue Hardship": 0
@@ -209,16 +209,16 @@
  {
 	"count": 7,
 	"communityBoard": "211",
-	"NYC Construction": 4,
+	"NYC Construction": 3,
 	"Minimal Noise": 1,
 	"Emergency Work": 0,
 	"Public Safety": 2,
-	"Undue Hardship": 0
+	"Undue Hardship": 1
  },
  {
-	"count": 9,
+	"count": 8,
 	"communityBoard": "212",
-	"NYC Construction": 8,
+	"NYC Construction": 7,
 	"Minimal Noise": 1,
 	"Emergency Work": 0,
 	"Public Safety": 0,
@@ -252,84 +252,84 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 27,
+	"count": 22,
 	"communityBoard": "301",
 	"NYC Construction": 8,
-	"Minimal Noise": 16,
+	"Minimal Noise": 11,
 	"Emergency Work": 0,
 	"Public Safety": 1,
 	"Undue Hardship": 2
  },
  {
-	"count": 36,
+	"count": 31,
 	"communityBoard": "302",
-	"NYC Construction": 12,
-	"Minimal Noise": 7,
+	"NYC Construction": 11,
+	"Minimal Noise": 6,
 	"Emergency Work": 2,
-	"Public Safety": 13,
+	"Public Safety": 10,
 	"Undue Hardship": 2
  },
  {
-	"count": 22,
+	"count": 25,
 	"communityBoard": "303",
-	"NYC Construction": 16,
-	"Minimal Noise": 6,
+	"NYC Construction": 15,
+	"Minimal Noise": 9,
 	"Emergency Work": 0,
-	"Public Safety": 0,
+	"Public Safety": 1,
 	"Undue Hardship": 0
  },
  {
-	"count": 17,
+	"count": 16,
 	"communityBoard": "304",
-	"NYC Construction": 12,
+	"NYC Construction": 11,
 	"Minimal Noise": 2,
 	"Emergency Work": 0,
 	"Public Safety": 3,
 	"Undue Hardship": 0
  },
  {
-	"count": 23,
+	"count": 25,
 	"communityBoard": "305",
 	"NYC Construction": 14,
+	"Minimal Noise": 5,
+	"Emergency Work": 0,
+	"Public Safety": 6,
+	"Undue Hardship": 0
+ },
+ {
+	"count": 17,
+	"communityBoard": "306",
+	"NYC Construction": 3,
+	"Minimal Noise": 10,
+	"Emergency Work": 0,
+	"Public Safety": 0,
+	"Undue Hardship": 4
+ },
+ {
+	"count": 34,
+	"communityBoard": "307",
+	"NYC Construction": 25,
 	"Minimal Noise": 3,
 	"Emergency Work": 0,
 	"Public Safety": 6,
 	"Undue Hardship": 0
  },
  {
-	"count": 24,
-	"communityBoard": "306",
-	"NYC Construction": 1,
-	"Minimal Noise": 10,
-	"Emergency Work": 0,
-	"Public Safety": 2,
-	"Undue Hardship": 11
- },
- {
-	"count": 33,
-	"communityBoard": "307",
-	"NYC Construction": 25,
-	"Minimal Noise": 3,
-	"Emergency Work": 0,
-	"Public Safety": 5,
-	"Undue Hardship": 0
- },
- {
-	"count": 8,
+	"count": 9,
 	"communityBoard": "308",
 	"NYC Construction": 2,
 	"Minimal Noise": 5,
 	"Emergency Work": 0,
-	"Public Safety": 1,
+	"Public Safety": 2,
 	"Undue Hardship": 0
  },
  {
 	"count": 15,
 	"communityBoard": "309",
 	"NYC Construction": 12,
-	"Minimal Noise": 1,
+	"Minimal Noise": 2,
 	"Emergency Work": 0,
-	"Public Safety": 2,
+	"Public Safety": 1,
 	"Undue Hardship": 0
  },
  {
@@ -354,10 +354,10 @@
 	"count": 9,
 	"communityBoard": "312",
 	"NYC Construction": 5,
-	"Minimal Noise": 0,
+	"Minimal Noise": 1,
 	"Emergency Work": 0,
-	"Public Safety": 4,
-	"Undue Hardship": 0
+	"Public Safety": 2,
+	"Undue Hardship": 1
  },
  {
 	"count": 21,
@@ -378,10 +378,10 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 10,
+	"count": 8,
 	"communityBoard": "315",
 	"NYC Construction": 2,
-	"Minimal Noise": 7,
+	"Minimal Noise": 5,
 	"Emergency Work": 0,
 	"Public Safety": 1,
 	"Undue Hardship": 0
@@ -405,13 +405,13 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 8,
+	"count": 7,
 	"communityBoard": "318",
 	"NYC Construction": 3,
 	"Minimal Noise": 2,
 	"Emergency Work": 0,
 	"Public Safety": 2,
-	"Undue Hardship": 1
+	"Undue Hardship": 0
  },
  {
 	"count": 0,
@@ -432,21 +432,21 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 18,
+	"count": 14,
 	"communityBoard": "401",
 	"NYC Construction": 7,
 	"Minimal Noise": 1,
 	"Emergency Work": 0,
-	"Public Safety": 6,
-	"Undue Hardship": 4
+	"Public Safety": 4,
+	"Undue Hardship": 2
  },
  {
-	"count": 16,
+	"count": 19,
 	"communityBoard": "402",
-	"NYC Construction": 0,
+	"NYC Construction": 1,
 	"Minimal Noise": 5,
 	"Emergency Work": 0,
-	"Public Safety": 8,
+	"Public Safety": 10,
 	"Undue Hardship": 3
  },
  {
@@ -486,19 +486,19 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 32,
+	"count": 30,
 	"communityBoard": "407",
-	"NYC Construction": 9,
-	"Minimal Noise": 9,
+	"NYC Construction": 6,
+	"Minimal Noise": 10,
 	"Emergency Work": 0,
 	"Public Safety": 9,
 	"Undue Hardship": 5
  },
  {
-	"count": 12,
+	"count": 15,
 	"communityBoard": "408",
 	"NYC Construction": 7,
-	"Minimal Noise": 2,
+	"Minimal Noise": 5,
 	"Emergency Work": 0,
 	"Public Safety": 3,
 	"Undue Hardship": 0
@@ -513,9 +513,9 @@
 	"Undue Hardship": 1
  },
  {
-	"count": 6,
+	"count": 5,
 	"communityBoard": "410",
-	"NYC Construction": 6,
+	"NYC Construction": 5,
 	"Minimal Noise": 0,
 	"Emergency Work": 0,
 	"Public Safety": 0,
@@ -531,10 +531,10 @@
 	"Undue Hardship": 7
  },
  {
-	"count": 23,
+	"count": 18,
 	"communityBoard": "412",
-	"NYC Construction": 15,
-	"Minimal Noise": 2,
+	"NYC Construction": 11,
+	"Minimal Noise": 1,
 	"Emergency Work": 0,
 	"Public Safety": 5,
 	"Undue Hardship": 1
@@ -549,13 +549,13 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 27,
+	"count": 25,
 	"communityBoard": "414",
 	"NYC Construction": 4,
 	"Minimal Noise": 2,
 	"Emergency Work": 1,
-	"Public Safety": 11,
-	"Undue Hardship": 9
+	"Public Safety": 14,
+	"Undue Hardship": 4
  },
  {
 	"count": 0,
@@ -612,10 +612,10 @@
 	"Undue Hardship": 0
  },
  {
-	"count": 16,
+	"count": 15,
 	"communityBoard": "502",
-	"NYC Construction": 12,
-	"Minimal Noise": 4,
+	"NYC Construction": 10,
+	"Minimal Noise": 5,
 	"Emergency Work": 0,
 	"Public Safety": 0,
 	"Undue Hardship": 0
