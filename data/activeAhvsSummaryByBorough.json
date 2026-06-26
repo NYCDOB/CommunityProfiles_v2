@@ -8,7 +8,7 @@
 		},
 		 {		
 		"x": "Queens",
-		"y": 4
+		"y": 3
 		},
 		 {		
 		"x": "Manhattan",
@@ -30,7 +30,7 @@
 	[
 		{		
 		"x": "Queens",
-		"y": 37
+		"y": 35
 		}
 ,
 		 {		
@@ -39,11 +39,11 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 148
+		"y": 149
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 4
+		"y": 3
 		},
 		 {		
 		"x": "Bronx",
@@ -57,16 +57,16 @@
 	[
 		{		
 		"x": "Queens",
-		"y": 116
+		"y": 107
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 186
+		"y": 197
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 25
+		"y": 21
 		},
 		 {		
 		"x": "Manhattan",
@@ -74,7 +74,7 @@
 		},
 		 {		
 		"x": "Bronx",
-		"y": 93
+		"y": 91
 		} 
 	],
 	"key": "NYC Construction"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Queens",
-		"y": 38
+		"y": 43
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 77
+		"y": 83
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 466
+		"y": 485
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 1
+		"y": 2
 		},
 		 {		
 		"x": "Bronx",
-		"y": 14
+		"y": 13
 		} 
 	],
 	"key": "Public Safety"
@@ -111,12 +111,12 @@
 	[
 		{		
 		"x": "Brooklyn",
-		"y": 32
+		"y": 30
 		}
 ,
 		 {		
 		"x": "Queens",
-		"y": 22
+		"y": 21
 		},
 		 {		
 		"x": "Staten Island",
@@ -124,11 +124,11 @@
 		},
 		 {		
 		"x": "Bronx",
-		"y": 26
+		"y": 22
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 49
+		"y": 47
 		}
 	],
 	"key": "Undue Hardship"
