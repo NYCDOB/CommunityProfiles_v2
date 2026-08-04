@@ -4,23 +4,23 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1916
+		"y": 1947
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 3065
+		"y": 3102
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1606
+		"y": 1600
 		},
 		 {		
 		"x": "Queens",
-		"y": 2214
+		"y": 2225
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 467
+		"y": 473
 		} 
 	],
 	"key": "Building Maintenance"
@@ -30,24 +30,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1314
+		"y": 1328
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 1321
+		"y": 1357
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1322
+		"y": 1353
 		},
 		 {		
 		"x": "Queens",
-		"y": 337
+		"y": 334
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 29
+		"y": 39
 		} 
 	],
 	"key": "Elevator Maintenance"
@@ -57,24 +57,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 973
+		"y": 962
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 2547
+		"y": 2599
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 1458
+		"y": 1474
 		},
 		 {		
 		"x": "Queens",
-		"y": 1132
+		"y": 1159
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 323
+		"y": 326
 		} 
 	],
 	"key": "Failure to Comply"
@@ -84,24 +84,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 187
+		"y": 197
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 501
+		"y": 508
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 298
+		"y": 296
 		},
 		 {		
 		"x": "Queens",
-		"y": 496
+		"y": 493
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 105
+		"y": 104
 		} 
 	],
 	"key": "Miscellaneous"
@@ -111,24 +111,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 5038
+		"y": 5090
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 9427
+		"y": 9491
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 5533
+		"y": 5593
 		},
 		 {		
 		"x": "Queens",
-		"y": 6364
+		"y": 6361
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 668
+		"y": 673
 		} 
 	],
 	"key": "Other"
@@ -138,24 +138,24 @@
 	[
 		{		
 		"x": "Bronx",
-		"y": 1107
+		"y": 1134
 		}
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 3177
+		"y": 3214
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 845
+		"y": 838
 		},
 		 {		
 		"x": "Queens",
-		"y": 2882
+		"y": 2885
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 683
+		"y": 692
 		}
 	],
 	"key": "Work Without Permit"
