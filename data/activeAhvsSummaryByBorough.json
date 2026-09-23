@@ -35,15 +35,15 @@
 ,
 		 {		
 		"x": "Queens",
-		"y": 70
+		"y": 71
 		},
 		 {		
 		"x": "Brooklyn",
-		"y": 73
+		"y": 79
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 173
+		"y": 178
 		},
 		 {		
 		"x": "Bronx",
@@ -57,20 +57,20 @@
 	[
 		{		
 		"x": "Brooklyn",
-		"y": 147
+		"y": 158
 		}
 ,
 		 {		
 		"x": "Manhattan",
-		"y": 93
+		"y": 90
 		},
 		 {		
 		"x": "Staten Island",
-		"y": 28
+		"y": 27
 		},
 		 {		
 		"x": "Queens",
-		"y": 107
+		"y": 108
 		},
 		 {		
 		"x": "Bronx",
@@ -89,7 +89,7 @@
 ,
 		 {		
 		"x": "Brooklyn",
-		"y": 74
+		"y": 75
 		},
 		 {		
 		"x": "Staten Island",
@@ -97,7 +97,7 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 461
+		"y": 490
 		},
 		 {		
 		"x": "Bronx",
@@ -111,12 +111,12 @@
 	[
 		{		
 		"x": "Brooklyn",
-		"y": 26
+		"y": 32
 		}
 ,
 		 {		
 		"x": "Queens",
-		"y": 18
+		"y": 16
 		},
 		 {		
 		"x": "Staten Island",
@@ -124,11 +124,11 @@
 		},
 		 {		
 		"x": "Manhattan",
-		"y": 44
+		"y": 45
 		},
 		 {		
 		"x": "Bronx",
-		"y": 11
+		"y": 18
 		}
 	],
 	"key": "Undue Hardship"
